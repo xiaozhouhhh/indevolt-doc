@@ -1,0 +1,14 @@
+{
+  "logo.alt": {
+    "message": "Developers",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Hardware": {
+    "message": "Hardware",
+    "description": "Navbar item with label Hardware"
+  },
+  "item.label.App": {
+    "message": "App",
+    "description": "Navbar item with label App"
+  }
+}
