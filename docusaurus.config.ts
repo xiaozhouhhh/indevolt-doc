@@ -112,7 +112,7 @@ const config: Config = {
             // },
             {
               label: "INDEVOLT App",
-              to: "docs/app/introduction"
+              to: "docs/App/introduction"
             },
           ]
         },
@@ -140,7 +140,7 @@ const config: Config = {
             // },
             {
               label: "INDEVOLT App",
-              to: "docs/app/introduction"
+              to: "docs/App/introduction"
             }
             
           ]

@@ -80,8 +80,8 @@ const sidebars: SidebarsConfig = {
     // 'hardware/firmware'
   ],
   appSidebar: [
-    'app/introduction',
-    'app/release-notes',
+    'App/introduction',
+    'App/release-notes',
     {
       type: 'category',
       label: 'Getting Started',
@@ -93,9 +93,9 @@ const sidebars: SidebarsConfig = {
           "Get started with INDEVOLT by installing the app, creating your account, and setting up your first device.",
       },
       items: [
-        'app/installation',
-        'app/registration-login',
-        'app/add-device'
+        'App/installation',
+        'App/registration-login',
+        'App/add-device'
       ],
     },
     {
@@ -109,14 +109,14 @@ const sidebars: SidebarsConfig = {
           "This section walks through key functions, from energy monitoring to personal settings."
       },
       items: [
-        'app/home',
-        'app/report',
-        'app/smart',
-        'app/device',
-        'app/profile'
+        'App/home',
+        'App/report',
+        'App/smart',
+        'App/device',
+        'App/profile'
       ],
     },
-    'app/faq'
+    'App/faq'
   ]
 
 };
