@@ -41,8 +41,9 @@ import TabItem from '@theme/TabItem';
   1. Appuyez sur **l'icône de scan** en haut à droite de l'application.  
   2. Scannez le code QR sur votre appareil ou saisissez le SN manuellement.
 
-      <img src={require("./img/select_scan_qr_code.png").default} width="240"/>
+      <img src={require("./img/discover_devices.png").default} width="240"/>
       <img src={require("./img/scan_qr_code.png").default} width="240"/>
+      <img src={require("./img/connecting_device.png").default} width="240"/>
 
   </TabItem>
 
@@ -56,6 +57,7 @@ import TabItem from '@theme/TabItem';
   2. L'application scannera automatiquement et affichera les appareils Bluetooth à proximité. **Sélectionnez votre appareil** en fonction du nom du produit et du SN.
 
       <img src={require("./img/discover_devices.png").default} width="240"/>
+      <img src={require("./img/connecting_device.png").default} width="240"/>
 
   </TabItem>
 
@@ -65,9 +67,10 @@ import TabItem from '@theme/TabItem';
   2. Sélectionnez le **modèle** spécifique sous cette marque.  
   3. Scannez le **code QR** sur votre appareil ou saisissez le SN manuellement.
 
-      <img src={require("./img/select_brand.png").default} width="240"/>
+      <img src={require("./img/discover_devices.png").default} width="240"/>
       <img src={require("./img/select_device.png").default} width="240"/>
       <img src={require("./img/scan_qr_code.png").default} width="240"/>
+      <img src={require("./img/connecting_device.png").default} width="240"/>
 
   </TabItem>
 </Tabs>
@@ -80,7 +83,6 @@ import TabItem from '@theme/TabItem';
    <img src={require("./img/select_wifi.png").default} width="240"/>
 
 4. L'appareil est ajouté avec succès.
-   <img src={require("./img/connect_bluetooth.png").default} width="240"/>
    <img src={require("./img/wifi_connected.png").default} width="240"/>
 
 5. *(Optionnel)* Vous pouvez ajouter des appareils liés en suivant les mêmes étapes. Si vous souhaitez le faire plus tard, appuyez sur le bouton **\<** en haut à gauche pour quitter.

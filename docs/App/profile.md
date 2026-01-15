@@ -329,7 +329,7 @@ Tap **Display** to customize the app’s appearance and formatting preferences.
 
 ### 6.1 Language
 
-Support multiple interface languages: Simplified Chinese, English, French, German, and Italian.
+Support multiple interface languages: Simplified Chinese, English, French, German, Italian and Dutch.
 <img src={require("./img/language.png").default} width="240"/>
 
 ### 6.2 Dark Mode

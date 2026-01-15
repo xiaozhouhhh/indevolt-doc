@@ -19,8 +19,8 @@ description: INDEVOLT阳台储能系统用户指南概览。
 
 如果您已经安装完成，想了解日常使用和 App 操作： 
 
-👉 **[了解微型储能系统 →](./Overview/system-overview.md)**  
-👉 **[查看基础使用说明 →](./Basic/power-on-off.md)**  
+👉 **[了解微型储能系统 →](./overview/system-overview.md)**  
+👉 **[查看基础使用说明 →](./basic/power-on-off.md)**  
 
 ---
 
@@ -28,8 +28,8 @@ description: INDEVOLT阳台储能系统用户指南概览。
 
 如果你希望优化用能模式、查看设备参数或进行系统集成：
 
-👉 **[设置用能策略 →](./Advanced/self-consumption.md)**  
-👉 **[查看技术参数 →](./Geek/power-tech-specs.md)**
+👉 **[设置用能策略 →](./advanced/self-consumption.md)**  
+👉 **[查看技术参数 →](./geek/power-tech-specs.md)**
 
 ---
 
@@ -60,4 +60,4 @@ description: INDEVOLT阳台储能系统用户指南概览。
 
 ---
 
-_文档版本：V1.0 ｜ 最近更新时间：2025-12_
+_文档版本：V1.0 ｜ 最近更新时间：2026-01_

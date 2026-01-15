@@ -3,20 +3,16 @@
     "message": "开发者",
     "description": "The alt text of navbar logo"
   },
-  "item.label.Documentation": {
+  "item.label.Docs": {
     "message": "文档",
-    "description": "Navbar item with label Documentation"
+    "description": "Navbar item with label Docs"
   },
-  "item.label.Blog": {
-    "message": "博客",
-    "description": "Navbar item with label Blog"
+  "item.label.INDEVOLT App": {
+    "message": "INDEVOLT App",
+    "description": "Navbar item with label INDEVOLT App"
   },
-  "item.label.Hardware": {
-    "message": "硬件",
-    "description": "Navbar item with label Hardware"
-  },
-  "item.label.App": {
-    "message": "App",
-    "description": "Navbar item with label App"
+  "item.label.Micro Storage": {
+    "message": "微型储能",
+    "description": "Navbar item with label Micro Storage"
   }
 }

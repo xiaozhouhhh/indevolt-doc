@@ -18,70 +18,70 @@ const sidebars: SidebarsConfig = {
 
   // But you can create a sidebar manually
 
-  // tutorialSidebar: [
-  //   'Hardware/doc-intro',
-  //   'Hardware/product-overview',
-  //   'Hardware/safety',
-  //   'Hardware/quick-start',
-  //   {
-  //     type: 'category',
-  //     collapsed: false,
-  //     label: 'Know Your Balcony Power System',
-  //     items: [
-  //       'Hardware/Overview/product-models',
-  //       'Hardware/Overview/system-overview',
-  //       'Hardware/Overview/appearance-interface'
-  //     ],
-  //   },
-  //   {
-  //     type: 'category',
-  //     collapsed: false,
-  //     label: 'Daily Use',
-  //     items: [
-  //       'Hardware/Basic/power-on-off',
-  //       'Hardware/Basic/status-data',
-  //     ],
-  //   },
-  //   {
-  //     type: 'category',
-  //     collapsed: false,
-  //     label: 'Energy Management',
-  //     items: [
-  //       'Hardware/Advanced/self-consumption',
-  //       'Hardware/Advanced/charge-discharge-schedule',
-  //       'Hardware/Advanced/real-time-control',
-  //       'Hardware/Advanced/price-strategy',
-  //     ],
-  //   },
-  //   {
-  //     type: 'category',
-  //     collapsed: false,
-  //     label: 'Technical Information & Capabilities',
-  //     items: [
-  //       {
-  //         type: 'category',
-  //         collapsed: false,
-  //         label: 'Technical Specification',
-  //         items: [
-  //           'Hardware/Geek/power-tech-specs',
-  //           'Hardware/Geek/battery-tech-specs',
-  //         ],
-  //       },
-  //       'Hardware/Geek/open-data',
-  //       'Hardware/Geek/home-assistant',
-  //       'Hardware/Geek/device-integration'
-  //     ],
-  //   },
-  //   'Hardware/faq-troubleshooting',
-  //   'Hardware/after-sales',
-  //   'Hardware/maintenance',
-  //   'Hardware/compliance',
-  //   'Hardware/glossary',
-  //   'Hardware/firmware'
-  // ],
+  tutorialSidebar: [
+    // 'hardware/doc-intro',
+    // 'hardware/product-overview',
+    // 'hardware/safety',
+    // 'hardware/quick-start',
+    // {
+    //   type: 'category',
+    //   collapsed: false,
+    //   label: 'Know Your Micro Storage System',
+    //   items: [
+    //     'hardware/overview/product-models',
+    //     'hardware/overview/system-overview',
+    //     'hardware/overview/appearance-interface'
+    //   ],
+    // },
+    // {
+    //   type: 'category',
+    //   collapsed: false,
+    //   label: 'Daily Use',
+    //   items: [
+    //     'hardware/basic/power-on-off',
+    //     'hardware/basic/status-data',
+    //   ],
+    // },
+    // {
+    //   type: 'category',
+    //   collapsed: false,
+    //   label: 'Energy Management',
+    //   items: [
+    //     'hardware/advanced/self-consumption',
+    //     'hardware/advanced/charge-discharge-schedule',
+    //     'hardware/advanced/real-time-control',
+    //     'hardware/advanced/price-strategy',
+    //   ],
+    // },
+    // {
+    //   type: 'category',
+    //   collapsed: false,
+    //   label: 'Technical Information & Capabilities',
+    //   items: [
+    //     {
+    //       type: 'category',
+    //       collapsed: false,
+    //       label: 'Technical Specification',
+    //       items: [
+    //         'hardware/geek/power-tech-specs',
+    //         'hardware/geek/battery-tech-specs',
+    //       ],
+    //     },
+    //     'hardware/geek/open-data',
+    //     'hardware/geek/home-assistant',
+    //     'hardware/geek/device-integration'
+    //   ],
+    // },
+    // 'hardware/faq-troubleshooting',
+    // 'hardware/after-sales',
+    // 'hardware/maintenance',
+    // 'hardware/compliance',
+    // 'hardware/glossary',
+    // 'hardware/firmware'
+  ],
   appSidebar: [
-    'App/introduction',
-    'App/release-notes',
+    'app/introduction',
+    'app/release-notes',
     {
       type: 'category',
       label: 'Getting Started',
@@ -93,9 +93,9 @@ const sidebars: SidebarsConfig = {
           "Get started with INDEVOLT by installing the app, creating your account, and setting up your first device.",
       },
       items: [
-        'App/installation',
-        'App/registration-login',
-        'App/add-device'
+        'app/installation',
+        'app/registration-login',
+        'app/add-device'
       ],
     },
     {
@@ -109,14 +109,14 @@ const sidebars: SidebarsConfig = {
           "This section walks through key functions, from energy monitoring to personal settings."
       },
       items: [
-        'App/home',
-        'App/report',
-        'App/smart',
-        'App/device',
-        'App/profile'
+        'app/home',
+        'app/report',
+        'app/smart',
+        'app/device',
+        'app/profile'
       ],
     },
-    'App/faq'
+    'app/faq'
   ]
 
 };

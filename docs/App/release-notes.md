@@ -5,6 +5,15 @@ description: INDEVOLT App version update history and feature improvements.
 
 # Release Notes
 
+## V1.2.5
+
+- Improved home energy management and pricing experience
+- Enhanced device integration and cluster management
+- Optimized device connection and interaction flow
+- General performance improvements and stability fixes
+
+---
+
 ## V1.2.4
 
 - Improved home energy settings and overall user experience

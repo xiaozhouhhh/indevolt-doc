@@ -89,6 +89,11 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social car
     image: "img/docusaurus-social-card.jpg",
+    docs: {
+      sidebar: {
+        hideable: true,
+      },
+    },
     navbar: {
       logo: {
         alt: "Developers",
@@ -97,17 +102,19 @@ const config: Config = {
         width: 120
       },
       items: [
-        // {
-        //   type: "docSidebar",
-        //   sidebarId: "tutorialSidebar",
-        //   position: "left",
-        //   label: "Micro Energy Storage",
-        // },
         {
-          type: "docSidebar",
-          sidebarId: "appSidebar",
+          label: "Docs",
           position: "left",
-          label: "App",
+          items: [
+            // {
+            //   label: "Micro Storage",
+            //   to: "docs/hardware/doc-intro"
+            // },
+            {
+              label: "INDEVOLT App",
+              to: "docs/app/introduction"
+            },
+          ]
         },
         {
           type: "localeDropdown",
@@ -125,6 +132,20 @@ const config: Config = {
       },
       links: [
         {
+          title: "Docs",
+          items: [
+            // {
+            //   label: "Micro Storage",
+            //   to: "docs/hardware/geek/open-data"
+            // },
+            {
+              label: "INDEVOLT App",
+              to: "docs/app/introduction"
+            }
+            
+          ]
+        },
+        {
           title: "Product",
           items: [
             {
@@ -138,7 +159,7 @@ const config: Config = {
           items: [
             {
               label: "About Us",
-              href: "https://www.indevolt.com/pages/about-us",
+              href: "https://www.indevolt.com/pages/about-us/",
             },
           ],
         },

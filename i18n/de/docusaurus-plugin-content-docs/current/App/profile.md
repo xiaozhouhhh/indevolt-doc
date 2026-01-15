@@ -322,8 +322,8 @@ Tippen Sie auf **Darstellung**, um das Erscheinungsbild und die Formatierung der
 
 ### 6.1 Sprache
 
-Unterstützte Oberflächensprachen: Vereinfachtes Chinesisch, Englisch, Französisch, Deutsch und Italienisch.
-<img src={require("./img/language.jpg").default} width="240"/>
+Unterstützte Oberflächensprachen: Vereinfachtes Chinesisch, Englisch, Französisch, Deutsch, Italienisch und Niederländisch.
+<img src={require("./img/language.png").default} width="240"/>
 
 ### 6.2 Dunkler Modus
 

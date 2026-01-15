@@ -1,15 +1,15 @@
 {
   "home.description": {
-    "message": "Welcome to our website!"
+    "message": "Willkommen auf unserer Website!"
   },
   "home.hero.greeting": {
-    "message": "Meet with"
+    "message": "Treffen Sie "
   },
   "home.hero.title": {
     "message": "INDEVOLT!"
   },
   "home.hero.subtitle": {
-    "message": "Explore our resources and learn more about our products."
+    "message": "Entdecken Sie unsere Ressourcen und erfahren Sie mehr über unsere Produkte."
   },
   "theme.ErrorPageContent.title": {
     "message": "Die Seite ist abgestürzt.",

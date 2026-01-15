@@ -3,9 +3,9 @@
     "message": "Next",
     "description": "The label for version current"
   },
-  "sidebar.tutorialSidebar.category.Know Your Balcony Power System": {
-    "message": "Know Your Balcony Power System",
-    "description": "The label for category Know Your Balcony Power System in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Know Your Micro Storage System": {
+    "message": "Know Your Micro Storage System",
+    "description": "The label for category Know Your Micro Storage System in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Daily Use": {
     "message": "Daily Use",

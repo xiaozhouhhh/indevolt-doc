@@ -5,6 +5,16 @@ description: Historique des mises à jour et améliorations des fonctionnalités
 
 # Notes de version
 
+## V1.2.5
+
+
+- Amélioration de la gestion de l’énergie domestique et des paramètres de tarification
+- Intégration étendue des appareils et gestion des groupes
+- Optimisation du processus de connexion et d’interaction des appareils
+- Améliorations générales des performances et de la stabilité
+
+---
+
 ## V1.2.4
 
 - Optimisation des paramètres énergétiques du foyer et de l’expérience utilisateur

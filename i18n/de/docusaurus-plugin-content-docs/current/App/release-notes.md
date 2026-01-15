@@ -5,6 +5,15 @@ description: Versionsverlauf und Funktionsverbesserungen der Energy-Ease-App.
 
 # Versionshinweise
 
+## V1.2.5
+
+- Verbesserte Verwaltung der Haushaltsenergie und Preis­einstellungen
+- Erweiterte Geräteintegration und Cluster-Verwaltung
+- Optimierter Geräteverbindungs- und Interaktionsablauf
+- Allgemeine Leistungsverbesserungen und Stabilitätsoptimierungen
+
+---
+
 ## V1.2.4
 
 - Optimierung der Einstellungen für das Energiemanagement im Haushalt

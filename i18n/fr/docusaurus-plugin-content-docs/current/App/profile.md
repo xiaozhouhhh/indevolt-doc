@@ -303,7 +303,7 @@ Touchez **Affichage** pour personnaliser l’apparence et les préférences de f
 
 ### 6.1 Langue
 
-Supporte plusieurs langues d’interface : Chinois simplifié, Anglais, Français, Allemand, Italien.  
+Supporte plusieurs langues d’interface : Chinois simplifié, Anglais, Français, Allemand, Italien, Néerlandais.  
 <img src={require("./img/language.png").default} width="240"/>
 
 ### 6.2 Mode sombre

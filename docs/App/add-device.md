@@ -41,7 +41,7 @@ import TabItem from '@theme/TabItem';
   1. Tap the scan icon in the top right corner of the app.  
   2. Scan the QR code on your device, or enter the SN manually.
 
-      <img src={require("./img/select_scan_qr_code.png").default} width="240"/>
+      <img src={require("./img/discover_devices.png").default} width="240"/>
       <img src={require("./img/scan_qr_code.png").default} width="240"/>
       <img src={require("./img/connecting_device.png").default} width="240"/>
 
@@ -68,7 +68,7 @@ import TabItem from '@theme/TabItem';
   2. Select the specific model under that brand.  
   3. Scan the QR code on your device or enter the SN manually.
 
-      <img src={require("./img/select_brand.png").default} width="240"/>
+      <img src={require("./img/discover_devices.png").default} width="240"/>
       <img src={require("./img/select_device.png").default} width="240"/>
       <img src={require("./img/scan_qr_code.png").default} width="240"/>
       <img src={require("./img/connecting_device.png").default} width="240"/>
