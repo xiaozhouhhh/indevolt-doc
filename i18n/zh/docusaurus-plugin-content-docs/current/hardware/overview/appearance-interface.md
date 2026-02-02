@@ -42,10 +42,10 @@ ECO型号无 4–7 端口。
 
 |                                  LED                                   | 描述                      | 状态         |
 | :--------------------------------------------------------------------: | ------------------------- | ------------ |
-|  <img src={require("./img/led-starting.png").default} height="150"/>   | 蓝色LED从中心向上下点亮   | 启动中       |
-|  <img src={require("./img/led-charging.png").default} height="150"/>   | 绿色LED从当前电量向上点亮 | 充电中       |
-| <img src={require("./img/led-discharging.png").default} height="150"/> | 蓝色LED从当前电量向下熄灭 | 放电中       |
-| <img src={require("./img/led-iot-failure.png").default} height="150"/> | LED显示黄色               | IoT连接失败  |
-|    <img src={require("./img/led-fault.png").default} height="150"/>    | LED显示红色               | 故障         |
-|  <img src={require("./img/led-shutdown.png").default} height="150"/>   | 蓝色LED从两侧向中心点亮   | 关闭中       |
-|    <img src={require("./img/led-reset.png").default} height="150"/>    | 蓝色LED闪烁三次           | 设备重置成功 |
+|  <img src={require("./img/led-starting.png").default} style={{ height: 150 }}/>   | 蓝色LED从中心向上下点亮   | 启动中       |
+|  <img src={require("./img/led-charging.png").default} style={{ height: 150 }}/>   | 绿色LED从当前电量向上点亮 | 充电中       |
+| <img src={require("./img/led-discharging.png").default} style={{ height: 150 }}/> | 蓝色LED从当前电量向下熄灭 | 放电中       |
+| <img src={require("./img/led-iot-failure.png").default} style={{ height: 150 }}/> | LED显示黄色               | IoT连接失败  |
+|    <img src={require("./img/led-fault.png").default} style={{ height: 150 }}/>    | LED显示红色               | 故障         |
+|  <img src={require("./img/led-shutdown.png").default} style={{ height: 150 }}/>   | 蓝色LED从两侧向中心点亮   | 关闭中       |
+|    <img src={require("./img/led-reset.png").default} style={{ height: 150 }}/>    | 蓝色LED闪烁三次           | 设备重置成功 |
