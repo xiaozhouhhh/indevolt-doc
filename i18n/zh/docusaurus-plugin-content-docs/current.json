@@ -48,7 +48,7 @@
     "description": "The generated-index page description for category Using INDEVOLT in sidebar appSidebar"
   },
   "sidebar.tutorialSidebar.category.Advanced Settings": {
-    "message": "Advanced Settings",
+    "message": "高级设置",
     "description": "The label for category Advanced Settings in sidebar tutorialSidebar"
   }
 }
