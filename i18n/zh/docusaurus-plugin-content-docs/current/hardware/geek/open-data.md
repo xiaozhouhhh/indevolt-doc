@@ -6,6 +6,10 @@ slug: /open-data
 
 # OpenData API
 
+:::info 文档版本说明
+当前在线文档内容对应《Indevolt OpenData Application Note》**V1.6**。
+:::
+
 ## 1️⃣ 介绍 {#introduction}
 
 OpenData是为基于WiFi的INDEVOLT物联网设备设计的轻量级通信框架。设备通过WiFi接入本地网络，支持数据主动推送与外部查询响应。
@@ -32,19 +36,34 @@ OpenData是为基于WiFi的INDEVOLT物联网设备设计的轻量级通信框架
 
 ### 步骤二、开启 API {#enable-api}
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 > 在默认状态下设备API功能未开启，需要开启后才能使用API。OpenData提供以下三种方式：
 > - HTTP
 > - HTTP+ Digest 认证
 > - HTTPS （目前不支持，敬请期待）
 > 
 > 您可在 INDEVOLT App 中设置本地API：
-> <img src={require("./img/profile_page.png").default} width="200"/>
-> <img src={require("./img/scan_qr_code.png").default} width="200"/>
-> <img src={require("./img/connect_device.png").default} width="200"/>
-> <img src={require("./img/device_connected.png").default} width="200"/>
-> <img src={require("./img/select-local-api.png").default} width="200"/>
-> <img src={require("./img/local-api.png").default} width="200"/>
-
+> - **设备已联网**：推荐使用 **云端设置**，操作更简单  
+> - **设备暂未联网**：可通过**本地蓝牙设置**，直接与设备连接即可完成配置
+> 
+> <Tabs>
+>   <TabItem value="cloud" label="通过云端设置" default>
+>     <img src={require("./img/select_device.png").default} width="200"/>
+>     <img src={require("./img/device_info.png").default} width="200"/>
+>     <img src={require("./img/select_local_api.png").default} width="200"/>
+>     <img src={require("./img/local_api.png").default} width="200"/>
+>   </TabItem>
+>   <TabItem value="local" label="通过本地蓝牙设置">
+>     <img src={require("./img/profile_page.png").default} width="200"/>
+>     <img src={require("./img/scan_qr_code.png").default} width="200"/>
+>     <img src={require("./img/connect_device.png").default} width="200"/>
+>     <img src={require("./img/device_connected.png").default} width="200"/>
+>     <img src={require("./img/select_local_api2.png").default} width="200"/>
+>     <img src={require("./img/local_api2.png").default} width="200"/>
+>   </TabItem>
+> </Tabs>
 
 ### 步骤三、查看固件版本 {#check-firmware}
 
@@ -53,7 +72,7 @@ OpenData是为基于WiFi的INDEVOLT物联网设备设计的轻量级通信框架
 > | Model                       | Applicable firmware version               |
 > | --------------------------- | ----------------------------------------- |
 > | BK1600/BK1600Ultra          | V1.3.0A_R006.072_M4848_00000039           |
-> | SolidFlex2000/PowerFlex2000 | CMS：V1406.07.002B <br />Pfile：V0D.00.11 |
+> | SolidFlex2000/PowerFlex2000 | CMS：V1406.07.002E |
 >
 > 请在 INDEVOLT App 中查看设备固件版本。在设备设置页选择 **固件升级** 查看固件信息.
 > <img src={require("./img/select-firmware.png").default} width="240"/>
@@ -205,6 +224,7 @@ Digest认证技术用于网络通信中验证用户身份，避免密码明文�
 | [`Indevolt`](#indevolt) | 读取 INDEVOLT 设备数据，控制设备。                         |
 | [`Sys`](#sys)           | 获取设备 CMS (Communication Management System) 信息。 |
 
+
 ## 5️⃣ `Indevolt` {#indevolt}
 
 `Indevolt` 允许你通过标准 HTTP 请求 **获取设备实时数据** 并 **发送控制命令**。
@@ -227,11 +247,6 @@ Digest认证技术用于网络通信中验证用户身份，避免密码明文�
   ```  
 
 :::
-
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 
 
 > **方法: `Indevolt.GetData`**
@@ -387,13 +402,6 @@ import TabItem from '@theme/TabItem';
 >       <td></td>
 >     </tr>
 >     <tr>
->       <td>6105</td>
->       <td>Num</td>
->       <td>%</td>
->       <td>Emergency Power Supply</td>
->       <td></td>
->     </tr>
->     <tr>
 >       <td>2618</td>
 >       <td>Num</td>
 >       <td></td>
@@ -429,11 +437,42 @@ import TabItem from '@theme/TabItem';
 >       <td> </td>
 >     </tr>
 >     <tr>
->       <td>2108</td>
+>       <td>11011</td>
 >       <td>Num</td>
 >       <td>W</td>
 >       <td>Max AC Output Power</td>
 >       <td> </td>
+>     </tr>
+>     <tr>
+>       <td>680</td>
+>       <td>Num</td>
+>       <td></td>
+>       <td>Bypass</td>
+>       <td>0: Disable <br />1: Enable</td>
+>     </tr>
+>     <tr>
+>       <td>6105</td>
+>       <td>Num</td>
+>       <td>%</td>
+>       <td>Backup SOC</td>
+>       <td> </td>
+>     </tr>
+>     <tr>
+>       <td>7171</td>
+>       <td>Num</td>
+>       <td></td>
+>       <td>Light</td>
+>       <td>0: Disable <br />1: Enable </td>
+>     </tr>
+>     <tr>
+>       <td colspan="5" style={{ textAlign: 'center' }}>Cluster Information</td>
+>     </tr>
+>     <tr>
+>       <td>606</td>
+>       <td>Enum</td>
+>       <td></td>
+>       <td>Master-slave identification</td>
+>       <td>1000: Master<br />1001: Slave<br />1002: None</td>
 >     </tr>
 >     <tr>
 >       <td colspan="5" style={{ textAlign: 'center' }}>Bypass Power</td>
@@ -452,14 +491,14 @@ import TabItem from '@theme/TabItem';
 >       <td>2107</td>
 >       <td>Num</td>
 >       <td>kWh</td>
->       <td>Total AC Output Energy</td>
+>       <td>Total AC Input Energy</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>2104</td>
 >       <td>Num</td>
 >       <td>Wh</td>
->       <td>Total AC Input Energy</td>
+>       <td>Total AC Output Energy</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
@@ -605,178 +644,262 @@ import TabItem from '@theme/TabItem';
 >       <td> </td>
 >     </tr>
 >     <tr>
+>       <td>9009</td>
+>       <td>Num</td>
+>       <td>V</td>
+>       <td>Batt Cell1 V-MB</td>
+>       <td> </td>
+>     </tr>
+>     <tr>
+>       <td>9011</td>
+>       <td>Num</td>
+>       <td>V</td>
+>       <td>Batt Cell2 V-MB</td>
+>       <td> </td>
+>     </tr>
+>     <tr>
 >       <td>9032</td>
 >       <td>String</td>
 >       <td> </td>
->       <td>Batt SN-Slave1</td>
+>       <td>Batt SN-Pack1</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>9016</td>
 >       <td>Num</td>
 >       <td>%</td>
->       <td>Batt SOC-Slave1</td>
+>       <td>Batt SOC-Pack1</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>9020</td>
 >       <td>Num</td>
 >       <td>V</td>
->       <td>Batt V-Slave1</td>
+>       <td>Batt V-Pack1</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>19173</td>
 >       <td>Num</td>
 >       <td>A</td>
->       <td>Batt I-Slave1</td>
+>       <td>Batt I-Pack1</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>9030</td>
 >       <td>Num</td>
 >       <td>℃</td>
->       <td>Batt Temp-Slave1</td>
+>       <td>Batt Temp-Pack1</td>
+>       <td> </td>
+>     </tr>
+>     <tr>
+>       <td>9021</td>
+>       <td>Num</td>
+>       <td>V</td>
+>       <td>Batt Cell1 V-Pack1</td>
+>       <td> </td>
+>     </tr>
+>     <tr>
+>       <td>9023</td>
+>       <td>Num</td>
+>       <td>V</td>
+>       <td>Batt Cell2 V-Pack1</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>9051</td>
 >       <td>String</td>
 >       <td> </td>
->       <td>Batt SN-Slave2</td>
+>       <td>Batt SN-Pack2</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>9035</td>
 >       <td>Num</td>
 >       <td>%</td>
->       <td>Batt SOC-Slave2</td>
+>       <td>Batt SOC-Pack2</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>9039</td>
 >       <td>Num</td>
 >       <td>V</td>
->       <td>Batt V-Slave2</td>
+>       <td>Batt V-Pack2</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>19174</td>
 >       <td>Num</td>
 >       <td>A</td>
->       <td>Batt I-Slave2</td>
+>       <td>Batt I-Pack2</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>9049</td>
 >       <td>Num</td>
 >       <td>℃</td>
->       <td>Batt Temp-Slave2</td>
+>       <td>Batt Temp-Pack2</td>
+>       <td> </td>
+>     </tr>
+>     <tr>
+>       <td>9040</td>
+>       <td>Num</td>
+>       <td>V</td>
+>       <td>Batt Cell1 V-Pack2</td>
+>       <td> </td>
+>     </tr>
+>     <tr>
+>       <td>9042</td>
+>       <td>Num</td>
+>       <td>V</td>
+>       <td>Batt Cell2 V-Pack2</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>9070</td>
 >       <td>String</td>
 >       <td> </td>
->       <td>Batt SN-Slave3</td>
+>       <td>Batt SN-Pack3</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>9054</td>
 >       <td>Num</td>
 >       <td>%</td>
->       <td>Batt SOC-Slave3</td>
+>       <td>Batt SOC-Pack3</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>9058</td>
 >       <td>Num</td>
 >       <td>V</td>
->       <td>Batt V-Slave3</td>
+>       <td>Batt V-Pack3</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>19175</td>
 >       <td>Num</td>
 >       <td>A</td>
->       <td>Batt I-Slave3</td>
+>       <td>Batt I-Pack3</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>9068</td>
 >       <td>Num</td>
 >       <td>℃</td>
->       <td>Batt Temp-Slave3</td>
+>       <td>Batt Temp-Pack3</td>
+>       <td> </td>
+>     </tr>
+>     <tr>
+>       <td>9059</td>
+>       <td>Num</td>
+>       <td>V</td>
+>       <td>Batt Cell1 V-Pack3</td>
+>       <td> </td>
+>     </tr>
+>     <tr>
+>       <td>9061</td>
+>       <td>Num</td>
+>       <td>V</td>
+>       <td>Batt Cell2 V-Pack3</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>9165</td>
 >       <td>Num</td>
 >       <td> </td>
->       <td>Batt SN-Slave4</td>
+>       <td>Batt SN-Pack4</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>9149</td>
 >       <td>Num</td>
 >       <td>%</td>
->       <td>Batt SOC-Slave4</td>
+>       <td>Batt SOC-Pack4</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>9153</td>
 >       <td>Num</td>
 >       <td>V</td>
->       <td>Batt V-Slave4</td>
+>       <td>Batt V-Pack4</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>19176</td>
 >       <td>Num</td>
 >       <td>A</td>
->       <td>Batt I-Slave4</td>
+>       <td>Batt I-Pack4</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>9163</td>
 >       <td>Num</td>
 >       <td>℃</td>
->       <td>Batt Temp-Slave4</td>
+>       <td>Batt Temp-Pack4</td>
+>       <td> </td>
+>     </tr>
+>     <tr>
+>       <td>9154</td>
+>       <td>Num</td>
+>       <td>V</td>
+>       <td>Batt Cell1 V-Pack4</td>
+>       <td> </td>
+>     </tr>
+>     <tr>
+>       <td>9156</td>
+>       <td>Num</td>
+>       <td>V</td>
+>       <td>Batt Cell2 V-Pack4</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>9218</td>
 >       <td>String</td>
 >       <td> </td>
->       <td>Batt SN-Slave5</td>
+>       <td>Batt SN-Pack5</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>9202</td>
 >       <td>Num</td>
 >       <td>%</td>
->       <td>Batt SOC-Slave5</td>
+>       <td>Batt SOC-Pack5</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>9206</td>
 >       <td>Num</td>
 >       <td>V</td>
->       <td>Batt V-Slave5</td>
+>       <td>Batt V-Pack5</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>19177</td>
 >       <td>Num</td>
 >       <td>A</td>
->       <td>Batt I-Slave5</td>
+>       <td>Batt I-Pack5</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
 >       <td>9216</td>
 >       <td>Num</td>
 >       <td>℃</td>
->       <td>Batt Temp-Slave5</td>
+>       <td>Batt Temp-Pack5</td>
+>       <td> </td>
+>     </tr>
+>     <tr>
+>       <td>9219</td>
+>       <td>Num</td>
+>       <td>V</td>
+>       <td>Batt Cell1 V-Pack5</td>
+>       <td> </td>
+>     </tr>
+>     <tr>
+>       <td>9222</td>
+>       <td>Num</td>
+>       <td>V</td>
+>       <td>Batt Cell2 V-Pack5</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
@@ -951,17 +1074,18 @@ import TabItem from '@theme/TabItem';
 >   <TabItem value="sf2000" label="SolidFlex2000/PowerFlex2000" default>
 >     | cJSON 点位 | cJSON 值类型 | 单位 | 说明    | 值                                                                                    |
 >     | ----------- | ---------------- | ---- | -------------------- | ---------------------------------------------------------------------------------------- |
->     | 47005       | Enum             |      | Mode                 | 1: Self-consumed Prioritized<br />2: Charge/Discharge Schedule<br />4: Real-time control |
->     | 47015       | UINT             |      | State                | 0: Standby<br />1: Charging<br />2: Discharging                                          |
->     | 47016       | INT              | W    | Power                | MAX Charging: 50–2400<br />MAX Discharging: 50–2400                                      |
->     | 47017       | UINT             | %    | SOC                  | 5-100                                                                                    |
->     | 1147        | INT              | W    | Max AC Output Power  |                                                                                          |
->     | 1146        | INT              | W    | Feed-in Power Limit  |                                                                                          |
->     | 1143        | UINT             |      | Grid Charging        | 0: Disable<br />1: Enable                                                                |
->     | 1138        | INT              | W    | Inverter Input Limit |                                                                                          |
->     | 7266        | Enum             |      | Bypass               | 0: Disable<br />1: Enable                                                                |
->     | 1142        | INT              | %    | Backup SOC           |                                                                                          |
->     | 7265        | Enum             |      | Light                | 0: Disable<br />1: Enable                                                                |
+>     |47005	|Enum	|	    |Mode Setting|	1: Self-consumed Prioritized <br />4: Real-time control <br />5: Charge/Discharge Schedule|
+>     |47015	|UINT	|	    |State Setting (Only available in real-time control)|	0: Standby  <br />1: Charging  <br />2: Discharging|
+>     |47016	|INT	| W	    |Power Setting (Only available in real-time control)|	MAX Charging: 50–2400  <br />MAX Discharging: 50–2400|
+>     |47017	|UINT	|%	    |SOC Setting (Only available in real-time control)|	5-100|
+>     |1147	|INT	| W	    |Max AC Output Power Setting|	50-2400|
+>     |1146	|INT	|  W	|Feed-in Power Limit Setting|	50-2400|
+>     |1143	|UINT	|	    |Grid Charging Setting|	0: Disable  <br />1: Enable|
+>     |1138	|INT	|    W	|Inverter Input Limit Setting|	50-2400|
+>     |1	    |Enum	|	    |Load Setting|	1: Smart Plug  <br />2: Meter  <br />3: Key Load  <br />4: Custom|
+>     |7266	|Enum	|	    |Bypass Setting|	0: Disable  <br />1: Enable|
+>     |1142	|INT	|    %	|Backup SOC Setting|	5-100|
+>     |7265	|Enum	|	    |Light Setting|	0: Disable  <br />1: Enable|
 > 
 >   </TabItem>
 >   <TabItem value="bk1600" label="BK1600/BK1600Ultra">
