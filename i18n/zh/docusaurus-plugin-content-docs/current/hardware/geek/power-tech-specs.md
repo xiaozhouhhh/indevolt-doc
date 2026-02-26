@@ -388,7 +388,7 @@ description: 深入了解 Indevolt 微型储能主机的详细技术参数与核
     <td colspan="2">22kg±1kg</td>
   </tr>
   <tr>
-    <td>安装方式</td>
+    <td>安装</td>
     <td>安装方式</td>
     <td colspan="4">上下堆叠锁定，整体靠墙锁定，底座支撑脚调整水平</td>
   </tr>
@@ -518,6 +518,9 @@ description: 深入了解 Indevolt 微型储能主机的详细技术参数与核
   <tr>
     <td>其他要求</td>
     <td colspan="4">方便进行堆叠,满足IEC62109的探针测试要求</td>
+  </tr>
+  <tr>
+    <td colspan="6" style={{ textAlign: 'center' }}>**配件要求** </td>
   </tr>
   <tr>
     <td colspan="2">配件要求</td>

@@ -35,13 +35,13 @@ description: INDEVOLT储能设备用户指南概览。
 
 ## 需要更多帮助？
 
-- 📖 [查看常见问题及故障排查（FAQ）](./faq-troubleshooting.md)
+- 📖 **[查看常见问题及故障排查（FAQ）](./faq-troubleshooting.md)**
 
 ---
 
 ## 更多信息
 
-- [查看固件更新记录](./firmware.md)
-- [维护保养](./maintenance.md)
-- [术语表](./glossary.md)
+- **[查看固件更新记录](./firmware.md)**
+- **[维护保养](./maintenance.md)**
+- **[术语表](./glossary.md)**
 
