@@ -165,7 +165,7 @@ const config: Config = {
         },
       ],
       copyright:
-        "Copyright © 2025 Power Genius. All rights reserved.",
+        "Copyright © 2026 Power Genius. All rights reserved.",
     },
     prism: {
       theme: prismThemes.github,

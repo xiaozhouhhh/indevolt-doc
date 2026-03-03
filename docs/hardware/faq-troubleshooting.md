@@ -413,10 +413,10 @@ description: Frequently Asked Questions and Usage Guide for INDEVOLT Micro Energ
 
 <details className="custom-details" open>
   <summary className="custom-details__summary">
-  Q: Is the 10-year warranty real? What components are covered?
+  Q: What is the warranty period? What components are covered?
   </summary>
 
-  A: The 10-year warranty is valid and covers the battery, AC inverter, and the complete system (consumables are excluded unless otherwise specified in the contract).
+  A: The product comes with a **10-year warranty** and covers the battery, AC inverter, and the complete system (Please refer to the terms and conditions of the contract for details. Consumable parts are excluded).
 </details>
 
 <details className="custom-details" open>

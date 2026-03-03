@@ -338,10 +338,10 @@ description: INDEVOLT 储能设备常见问题解答与使用说明
 
 <details className="custom-details" open>
   <summary className="custom-details__summary">
-  问：10 年质保是否真实？覆盖哪些部件？
+  问：产品质保期是多久？覆盖哪些部件？
   </summary>
 
-  答：10年质保真实有效，质保范围涵盖电池、交流逆变器及整套系统（具体以质保合同条款为准，易损件除外）。
+  答：产品提供 **10 年有限质保**。质保范围涵盖电池、交流逆变器及整套系统（具体以质保合同条款为准，易损件除外）。
 </details>
 
 <details className="custom-details" open>

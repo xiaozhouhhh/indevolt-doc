@@ -38,7 +38,7 @@ In Self-Consumed Prioritized mode, the system automatically distributes energy b
 
 ---
 
-## Load Selection
+## Load Settings
 
 To help the system accurately determine required discharge power, you need to select an appropriate load type.
 
