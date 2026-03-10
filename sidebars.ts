@@ -45,15 +45,6 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       collapsed: false,
-      label: 'Advanced Settings',
-      items: [
-        // 'hardware/advanced/cluster',
-        'hardware/advanced/link-device',
-      ],
-    },
-    {
-      type: 'category',
-      collapsed: false,
       label: 'Energy Management',
       link: {type: 'doc', id: 'hardware/energy-mode/energy-mode'},
       items: [
@@ -61,6 +52,25 @@ const sidebars: SidebarsConfig = {
         'hardware/energy-mode/charge-discharge-schedule',
         'hardware/energy-mode/real-time-control',
         'hardware/energy-mode/price-strategy',
+      ],
+    },
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Advanced Settings',
+      items: [
+        // 'hardware/advanced/cluster',
+        'hardware/advanced/link-device',
+        
+      ],
+    },
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Technical Note',
+      items: [
+        'hardware/technical-note/standby-power',
+        // 'hardware/technical-note/recharge',
       ],
     },
     {
