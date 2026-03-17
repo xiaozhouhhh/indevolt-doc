@@ -71,6 +71,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'hardware/technical-note/standby-power',
         'hardware/technical-note/recharge',
+        'hardware/technical-note/energy-calibration',
       ],
     },
     {
