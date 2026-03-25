@@ -378,7 +378,7 @@ import TabItem from '@theme/TabItem';
 >       <td>Enum</td>
 >       <td></td>
 >       <td>Working Mode</td>
->       <td>1: Self-consumed Prioritized<br />4: Real-time Control<br />5: Charge/Discharge Sc  hedule</td>
+>       <td>1: Self-consumed Prioritized<br />4: Real-time Control<br />5: Charge/Discharge Schedule</td>
 >     </tr>
 >     <tr>
 >       <td>142</td>
@@ -437,6 +437,13 @@ import TabItem from '@theme/TabItem';
 >       <td>0: Disable<br />1: Enable </td>
 >     </tr>
 >     <tr>
+>       <td>11039</td>
+>       <td>Num</td>
+>       <td></td>
+>       <td>Bypass mode</td>
+>       <td>0: Eps<br />1: M-Inv <br />(Automatically switch according to forward and reverse current)</td>
+>     </tr>
+>     <tr>
 >       <td>6105</td>
 >       <td>Num</td>
 >       <td>%</td>
@@ -449,6 +456,27 @@ import TabItem from '@theme/TabItem';
 >       <td></td>
 >       <td>Light</td>
 >       <td>0: Disable<br />1: Enable </td>
+>     </tr>
+>     <tr>
+>       <td>8646</td>
+>       <td>Num</td>
+>       <td>Day</td>
+>       <td>Battery Calibration: Cycle </td>
+>       <td>0-60 <br />0: OFF <br />(Operating time without full charge)</td>
+>     </tr>
+>     <tr>
+>       <td>8647</td>
+>       <td>Num</td>
+>       <td>Time</td>
+>       <td>Battery Calibration: Start Time</td>
+>       <td> DEC-->HEX<br />H: hour<br />L: minute <br /><br /><i>e.g.: 256-->0100<br />01(HEX-H)-->01h<br />00(HEX-L)-->00min</i> </td>
+>     </tr>
+>     <tr>
+>       <td>2802</td>
+>       <td>Num</td>
+>       <td>W</td>
+>       <td>Battery Calibration: Charging power (AC)</td>
+>       <td> </td>
 >     </tr>
 >     <tr>
 >       <td colspan="5" style={{ textAlign: 'center' }}>Cluster Information</td>
@@ -478,28 +506,56 @@ import TabItem from '@theme/TabItem';
 >       <td>Num</td>
 >       <td>kWh</td>
 >       <td>Total AC Input Energy</td>
->       <td> </td>
+>       <td> Comprehensive electrical energy, including (DC+AC+Bypass) </td>
 >     </tr>
 >     <tr>
 >       <td>2104</td>
 >       <td>Num</td>
 >       <td>kWh</td>
 >       <td>Total AC Output Energy</td>
->       <td> </td>
+>       <td> Comprehensive electrical energy, including (DC+AC+Bypass) </td>
 >     </tr>
 >     <tr>
->       <td>2105</td>
+>       <td>11035</td>
 >       <td>Num</td>
->       <td>kWh</td>
->       <td>Off-grid Output Energy</td>
->       <td> </td>
+>       <td>Wh</td>
+>       <td>Daily bypass M-inv input energy</td>
+>       <td> Daily electrical energy of micro-inverter input for grid-connected access </td>
 >     </tr>
 >     <tr>
 >       <td>11034</td>
 >       <td>Num</td>
 >       <td>Wh</td>
->       <td>Bypass Input Energy</td>
->       <td> </td>
+>       <td>Total bypass M-inv input energy</td>
+>       <td> Total electrical energy of micro-inverter input for grid-connected access </td>
+>     </tr>
+>     <tr>
+>     <td>11037</td>
+>         <td>Num</td>
+>         <td> KWh</td>
+>         <td>Daily off-grid bypass output energy</td>
+>         <td>Daily electrical energy of off - grid bypass discharge</td>
+>     </tr>
+>     <tr>
+>         <td>2105</td>
+>         <td>Num</td>
+>         <td> KWh</td>
+>         <td>Total off-grid bypass output energy</td>
+>         <td>Total electrical energy of off-grid bypass discharge</td>
+>     </tr>
+>     <tr>
+>         <td>9285</td>
+>         <td>Num</td>
+>         <td> Wh</td>
+>         <td>Daily bypass output energy</td>
+>         <td>Daily electrical energy of bypass discharge (grid-connected + off-grid)</td>
+>     </tr>
+>     <tr>
+>         <td>9284</td>
+>         <td>Num</td>
+>         <td>Wh</td>
+>         <td>Total bypass output energy</td>
+>         <td>Total electrical energy of bypass discharge (grid-connected + off-grid)</td>
 >     </tr>
 >     <tr>
 >       <td>1502</td>
@@ -509,10 +565,10 @@ import TabItem from '@theme/TabItem';
 >       <td> </td>
 >     </tr>
 >     <tr>
->       <td>6004</td>
+>       <td>1505</td>
 >       <td>Num</td>
->       <td>kWh</td>
->       <td>Battery Daily Charging Energy</td>
+>       <td>Wh</td>
+>       <td>Cumulative Production</td>
 >       <td> </td>
 >     </tr>
 >     <tr>
@@ -1067,7 +1123,7 @@ import TabItem from '@theme/TabItem';
 >     | 1147        | INT              | W    | Max AC Output Power Setting|  50-2400                                                                            |
 >     | 1146        | INT              | W    | Feed-in Power Limit Setting|  50-2400                                                                                |
 >     | 1143        | UINT             |      | Grid Charging Setting| 0: Disable<br />1: Enable                                                                |
->     | 1138        | INT              | W    | Inverter Input Limit Setting| 50-2400                                                                             |
+>     | 1138        | INT              | W    | Inverter Input Limit Setting| 100-2400                                                                             |
 >     | 1           | Enum             |      | Load Setting|    1: Smart Plug<br />2: Meter<br />3: Key Load<br />4: Custom                           |
 >     | 7266        | Enum             |      | Bypass Setting| 0: Disable<br />1: Enable                                                                |
 >     | 1142        | INT              | %    | Backup SOC Setting|                                                                                          |
