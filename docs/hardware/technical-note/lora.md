@@ -1,6 +1,6 @@
 ---
 title: LoRa Connection Guide
-description: User guide for connecting micro energy storage devices to LoRa terminal devices
+description: User guide for connecting Indevolt micro energy storage devices to LoRa terminal devices
 ---
 
 # LoRa Connection Guide
