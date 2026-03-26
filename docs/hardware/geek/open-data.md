@@ -1474,7 +1474,7 @@ This class is used to obtain firmware version, including CMS (Communication Mana
   <summary>**Q: HTTP request returns 401 Unauthorized.**</summary>
 
   - Verify the username and password for Digest Authentication.
-  - New/factory-reset devices only support access to the designated interface: `User.SetConfig`. Refer to [Digest Authentication](#digest-auth) section - other APIs become accessible after successful password modification and authentication with the new password.
+  - New/factory-reset devices only support access to the designated interface: `User.SetConfig`. Refer to [Digest Authentication](#http-digest) section - other APIs become accessible after successful password modification and authentication with the new password.
 </details>
 
 <details>
