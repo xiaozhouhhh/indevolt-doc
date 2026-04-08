@@ -137,8 +137,10 @@ const sidebars: SidebarsConfig = {
       ],
     },
     'app/faq'
+  ],
+  scenarioSidebar: [
+    'scenario/intro',
   ]
-
 };
 
 export default sidebars;

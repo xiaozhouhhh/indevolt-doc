@@ -114,6 +114,10 @@ const config: Config = {
               label: "INDEVOLT App",
               to: "docs/app/introduction"
             },
+            {
+              label: "应用场景",
+              to: "docs/scenario/intro"
+            },
           ]
         },
         {
