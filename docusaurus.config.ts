@@ -116,7 +116,7 @@ const config: Config = {
             },
             {
               label: "应用场景",
-              to: "docs/scenario/intro"
+              to: "docs/scenario/single-phase-microinverter"
             },
           ]
         },

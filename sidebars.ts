@@ -140,7 +140,7 @@ const sidebars: SidebarsConfig = {
     'app/faq'
   ],
   scenarioSidebar: [
-    'scenario/intro',
+    'scenario/single-phase-microinverter',
   ]
 };
 
