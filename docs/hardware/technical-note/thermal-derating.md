@@ -78,8 +78,8 @@ Battery charge and discharge power dynamically adjusts with temperature:
 - **At low temperatures**: the system mainly limits charging, since charging at low temperatures may cause irreversible damage to lithium batteries. Discharge capability is also reduced.  
     > In winter, it is common to see “discharging works, but charging is unavailable.”
 
-The values in the table below represent the capability of a **single battery unit** (main battery or battery pack).  
-**Actual max system power = single battery power × number of unit**, but it will not exceed the system’s maximum charge/discharge limit.
+The values in the table below represent the capability of a single unit (main unit or battery pack).  
+**Actual system power = per-unit power × number of units**, and it will not exceed the system’s maximum charge/discharge power limit.
 
 <table><thead>
   <tr>
