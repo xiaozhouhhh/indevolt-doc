@@ -247,6 +247,14 @@ description: INDEVOLT 储能设备常见问题解答与使用说明
 
 <details className="custom-details" open>
   <summary className="custom-details__summary">
+  问：PowerFlex系统与SolidFlex系统能否在集群模式下共同运行？
+  </summary>
+
+  答：目前已支持PowerFlex系统与SolidFlex系统在集群模式下共同运行。
+</details>
+
+<details className="custom-details" open>
+  <summary className="custom-details__summary">
   问：若拥有两个电池组，设备输出功率可设置为2×2400W，还是总功率仅为2400W？
   </summary>
 
