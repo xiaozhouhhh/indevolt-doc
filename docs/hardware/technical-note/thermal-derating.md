@@ -11,7 +11,7 @@ Derating is a normal protection mechanism that allows the system to operate in a
 
 ---
 
-## PV-Side Thermal Derating
+## PV Thermal Derating
 
 Under normal conditions, the system maximizes power generation. However, at higher temperatures, continuous full-power operation can introduce additional stress. When the internal PV conversion module (**MPPT**) temperature becomes too high, the system will automatically reduce PV power to protect the device.
 
