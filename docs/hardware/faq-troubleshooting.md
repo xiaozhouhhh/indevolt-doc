@@ -295,9 +295,7 @@ description: Frequently Asked Questions and Usage Guide for INDEVOLT Micro Energ
   Q: Can PowerFlex and SolidFlex systems operate together in Cluster Mode?
   </summary>
 
-  A: Currently, PowerFlex and SolidFlex systems do not support mixed operation in Cluster Mode. Each system must operate independently according to its own control logic.
-
-  Both systems use new-generation energy storage battery cells, and the SOC safe operating range is 0–100%. Operating within this range does not affect the designed cycle life.
+  A: Currently, PowerFlex and SolidFlex systems support mixed operation in Cluster Mode.
 </details>
 
 <details className="custom-details" open>
