@@ -150,7 +150,7 @@ description: Frequently Asked Questions and Usage Guide for INDEVOLT Micro Energ
 
 <details className="custom-details" open>
   <summary className="custom-details__summary">
-  1. Q: The battery parameter shows a maximum power of 2400W, but the current default configuration is 800W. Can the power be adjusted to 2400W?
+  3. Q: The battery parameter shows a maximum power of 2400W, but the current default configuration is 800W. Can the power be adjusted to 2400W?
   </summary>
 
   A: The discharge capability depends on the number of battery packs installed.
