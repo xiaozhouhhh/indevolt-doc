@@ -12,7 +12,7 @@ The **bypass socket** is a bi-directional interface that automatically switches 
 
 ---
 
-## 1. How the System Identifies Devices
+## 1. Device Identification
 
 The system determines the connected device type based on **power direction + duration**:
 
@@ -26,7 +26,7 @@ The system determines the connected device type based on **power direction + dur
 
 ---
 
-## 2. System Behavior in Different Scenarios
+## 2. System Behavior
 
 System behavior depends on:
 - Whether the system is grid-connected or off-grid  
@@ -43,7 +43,7 @@ Minimum recommended configuration:
 
 ---
 
-### 2.1 Grid-Connected + Load
+### 2.1 Grid + Load
 
 The load is powered by either the grid or the system inverter.
 
@@ -56,7 +56,7 @@ Battery protection:
 
 ---
 
-### 2.2 Grid-Connected + Micro-Inverter
+### 2.2 Grid + Micro-Inverter
 
 Micro-inverter energy is used for household consumption and battery charging. Excess energy may be fed into the grid within limits.
 
@@ -69,7 +69,7 @@ Grid feed-in limit protection:
 
 ---
 
-#### 2.2.1 Energy Behavior in Grid-Connected Mode
+#### 2.2.1 Grid-Connected Energy Behavior
 
 In grid-connected operation, the system automatically allocates energy based on the selected energy mode, following a consistent priority:
 
@@ -179,7 +179,7 @@ Power range:
 
 ---
 
-## 3. How to Enable or Disable the Bypass Socket
+## 3. Bypass Socket Control
 
 Control method depends on network status:
 
@@ -189,7 +189,7 @@ Control method depends on network status:
 | Abnormal      | Bluetooth only |
 
 
-### Method 1: App Remote Control (Network Available)
+### Method 1: App Remote Control
 
 Indevolt App → Device → <img src={require("./img/settings_icon.png").default} width="30" style={{verticalAlign: "middle"}}/> → Bypass Socket → Enable Status → Select connected device type
 
@@ -200,7 +200,7 @@ Indevolt App → Device → <img src={require("./img/settings_icon.png").default
 
 ---
 
-### Method 2: Bluetooth Local Connection (No Network)
+### Method 2: Bluetooth Local Control
 
 App → Profile / Login page → Direct Device Connection → Scan QR code → Connect device → <img src={require("./img/settings_icon.png").default} width="30" style={{verticalAlign: "middle"}}/> → Bypass Socket → Enable
 
