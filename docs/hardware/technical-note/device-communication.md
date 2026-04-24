@@ -1,9 +1,9 @@
 ---
-title: Micro-Storage Communication with External Devices
+title: Communication with External Devices
 description: Learn how micro-storage communicates with meters, plugs, and other devices, and how data updates work
 ---
 
-# Micro-Storage Communication with External Devices
+# Communication with External Devices
 
 When you connect a smart meter, smart plug, or other device to the micro-storage system, the system will automatically communicate with it to collect power consumption or generation data.
 
