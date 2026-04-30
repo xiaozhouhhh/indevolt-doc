@@ -140,7 +140,58 @@ const sidebars: SidebarsConfig = {
     'app/faq'
   ],
   scenarioSidebar: [
-    'scenario/single-phase-microinverter',
+    'scenario/introduction',
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Grid-tied · Single-phase System',
+      link: {type: 'doc', id: 'scenario/grid-single-phase/overview'},
+      items: [
+        {
+          type: 'category',
+          collapsed: false,
+          label: '纯储能系统（暂无光伏）',
+          link: {type: 'doc', id: 'scenario/grid-single-phase/storage/overview'},
+          items: [
+            'scenario/grid-single-phase/storage/standalone',
+            'scenario/grid-single-phase/storage/standalone-plug',
+            'scenario/grid-single-phase/storage/standalone-meter',
+            'scenario/grid-single-phase/storage/standalone-meter-plug',
+            'scenario/grid-single-phase/storage/standalone-backup',
+            'scenario/grid-single-phase/storage/standalone-backup-plug',
+            'scenario/grid-single-phase/storage/standalone-backup-meter',
+            'scenario/grid-single-phase/storage/standalone-backup-meter-plug',
+          ],
+        },
+        'scenario/grid-single-phase/balcony',
+        'scenario/grid-single-phase/residential'
+      ],
+    },
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Grid-tied · Three-phase System',
+      items: [
+        'scenario/grid-three-phase/overview'
+      ],
+    },
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Off-grid · Single-phase System',
+      items: [
+        'scenario/offgrid-single-phase/overview'
+      ],
+    },
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Off-grid · Three-phase System',
+      link: {type: 'doc', id: 'scenario/offgrid-three-phase/overview'},
+      items: [
+        'scenario/offgrid-three-phase/overview'
+      ],
+    },
   ]
 };
 

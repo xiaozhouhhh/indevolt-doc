@@ -54,5 +54,21 @@
   "sidebar.tutorialSidebar.category.Technical Note": {
     "message": "技术说明",
     "description": "The label for category Technical Note in sidebar tutorialSidebar"
+  },
+  "sidebar.scenarioSidebar.category.Grid-tied · Single-phase System": {
+    "message": "并网 · 单相系统",
+    "description": "The label for category Grid-tied · Single-phase System in sidebar scenarioSidebar"
+  },
+  "sidebar.scenarioSidebar.category.Grid-tied · Three-phase System": {
+    "message": "并网 · 三相系统",
+    "description": "The label for category Grid-tied · Three-phase System in sidebar scenarioSidebar"
+  },
+  "sidebar.scenarioSidebar.category.Off-grid · Single-phase System": {
+    "message": "离网 · 单相系统",
+    "description": "The label for category Off-grid · Single-phase System in sidebar scenarioSidebar"
+  },
+  "sidebar.scenarioSidebar.category.Off-grid · Three-phase System": {
+    "message": "离网 · 三相系统",
+    "description": "The label for category Off-grid · Three-phase System in sidebar scenarioSidebar"
   }
 }
