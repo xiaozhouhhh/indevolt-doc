@@ -143,13 +143,11 @@ const sidebars: SidebarsConfig = {
     'scenario/introduction',
     {
       type: 'category',
-      collapsed: false,
       label: 'Grid-tied · Single-phase System',
       link: {type: 'doc', id: 'scenario/grid-single-phase/overview'},
       items: [
         {
           type: 'category',
-          collapsed: false,
           label: '纯储能系统（暂无光伏）',
           link: {type: 'doc', id: 'scenario/grid-single-phase/storage/overview'},
           items: [
@@ -169,7 +167,6 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: false,
       label: 'Grid-tied · Three-phase System',
       items: [
         'scenario/grid-three-phase/overview'
@@ -177,7 +174,6 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: false,
       label: 'Off-grid · Single-phase System',
       items: [
         'scenario/offgrid-single-phase/overview'
@@ -185,7 +181,6 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      collapsed: false,
       label: 'Off-grid · Three-phase System',
       link: {type: 'doc', id: 'scenario/offgrid-three-phase/overview'},
       items: [
