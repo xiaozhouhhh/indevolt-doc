@@ -18,7 +18,7 @@ Les modes de communication varient légèrement selon les marques, mais le syst�
 | Ecotracker | HTTP                 | Cloud via micro-stockage     |
 | Stromleser | HTTP                 | Cloud via micro-stockage     |
 | HomeWizard | HTTP                 | Cloud via micro-stockage     |
-| IGEN       | Diffusion UDP        | Cloud direct  |
+| SOLARMAN       | Diffusion UDP        | Cloud direct  |
 | INDEVOLT   | Protocole propriétaire | Cloud via micro-stockage  |
 
 :::tip
@@ -109,9 +109,9 @@ Les appareils suivants ne sont pas encore intégrés au système micro-stockage 
 </table>
 :::
 
-### 1.2 Appareils IGEN
+### 1.2 Appareils SOLARMAN
 
-Les appareils IGEN envoient leurs données via une **diffusion locale (broadcast)**, sans interrogation, pour une meilleure réactivité.
+Les appareils SOLARMAN envoient leurs données via une **diffusion locale (broadcast)**, sans interrogation, pour une meilleure réactivité.
 
 | Type           | Modèle                                                   | Intervalle par défaut | Minimum |
 |----------------|----------------------------------------------------------|------------------------|----------|

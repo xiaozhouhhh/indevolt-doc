@@ -138,7 +138,18 @@ http://{IP_ADDRESS}:8080/rpc/{API}
 
 ---
 
-### 3.2 Codes d’erreur {#errors}
+### 3.2 Fréquence des requêtes {#rate-limit}
+
+Afin de garantir la stabilité du système, toutes les API HTTP sont soumises aux limitations suivantes :
+
+| Type                              | Limite       |
+| --------------------------------- | ------------ |
+| Intervalle de requête recommandé  | ≥ 5 secondes |
+| Intervalle minimal pris en charge | 1 seconde    |
+
+---
+
+### 3.3 Codes d’erreur {#errors}
 
 | Code d’état | Description                  | Explication                                                                 |
 | ----------- | --------------------------- | --------------------------------------------------------------------------- |
