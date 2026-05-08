@@ -11,6 +11,7 @@ description: Historique des versions du firmware des équipements de stockage d�
 
 | Date de publication | Version        | Résumé des mises à jour |
 | ------------------- | -------------- | ----------------------- |
+| 2026/5/7   | V140B.0B.0035 | 1. Optimisation de la logique de communication |
 | 2026/4/10           | V140A.0A.0034  | 1. Ajout de plans horaires personnalisés à la minute<br />2. Ajout du support MQTT tiers (non pris en charge dans l’application)<br />3. Ajout de l’accès cloud Modbus TCP (non pris en charge dans l’application)<br />4. Passage des tarifs dynamiques à un pas de 15 minutes<br />5. Optimisation de la logique de communication Wi-Fi et LoRa<br />6. Suppression de la réinitialisation Wi-Fi par appui long (10 s sur bouton), désormais disponible dans l’application (non pris en charge pour le moment) |
 | 2026/3/3            | V1408.09.0031  | 1. Ajout du support des compteurs stromleser (lecteur infrarouge)<br />2. Ajout du support des compteurs HomeWizard (P1)<br />3. Ajout du support du Shelly Plug Gen1<br />4. Ajout du réglage d’offset des compteurs<br />5. Optimisation de la logique de communication |
 | 2026/1/15           | V1407.08.002F  | 1. Optimisation de la logique d’appel OpenData |
@@ -26,6 +27,7 @@ description: Historique des versions du firmware des équipements de stockage d�
 
 | Date de publication | Version   | Résumé des mises à jour |
 | ------------------- | --------- | ------------------------ |
+| 2026/5/6  | V0D.00.18 | 1. Optimisation de certains paramètres |
 | 2026/1/14           | V0D.00.14  | 1. Optimisation de l’affichage de l’état de température de la batterie |
 | 2026/1/9            | V0D.00.13  | 1. Optimisation de l’affichage de l’état de température de la batterie |
 | 2025/12/25          | V0D.00.11  | 1. Ajout du réglage de puissance de charge AC |
