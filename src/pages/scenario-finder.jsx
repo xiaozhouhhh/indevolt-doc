@@ -7,44 +7,100 @@ export default function ScenarioFinder() {
   const { i18n } = useDocusaurusContext();
   const locale = i18n.currentLocale;
 
-  // Step states
+  /**
+   * States
+   */
   const [mode, setMode] = useState('');
   const [phase, setPhase] = useState('');
   const [setup, setSetup] = useState('');
   const [pv, setPv] = useState('');
   const [power, setPower] = useState('');
 
+  /**
+   * Mode helpers
+   */
   const isGrid = mode === 'grid';
 
-  const isReady =
-    mode &&
-    phase &&
-    setup &&
-    pv &&
-    (isGrid ? power : true);
+  /**
+   * Ready state
+   */
+  const isReady = useMemo(() => {
+    // GRID FLOW
+    if (isGrid) {
+      return (
+        mode &&
+        phase &&
+        setup &&
+        pv &&
+        power
+      );
+    }
+
+    // OFFGRID FLOW
+    if (!isGrid && mode) {
+      return (
+        phase &&
+        setup
+      );
+    }
+
+    return false;
+  }, [
+    mode,
+    phase,
+    setup,
+    pv,
+    power,
+    isGrid,
+  ]);
 
   /**
-   * Generate final path (locale aware)
+   * Final path
    */
   const path = useMemo(() => {
-    if (!isReady) return '';
+    if (!isReady) {
+      return '';
+    }
 
-    const localePrefix = locale === 'en' ? '' : `/${locale}`;
+    const localePrefix =
+      locale === 'en'
+        ? ''
+        : `/${locale}`;
 
-    if (mode === 'grid') {
+    /**
+     * GRID
+     */
+    if (isGrid) {
       return `${localePrefix}/docs/scenario/grid/${phase}/${setup}/${pv}/${power}/overview`;
     }
 
-    return `${localePrefix}/docs/scenario/offgrid/${phase}/${setup}/${pv}/overview`;
-  }, [locale, mode, phase, setup, pv, power, isReady]);
+    /**
+     * OFFGRID
+     */
+    return `${localePrefix}/docs/scenario/offgrid/${phase}/${setup}/overview`;
+  }, [
+    locale,
+    isReady,
+    isGrid,
+    phase,
+    setup,
+    pv,
+    power,
+  ]);
 
+  /**
+   * Navigate
+   */
   const go = () => {
-    if (!isReady) return;
+    if (!isReady) {
+      return;
+    }
+
     window.location.href = path;
   };
 
   /**
-   * Reusable Select Component
+   * Select component
    */
   const Select = ({
     title,
@@ -62,10 +118,12 @@ export default function ScenarioFinder() {
         boxSizing: 'border-box',
       }}
     >
+      {/* Title */}
       <h3 style={{ marginBottom: 6 }}>
         {title}
       </h3>
 
+      {/* Description */}
       {description && (
         <p
           style={{
@@ -80,6 +138,7 @@ export default function ScenarioFinder() {
         </p>
       )}
 
+      {/* Select */}
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
@@ -89,6 +148,8 @@ export default function ScenarioFinder() {
           fontSize: 15,
           borderRadius: 8,
           border: '1px solid #e5e7eb',
+          boxSizing: 'border-box',
+          background: '#fff',
         }}
       >
         <option value="">
@@ -99,7 +160,10 @@ export default function ScenarioFinder() {
         </option>
 
         {options.map((o) => (
-          <option key={o.value} value={o.value}>
+          <option
+            key={o.value}
+            value={o.value}
+          >
             {o.label}
           </option>
         ))}
@@ -120,9 +184,10 @@ export default function ScenarioFinder() {
           maxWidth: 760,
           margin: '0 auto',
           padding: '2rem 1rem',
+          boxSizing: 'border-box',
         }}
       >
-        {/* Title */}
+        {/* Page title */}
         <h1>
           {translate({
             id: 'scenarioFinder.h1',
@@ -131,7 +196,12 @@ export default function ScenarioFinder() {
         </h1>
 
         {/* Subtitle */}
-        <p style={{ color: '#666', marginBottom: 32 }}>
+        <p
+          style={{
+            color: '#666',
+            marginBottom: 32,
+          }}
+        >
           {translate({
             id: 'scenarioFinder.subtitle',
             message: 'Quickly match the appropriate scenario based on your system configuration.',
@@ -152,10 +222,22 @@ export default function ScenarioFinder() {
           value={mode}
           onChange={(v) => {
             setMode(v);
+
+            /**
+             * Reset downstream states
+             */
             setPhase('');
             setSetup('');
             setPv('');
             setPower('');
+
+            /**
+             * OFFGRID:
+             * Auto select single-phase
+             */
+            if (v === 'offgrid') {
+              setPhase('single-phase');
+            }
           }}
           options={[
             {
@@ -175,8 +257,8 @@ export default function ScenarioFinder() {
           ]}
         />
 
-        {/* STEP 2 */}
-        {mode && (
+        {/* GRID ONLY — STEP 2 */}
+        {isGrid && (
           <Select
             title={translate({
               id: 'scenarioFinder.step2.title',
@@ -213,8 +295,8 @@ export default function ScenarioFinder() {
           />
         )}
 
-        {/* STEP 3 */}
-        {phase && (
+        {/* GRID — STEP 3 */}
+        {isGrid && phase && (
           <Select
             title={translate({
               id: 'scenarioFinder.step3.title',
@@ -235,7 +317,7 @@ export default function ScenarioFinder() {
               {
                 value: 'standalone',
                 label: translate({
-                  id: 'scenarioFinder.step3.option.single',
+                  id: 'scenarioFinder.step3.option.standalone',
                   message: 'Standalone',
                 }),
               },
@@ -250,8 +332,50 @@ export default function ScenarioFinder() {
           />
         )}
 
-        {/* STEP 4 */}
-        {setup && (
+        {/* OFFGRID — STEP 2 */}
+        {!isGrid && mode && (
+          <Select
+            title={translate({
+              id: 'scenarioFinder.offgrid.step2.title',
+              message: '2. Device Configuration',
+            })}
+            description={translate({
+              id: 'scenarioFinder.offgrid.step2.desc',
+              message:
+                'Select whether the system is portable, uses a single device, or uses multiple devices operating together in parallel.',
+            })}
+            value={setup}
+            onChange={(v) => {
+              setSetup(v);
+            }}
+            options={[
+              {
+                value: 'portable',
+                label: translate({
+                  id: 'scenarioFinder.offgrid.step2.option.portable',
+                  message: 'Portable',
+                }),
+              },
+              {
+                value: 'standalone',
+                label: translate({
+                  id: 'scenarioFinder.offgrid.step2.option.standalone',
+                  message: 'Standalone',
+                }),
+              },
+              {
+                value: 'cluster',
+                label: translate({
+                  id: 'scenarioFinder.offgrid.step2.option.cluster',
+                  message: 'Cluster',
+                }),
+              },
+            ]}
+          />
+        )}
+
+        {/* GRID — STEP 4 */}
+        {isGrid && setup && (
           <Select
             title={translate({
               id: 'scenarioFinder.step4.title',
@@ -293,8 +417,8 @@ export default function ScenarioFinder() {
           />
         )}
 
-        {/* STEP 5 */}
-        {pv && isGrid && (
+        {/* GRID — STEP 5 */}
+        {isGrid && pv && (
           <Select
             title={translate({
               id: 'scenarioFinder.step5.title',

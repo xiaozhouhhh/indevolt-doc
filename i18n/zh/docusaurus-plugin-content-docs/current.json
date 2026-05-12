@@ -102,5 +102,9 @@
   "sidebar.scenarioSidebar.category.Choose your setup": {
     "message": "选择您的配置",
     "description": "The label for category Choose your setup in sidebar scenarioSidebar"
+  },
+  "sidebar.scenarioSidebar.category.Portable": {
+    "message": "便携",
+    "description": "The label for category Portable in sidebar scenarioSidebar"
   }
 }

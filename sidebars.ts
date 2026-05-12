@@ -453,117 +453,23 @@ const sidebars: SidebarsConfig = {
               items: [
                 {
                   type: 'category',
+                  label: 'Portable',
+                  items: [
+                    'scenario/offgrid/single-phase/portable/overview',
+                  ],
+                },
+                {
+                  type: 'category',
                   label: 'Standalone',
                   items: [
-                    {
-                      type: 'category',
-                      label: 'No Existing PV',
-                      items: [
-                        'scenario/offgrid/single-phase/standalone/no-pv/overview',
-                      ],
-                    },
-                    {
-                      type: 'category',
-                      label: 'Balcony PV',
-                      items: [
-                        'scenario/offgrid/single-phase/standalone/balcony-pv/overview',
-
-                      ],
-                    },
-                    {
-                      type: 'category',
-                      label: 'Residential PV',
-                      items: [
-                        'scenario/offgrid/single-phase/standalone/residential-pv/overview',
-                      ],
-                    },
+                    'scenario/offgrid/single-phase/standalone/overview',
                   ],
                 },
                 {
                   type: 'category',
                   label: 'Cluster',
                   items: [
-                    {
-                      type: 'category',
-                      label: 'No Existing PV',
-                      items: [
-                        'scenario/offgrid/single-phase/cluster/no-pv/overview',
-                      ],
-                    },
-                    {
-                      type: 'category',
-                      label: 'Balcony PV',
-                      items: [
-                        'scenario/offgrid/single-phase/cluster/balcony-pv/overview',
-                      ],
-                    },
-                    {
-                      type: 'category',
-                      label: 'Residential PV',
-                      items: [
-                        'scenario/offgrid/single-phase/cluster/residential-pv/overview',
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Three-phase System',
-              items: [
-                {
-                  type: 'category',
-                  label: 'Standalone',
-                  items: [
-                    {
-                      type: 'category',
-                      label: 'No Existing PV',
-                      items: [
-                        'scenario/offgrid/three-phase/standalone/no-pv/overview',
-                      ],
-                    },
-                    {
-                      type: 'category',
-                      label: 'Balcony PV',
-                      items: [
-                        'scenario/offgrid/three-phase/standalone/balcony-pv/overview',
-                      ],
-                    },
-                    {
-                      type: 'category',
-                      label: 'Residential PV',
-                      items: [
-                        'scenario/offgrid/three-phase/standalone/residential-pv/overview',
-                      ],
-                    },
-                  ],
-                },
-                {
-                  type: 'category',
-                  label: 'Cluster',
-                  items: [
-                    {
-                      type: 'category',
-                      label: 'No Existing PV',
-                      items: [
-                        'scenario/offgrid/three-phase/cluster/no-pv/overview',
-                      ],
-                    },
-                    {
-                      type: 'category',
-                      label: 'Balcony PV',
-                      items: [
-                        'scenario/offgrid/three-phase/cluster/balcony-pv/overview',
-                      ],
-                    },
-                    {
-                      type: 'category',
-                      label: 'Residential PV',
-                      items: [
-                        'scenario/offgrid/three-phase/cluster/residential-pv/overview',
-                      ],
-                    },
+                    'scenario/offgrid/single-phase/cluster/overview',
                   ],
                 },
               ],

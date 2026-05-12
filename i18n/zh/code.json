@@ -376,7 +376,7 @@
   "scenarioFinder.step3.desc": {
     "message": "请选择设备是单机运行还是并机运行。"
   },
-  "scenarioFinder.step3.option.single": {
+  "scenarioFinder.step3.option.standalone": {
     "message": "单机"
   },
   "scenarioFinder.step3.option.cluster": {
@@ -411,5 +411,20 @@
   },
   "scenarioFinder.button.view": {
     "message": "查看匹配场景 →"
+  },
+  "scenarioFinder.offgrid.step2.title": {
+    "message": "2. 设备配置方式"
+  },
+  "scenarioFinder.offgrid.step2.desc": {
+    "message": "选择设备工作方式：便携式、单机运行，或并机运行"
+  },
+  "scenarioFinder.offgrid.step2.option.portable": {
+    "message": "便携"
+  },
+  "scenarioFinder.offgrid.step2.option.standalone": {
+    "message": "单机"
+  },
+  "scenarioFinder.offgrid.step2.option.cluster": {
+    "message": "并机"
   }
 }
