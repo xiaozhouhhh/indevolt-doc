@@ -1,6 +1,6 @@
 ---
 title: 设备外观与接口说明
-description: Guide
+description: 介绍Indevolt设备外观结构、接口定义、按键操作及LED指示状态说明
 ---
 
 # 设备外观与接口说明

@@ -163,7 +163,7 @@ The values in the table below represent the capability of a single unit (main un
 
 **How to Check Battery Temperature**
 
-Indevolt App steps: Device page → Select the corresponding micro storage device → Tap <img src={require("./img/settings_icon.png").default} width="30" style={{verticalAlign: "middle"}}/> → Select **Temperature** → View main battery and battery pack temperatures
+INDEVOLT App steps: Device page → Select the corresponding micro storage device → Tap <img src={require("./img/settings_icon.png").default} width="30" style={{verticalAlign: "middle"}}/> → Select **Temperature** → View main battery and battery pack temperatures
 
 <img src={require("../energy-mode/img/select_device.png").default} width="240"/>
 <img src={require("../energy-mode/img/device_info.png").default} width="240"/>

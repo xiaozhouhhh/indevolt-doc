@@ -95,7 +95,7 @@ description: 优先使用光伏电能，提升自发自用比例
 
 ## 推荐设备参数设置
 
-在设备详情页，点击右上角 **⚙ 设置** 图标进入设置页面。
+在设备详情页，点击右上角 **⚙** 图标进入设置页面。
 
 <img src={require("./img/device_info.png").default} width="240"/>
 <img src={require("./img/device_setting.png").default} width="240"/>
