@@ -144,7 +144,7 @@ description: INDEVOLT 储能设备常见问题解答与使用说明
   答：系统会在光伏功率高于 50W 后开始给电池充电。设备自身运行功耗约 35 W，加上电能转换损耗，若光伏功率低于 50W，扣除损耗后，剩余电量基本无法为电池充电。
 </details>
 
-<details className="error-details" open>
+<details className="custom-details" open>
   <summary className="custom-details__summary">
   6. 问：为什么光伏功率较低时，设备没有显示“充电”？
   </summary>
@@ -169,7 +169,7 @@ description: INDEVOLT 储能设备常见问题解答与使用说明
   答：建议在首次使用前，将电池满充 1 次，用于校准 SOC 数值，确保后续 App 显示的 SOC 与电池实际电量一致，提升使用体验。
 </details>
 
-<details className="error-details" open>
+<details className="custom-details" open>
   <summary className="custom-details__summary">
   8. 问：当电池充满电后，太阳能电池板是否会停止发电？这样是否安全？
   </summary>
@@ -185,18 +185,18 @@ description: INDEVOLT 储能设备常见问题解答与使用说明
   整个过程由系统自动控制，不会对设备、电池或太阳能板造成损坏，可放心使用。
 </details>
 
-<details className="error-details" open>
+<details className="custom-details" open>
   <summary className="custom-details__summary">
   9. 问：为什么断开电网后，Backup 接口没有电？
   </summary>
 
   答：可能有以下原因：
   
-  - 当 EMS 固件版本低于 1.01.07 时，如果 Backup 接口处于微逆运行模式，系统会禁止该接口离网放电，以保护设备；
+  - 当 EMS 固件版本低于 1.01.08 时，如果 Backup 接口处于微逆运行模式，系统会禁止该接口离网放电，以保护设备；
   - 当电池 SOC 低于 5% 时，该接口也可能停止供电。
 
   建议检查以下内容：
-  - 在 App 中将 EMS 固件升级至 1.01.07 及以上版本；
+  - 在 App 中将 EMS 固件升级至 1.01.08 及以上版本；
   - 确认当前电池电量是否过低。
   
 </details>
@@ -211,7 +211,7 @@ description: INDEVOLT 储能设备常见问题解答与使用说明
   - 深度待机状态（不充电、不放电，设备低功耗运行）：功耗会随系统设置变化，详见[待机功耗说明](./technical-note/standby-power.md)
 </details>
 
-<details className="error-details" open>
+<details className="custom-details" open>
   <summary className="custom-details__summary">
   11. 问：负载耗电是否总是从电池取电，还是可直接使用光伏电力？
   </summary>
@@ -219,6 +219,8 @@ description: INDEVOLT 储能设备常见问题解答与使用说明
   答：不一定。
   - 当光伏发电功率足够时，系统会优先使用光伏电力为负载供电，多余的电力再用于给电池充电。
   - 当光伏功率不足时，系统才会由电池补充供电。
+  - 2025 年 12 月之后生产的设备含 AC 辅源模块，深度待机时由电网供电。
+
 </details>
 
 
@@ -244,12 +246,17 @@ description: INDEVOLT 储能设备常见问题解答与使用说明
   答：已支持 PowerFlex 系统与 SolidFlex 系统在集群模式下共同运行。
 </details>
 
-<details className="error-details" open>
+<details className="custom-details" open>
   <summary className="custom-details__summary">
   3. 问：若拥有两个并机的电池组，设备输出功率可设置为 2×2400W，还是总功率仅为 2400W？
   </summary>
 
-  答：两个设备并机后，系统最大放电功率可达到 2 × 2400W。可在 App 并机分组的“功率设置”页面中查看当前系统可设置的最大交流输出功率。  
+  答：可在 App 并机分组的“功率设置”页面中查看当前系统可设置的最大交流输出功率。  
+
+  不同并机方式下，系统的输出能力有所不同：
+  - 协同式并机：每台设备都会独立接入电网，并分别完成交流输入与输出，因此每个电池组最高可输出 2400W。
+  - 集中式并机：所有设备的交流输入与输出都会集中到主设备，由主设备统一接入电网并完成输出管理。并机后，主设备侧的最大输出功率最高可达 2 × 2400W。
+  
   但实际可设置功率还需符合当地电网、电气规范及法规要求。
 </details>
 
@@ -320,15 +327,7 @@ description: INDEVOLT 储能设备常见问题解答与使用说明
 
 <details className="custom-details" open>
   <summary className="custom-details__summary">
-  4. 问：8000 次循环寿命采用的实际放电深度（DOD）是多少？
-  </summary>
-
-  答：8000次循环寿命采用的实际放电深度为100%；系统设定的电池保护/预留电量比例为5%
-</details>
-
-<details className="custom-details" open>
-  <summary className="custom-details__summary">
-  5. 问：电池允许的最大放电深度（DOD）为多少？
+  4. 问：电池允许的最大放电深度（DOD）为多少？
   </summary>
 
   答：在质保条件下，电池允许的最大放电深度为100%（日常使用中建议根据需求调整，避免频繁满放）。
@@ -336,7 +335,7 @@ description: INDEVOLT 储能设备常见问题解答与使用说明
 
 <details className="custom-details" open>
   <summary className="custom-details__summary">
-  6. 问：系统是否会自动限制充放电倍率（C-rate），以延长电池使用寿命？
+  5. 问：系统是否会自动限制充放电倍率（C-rate），以延长电池使用寿命？
   </summary>
 
   答：系统支持手动调整充放电功率，同时会根据电池状态（如SOC、温度）自动限制充放电倍率，避免过高倍率对电池造成损伤，延长电池使用寿命。
