@@ -5,11 +5,15 @@ description: 更换 WiFi+LAN 模块并迁移设备设置及历史数据。
 
 # 配件更换
 
-本指南仅适用于以下型号：
-- SolidFlex 2000
+本指南适用于以下型号：
 - PowerFlex 2000
-- SolidFlex 2000 Eco
 - PowerFlex 2000 Eco
+- PowerFlex 3000 AC
+- PowerFlex 3000 Hybrid
+- SolidFlex 2000
+- SolidFlex 2000 Eco
+- SolidFlex 3000 AC
+- Titan 2400
 
 
 ## 准备

@@ -5,11 +5,15 @@ description: Replace the WiFi+LAN module and migrate device settings and histori
 
 # Accessory Replacement
 
-This guide applies only to the following models:
-- SolidFlex 2000
+This guide applies to the following models:
 - PowerFlex 2000
-- SolidFlex 2000 Eco
 - PowerFlex 2000 Eco
+- PowerFlex 3000 AC
+- PowerFlex 3000 Hybrid
+- SolidFlex 2000
+- SolidFlex 2000 Eco
+- SolidFlex 3000 AC
+- Titan 2400
 
 
 ## Before You Start
