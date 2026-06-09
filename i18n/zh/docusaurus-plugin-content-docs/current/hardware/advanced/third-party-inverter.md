@@ -27,7 +27,7 @@ PV[光伏组件]
 INV[逆变器]
 LOGGER[SOLARMAN采集器]
 CLOUD[云平台]
-APP[App/Web]
+APP[SOLARMAN App/Web]
 
 PV --> INV
 INV -->|通信| LOGGER
