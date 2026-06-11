@@ -61,6 +61,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'hardware/advanced/link-device',
         'hardware/advanced/accessory-replacement',
+        'hardware/advanced/third-party-inverter',
       ],
     },
     {
