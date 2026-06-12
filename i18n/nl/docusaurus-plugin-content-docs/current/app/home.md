@@ -1,105 +1,145 @@
 ---
 title: Huis
-description: Monitor de energiestromen in uw huis dynamisch en volg realtime gegevens over energieopwekking, verbruik en energieopslag.
+description: Dynamische monitoring van de energiestromen in huis, met realtime inzicht in opwekking, verbruik en opslaggegevens.
 ---
 
 # Huis
 
-De pagina **Huis** is het hoofdscherm voor het beheren van de energiegegevens van uw huidige huis. Hier ziet u realtime gegevens over energieopwekking, verbruik en een compleet overzicht van de energiestromen binnen uw huis.
+De pagina **Huis** is de startpagina waar u de energiegegevens van uw huishouden kunt bekijken en beheren. Hier krijgt u realtime inzicht in de opwekking, het verbruik, het laden en ontladen van de batterij en de import en export van elektriciteit via het net. Via het energiestroomdiagram kunt u bovendien de energiestromen visueel volgen.
 
 <img src={require("./img/home_intro.png").default} width="240"/>
 
-| Nr. | Functie | Beschrijving |
-| ---- | -------- | ------------ |
-| 1 | Huis | Toont de naam van het huidige huis. Tik hier om alle toegevoegde huizen te bekijken, tussen huizen te wisselen of huizen te beheren. |
-| 2 | + | Apparaat toevoegen. |
-| 3 | Dashboard | Pas het thema en de weergegeven gegevens van de energiestroomgrafiek aan. |
-| 4 | Weer | Toont realtime lokale weersinformatie en temperatuur. |
-| 5 | Configureren | Wanneer er geen stroomtariefplan beschikbaar is, wordt de knop **Configureren** weergegeven om afname- en teruglevertarieven in te stellen. Wanneer er wel een tariefplan actief is, worden direct de stroomprijzen van vandaag weergegeven. |
-| 6 | Stroomdiagram | Visualiseert dynamisch de energiestromen binnen het huis. |
-| 7 | Daggegevens | Dagelijks overzicht van energieopwekking en energieverbruik. |
+| Nr. | Functie            | Beschrijving                                                                 |
+| --- | ------------------ | ---------------------------------------------------------------------------- |
+| 1   | Huis              | Toont de huidige naam van het huishouden. Tik om alle gekoppelde huishoudens te bekijken, te wisselen en te beheren. |
+| 2   | +                  | Apparaat toevoegen                                                          |
+| 3   | Weer               | Bekijk het actuele weer en de temperatuur op de locatie van het huishouden  |
+| 4   | Stroomdiagram     | Visualiseert dynamisch de energiebronnen en -stromen binnen het huishouden  |
+| 5   | Dashboard | Pas het thema en de weergegeven energiegegevens van het stroomdiagram aan |
+| 6   | Daggegevens        | Bekijk dagelijkse statistieken van opwekking, verbruik en opbrengsten      |
+
+---
 
 ## 1. Huis
 
-### 1.1 Wisselen van huis
+Als uw account meerdere huishoudens beheert, kunt u hier eenvoudig tussen verschillende huishoudens schakelen.
 
-Tik linksboven op de huisnaam om de lijst met alle huizen binnen uw account te openen. Selecteer het gewenste huis om snel naar de energiegegevens van dat huis te schakelen.
+### 1.1 Huishouden wisselen
+
+Tik op de naam van het huishouden linksboven om alle gekoppelde huishoudens te bekijken. Selecteer een huishouden om de weergave van energiegegevens direct te wijzigen.
 
 <img src={require("./img/tap_myhome.png").default} width="240"/>
 <img src={require("./img/select_home.png").default} width="240"/>
 
-### 1.2 Huisbeheer
+### 1.2 Huishoudbeheer
 
-Voor uitgebreid beheer van huizen tikt u onderaan de lijst op de knop **Beheren**.
+Tik onderaan de huishoudenslijst op **Beheren** om de beheerpagina te openen.
+
+#### Huishouden toevoegen
+
+1. Tik op de knop **+** rechtsboven.
+2. Vul de gevraagde informatie in volgens de instructies op het scherm.
+
+Zie voor meer details: [Huishouden toevoegen](./profile.md#21-woning-toevoegen)
+
+#### Huishouden bewerken of verwijderen
+
+Selecteer een huishouden in de beheerpagina om de volgende acties uit te voeren:
+- [Bewerken](./profile.md#22-woninggegevens-bewerken): wijzig naam, adres en instellingen
+- [Verwijderen](./profile.md#23-woning-verwijderen): verwijder het huishouden
 
 <img src={require("./img/select_home.png").default} width="240"/>
 <img src={require("./img/manage_home.png").default} width="240"/>
 
-**Huis toevoegen**
-
-1. Tik rechtsboven op de knop **+** in de pagina Huisbeheer.
-2. Volg de instructies op het scherm om de gegevens van het nieuwe huis in te voeren. Zie het hoofdstuk [Huis toevoegen](./profile.md#21-huis-toevoegen) voor meer informatie.
-
-**Huis bewerken**
-
-Selecteer in de pagina Huisbeheer het huis dat u wilt aanpassen om de informatiepagina te openen:
-- [Bewerk](./profile.md#22-huis-bewerken) de huisnaam, het adres en gerelateerde instellingen.
-- [Verwijder](./profile.md#23-huis-verwijderen) het huis.
+---
 
 ## 2. Apparaat toevoegen
 
-Ga naar de handleiding [Apparaat toevoegen](./add-device.md) om te zien hoe u nieuwe apparaten aan uw huis koppelt.
+Tik op de knop **+** rechtsboven op de startpagina om een apparaat toe te voegen.
 
-## 3. Dashboard
+Voor gedetailleerde instructies: [Apparaat toevoegen](./add-device.md)
 
-Tik op de knop Dashboard om de configuratiepagina te openen.
+---
+
+## 3. Weer
+
+De weerkaart toont realtime weerinformatie en de actuele temperatuur op de locatie van uw huishouden. Dit helpt u om energieopwekking en verbruik beter te begrijpen in relatie tot weersomstandigheden.
+
+---
+
+## 4. Stroomdiagram
+
+Het stroomdiagram visualiseert de energiebronnen en -stromen binnen uw huishouden in realtime. De richting van de pijlen geeft de energiestroom weer.
+
+- **Vernieuwen:** trek de pagina omlaag om de gegevens te vernieuwen  
+- **Thema wijzigen:** pas het diagram aan via [Dashboard](#5-dashboard)  
+- **Gegevensbron instellen:** de weergegeven gegevens zijn afkomstig uit de [gegevensbroninstellingen](./profile.md#5-gegevensbron); u kunt deze indien nodig aanpassen  
+
+<img src={require("./img/power_flow.png").default} width="240"/>
+
+---
+
+## 5. Dashboard
+
+Tik op de knop <img src={require("./img/config_icon.png").default} width="25" style={{verticalAlign: "middle"}}/> om de configuratiepagina te openen en de startpagina aan te passen.
+
+U kunt:
+
+- Een thema voor het energiediagram kiezen  
+- Bepalen welke daggegevens worden weergegeven  
+- De volgorde van datakaarten aanpassen  
 
 <img src={require("./img/select_dashboard.png").default} width="240"/>
 <img src={require("./img/dashboard.png").default} width="240"/>
 
-- **Stroomdiagram**: tik op het veld **Stroomdiagram** om een thema te kiezen.
+### 5.1 Stroomdiagramthema
 
-    <img src={require("./img/configure_power_flow.png").default} width="240"/>
+Tik op **Stroomdiagram** om een ander visueel thema te kiezen.
 
-- **Dag**: selecteer welke [daggegevens](#7-daggegevens) op de huispagina moeten worden weergegeven.
+<img src={require("./img/configure_power_flow.png").default} width="240"/>
 
-    <img src={require("./img/configure_daily.png").default} width="240"/>
+### 5.2 Daggegevens
 
-## 4. Weer
+U kunt bepalen welke [daggegevens](#6-daggegevens) op de startpagina worden weergegeven.
 
-Deze widget toont realtime weersinformatie en temperatuur voor de locatie van uw huis.
+#### Automatisch
 
-## 5. Configureren
+Het systeem toont automatisch relevante datakaarten op basis van geconfigureerde gegevensbronnen.
 
-Dit gedeelte toont dynamische inhoud:
-- Wanneer er geen stroomtariefplan beschikbaar is, wordt de knop **Configureren** weergegeven. Tik hierop om [afname- en teruglevertarieven in te stellen](./profile.md#3-stroomtarieven).
-- Wanneer er wel een stroomtariefplan beschikbaar is, worden de afname- en teruglevertarieven van vandaag weergegeven. Tik erop om historische tarieven te bekijken.
+Als er geen gegevensbron beschikbaar is, wordt de betreffende kaart niet weergegeven.
 
-## 6. Stroomdiagram
+<img src={require("./img/configure_daily1.png").default} width="240"/>
 
-Het stroomdiagram visualiseert dynamisch de energiebronnen en energiestromen binnen uw huis. De richting van de energiestroom in de grafiek geeft de werkelijke energierichting weer.
+#### Handmatig
 
-- Weergave vernieuwen: trek de pagina van de energiestroomgrafiek omlaag om de gegevens te vernieuwen.
-- Thema wijzigen: wijzig het weergavethema via [Dashboard](#3-dashboard).
-- Gegevensbron instellen: de gegevens in de energiestroomgrafiek zijn afkomstig uit de [Instellingen voor gegevensbronnen](./profile.md#5-instellingen-voor-gegevensbronnen), die u naar wens kunt aanpassen.
+Selecteer handmatig welke gegevens moeten worden weergegeven.
 
-<img src={require("./img/power_flow.png").default} width="240"/>
+<img src={require("./img/configure_daily2.png").default} width="240"/>
 
-## 7. Daggegevens
+### 5.3 Volgorde van gegevens aanpassen
 
-De daggegevensweergave toont de cumulatieve gegevens van energieopwekking en energieverbruik van de huidige dag:
+Houd een datakaart ingedrukt en sleep deze om de volgorde aan te passen. De startpagina toont de gegevens daarna in de nieuwe volgorde, zodat vaak gebruikte informatie bovenaan kan worden geplaatst.
 
-| Parameter | Beschrijving |
-| ---------- | ------------ |
-| Zelfverbruik | (Energieverbruik geleverd door zonne-energie + laadenergie van zonne-energie naar de batterij) / totale energieopwekking. Geeft aan welk deel van de zonne-energie direct binnen het huis wordt gebruikt. |
-| Zelfvoorzienend | (Verbruik afkomstig van energieopwekking + verbruik afkomstig van batterijontlading) / totaal energieverbruik. Geeft aan welk deel van het verbruik door eigen energie wordt gedekt. |
-| Opwek | Totale energieopwekking van het PV-systeem op de huidige dag. |
-| Verbruik | Totale hoeveelheid verbruikte energie van de huidige dag. |
-| Netinkoop | Totale hoeveelheid energie die vandaag van het elektriciteitsnet is afgenomen. |
-| Netverkoop | Totale hoeveelheid energie die vandaag aan het elektriciteitsnet is teruggeleverd. |
-| Laad | Totale hoeveelheid geladen energie van het opslagsysteem vandaag. |
-| Ontlad | Totale hoeveelheid ontladen energie van het opslagsysteem vandaag. |
+<img src={require("./img/configure_daily1.png").default} width="240"/>
+<img src={require("./img/data_order.png").default} width="240"/>
+
+---
+
+## 6. Daggegevens
+
+Het gedeelte **Daggegevens** toont de totale energiegegevens vanaf middernacht tot het huidige moment, zodat u het energieverbruik van uw huishouden kunt volgen.
 
 <img src={require("./img/daily.png").default} width="240"/>
 
-Via [Dashboard](#3-dashboard) kunt u zelf bepalen welke gegevens hier worden weergegeven.
+| Gegeven       | Beschrijving |
+|---------------|-------------|
+| Inkomsten     | Dagelijkse opbrengst op basis van de huidige elektriciteitsprijs. Tik op de prijskaart voor gedetailleerde statistieken. |
+| Opwek     | Totale PV-opwekking van vandaag |
+| Net           | Totale import en export van elektriciteit vandaag |
+| Elektriciteit verbruiken      | Totale energieconsumptie van het huishouden vandaag |
+| Tarief | Huidige import- en exporttarieven |
+| Batterij      | Totale laad- en ontlaadenergie van de batterij vandaag |
+| Zelfverbruik  | (PV-verbruik + PV → batterij) / opwekking: aandeel van zelfgebruikte zonne-energie |
+| Zelfvoorzienend | (verbruik uit opwekking + verbruik uit batterij) / totaal verbruik: aandeel van eigen energievoorziening |
+
+U kunt deze sectie aanpassen via [Dashboardconfiguratie](#5-dashboardconfiguratie).

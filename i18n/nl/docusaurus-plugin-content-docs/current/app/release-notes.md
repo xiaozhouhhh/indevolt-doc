@@ -5,6 +5,17 @@ description: INDEVOLT App Release Notes
 
 # Release Notes
 
+## V1.4.0
+
+- Nieuwe slimme energiebeheerfuncties toegevoegd
+- Elektriciteitsprijsstrategieën en AI-ervaring geoptimaliseerd
+- Startpagina en weergave van elektriciteitsprijzen verbeterd
+- Ondersteuning toegevoegd voor meer apparaat- en accessoireconfiguraties
+- Systeemstabiliteit en algehele gebruikerservaring verbeterd
+- Bekende problemen opgelost
+
+---
+
 ## V1.3.0
 
 - Nieuwe apparaatfuncties en bedieningshandleidingen toegevoegd
