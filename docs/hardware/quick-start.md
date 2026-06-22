@@ -47,8 +47,8 @@ Before installation, please prepare the following tools:
 
 Calculate the required installation space based on your actual configuration, ensuring sufficient clearance for heat dissipation and electrical safety.
 
-<img src={require("./img/system-size.png").default} width="480"/>
-<img src={require("./img/device-size.png").default} width="480"/>
+<img src={require("./img/system-size.png").default} width="720"/>
+<img src={require("./img/device-size.png").default} width="600"/>
 
 **Step 2: Secure the Device**
 
@@ -57,7 +57,7 @@ The following example uses **1 power module + 2 battery modules**:
 1. Install four support feet on the bottom of the lowest expansion battery module.  
    <img src={require("./img/installation-step1.png").default} width="360"/>
 
-2. Place the battery module on the floor, keeping a distance of 20–30 mm from the wall.  
+2.  A minimum clearance of 30 mm must be maintained at the rear of the device(heatsink area) to ensure adequate ventilation and efficient heat dissipation. 
    <img src={require("./img/installation-step2.png").default} width="360"/>
 
 3. Adjust the four support feet to level the device. Use a spirit level for calibration.  

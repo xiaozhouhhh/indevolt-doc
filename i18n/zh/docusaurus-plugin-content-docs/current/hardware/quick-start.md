@@ -47,8 +47,8 @@ description: Indevolt储能设备安装与初次使用指南
 
 根据实际设备配置计算所需安装空间，确保设备安装后留有足够的散热和安全绝缘空间。
 
-<img src={require("./img/system-size.png").default} width="480"/>
-<img src={require("./img/device-size.png").default} width="480"/>
+<img src={require("./img/system-size.png").default} width="720"/>
+<img src={require("./img/device-size.png").default} width="600"/>
 
 **步骤2：固定设备**
 
@@ -56,7 +56,7 @@ description: Indevolt储能设备安装与初次使用指南
 
 1. 在最底部的扩展电池模块底部安装 4 个支撑脚。
    <img src={require("./img/installation-step1.png").default} width="360"/>
-2. 将电池模块放置在地面上，并与墙面保持 20–30 mm 的距离。
+2. 设备背面（散热片区域）必须保持至少 30 mm 的间隙，以确保通风良好并实现高效散热。
    <img src={require("./img/installation-step2.png").default} width="360"/>
 3. 调整设备底部四个支撑脚的高度，使设备保持水平状态，并使用水平仪进行校准。
    <img src={require("./img/installation-step3.png").default} width="480"/>
