@@ -62,7 +62,8 @@ const sidebars: SidebarsConfig = {
         'hardware/advanced/link-device',
         'hardware/advanced/accessory-replacement',
         'hardware/advanced/third-party-inverter',
-        `hardware/advanced/third-party-inverter-dual-metering`
+        'hardware/advanced/third-party-inverter-dual-metering',
+        'hardware/advanced/three-phase-meter',
       ],
     },
     {
