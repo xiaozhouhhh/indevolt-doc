@@ -135,6 +135,21 @@ html[data-theme="dark"] .theme-code-block {
     --prism-background-color: #1e1e1e !important;
 }
 
+.table-img-box {
+  width: 180px;
+  height: 180px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-img-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
 .markdown ol {
     list-style-type: decimal; /* shows 1, 2, 3 */
     margin-left: 0.5em; /* adds indentation */
@@ -179,7 +194,7 @@ article .markdown video {
 }
 
 article .markdown > h2 {
-    font-size: 1.6em;
+    font-size: 1.75em;
 }
 
 article .markdown > h3 {
@@ -187,7 +202,7 @@ article .markdown > h3 {
 }
 
 article .markdown > h4 {
-    font-size: 1.2em;
+    font-size: 1.15em;
 }
 
 article .markdown > h5 {
@@ -358,4 +373,25 @@ div[class^="announcementBar_"] {
 
 .custom-details > summary::-webkit-details-marker {
   display: none;
+}
+
+.tabs {
+  display: inline-flex;
+  background: #f3f4f6;
+  border-radius: 999px;
+  padding: 4px;
+  margin-bottom: 1rem;
+}
+
+.tabs__item {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 20px;
+  font-weight: 500;
+  color: #666;
+}
+
+.tabs__item.tabs__item--active {
+  background: var(--ifm-color-primary);
+  color: white;
 }

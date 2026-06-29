@@ -38,7 +38,7 @@ LoRa 则专门传输小数据，比如用电量或设备状态。它传输速度
 
 ## 适用设备
 
-如果设备固件版本低于表格所列的最低版本要求，请在 Indevolt App 设备设置页升级固件。
+如果设备固件版本低于表格所列的最低版本要求，请在 INDEVOLT App 设备设置页升级固件。
 
 <table><thead>
   <tr>
@@ -77,11 +77,11 @@ LoRa 则专门传输小数据，比如用电量或设备状态。它传输速度
 
 :::info 准备
 请先确认以下条件已满足：
-- 已在 Indevolt App 中添加微储设备，且设备已开机并在线  
+- 已在 INDEVOLT App 中添加微储设备，且设备已开机并在线  
 - 支持LoRa 的终端设备已安装完成并通电  
 :::
 
-1. 打开 Indevolt App，在设备页面点击右上角“+”，选择需要添加的设备（以电表为例）。
+1. 打开 INDEVOLT App，在设备页面点击右上角“+”，选择需要添加的设备（以电表为例）。
    
    <img src={require("./img/click_add_device.png").default} width="200"/>
    <img src={require("./img/select_lora_device.png").default} width="200"/>
@@ -110,13 +110,12 @@ LoRa 则专门传输小数据，比如用电量或设备状态。它传输速度
    此外，在设备列表中，设备卡片右上角图标也会显示当前接入方式（Wi-Fi 或 LoRa）。
    <img src={require("./img/lora_icon.png").default} width="210"/>
 
----
 
 ### 切换接入方式（Wi-Fi/LoRa）
 
 如需切换接入方式，可按以下步骤操作：
 
-1. 在设备页面点击电表，进入后点击右上角设置<img src={require("./img/settings_icon.png").default} width="30" style={{verticalAlign: "middle"}}/>，选择**网络设置**，点击页面底部**切换接入方式**
+1. 在设备页面点击电表，进入后点击右上角设置<img src={require("./img/settings_icon.png").default} width="30" style={{verticalAlign: "middle"}}/>，选择**网络设置**，点击页面底部**切换接入方式**。
     <img src={require("./img/tap_device.png").default} width="210"/>
     <img src={require("./img/device_setting.png").default} width="200"/>
     <img src={require("./img/network_setting.png").default} width="200"/>

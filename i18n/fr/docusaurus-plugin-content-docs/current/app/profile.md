@@ -217,68 +217,7 @@ Les paramètres de cluster permettent de combiner plusieurs dispositifs de stock
 
 Vous devez configurer le mode principal/subordonné : un appareil est désigné comme principal, les autres agissant comme subordonnés, coordonnés par le principal.
 
-Le tableau suivant montre quels modèles supportent les rôles principal/subordonné :
-
-<table><thead>
-  <tr>
-    <th></th>
-    <th colspan="2">Filaire</th>
-    <th colspan="2">Sans fil</th>
-  </tr></thead>
-<tbody>
-  <tr>
-    <td>Modèle</td>
-    <td>Principal</td>
-    <td>Subordonné</td>
-    <td>Principal</td>
-    <td>Subordonné</td>
-  </tr>
-  <tr>
-    <td>BK1600</td>
-    <td>✗</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-  </tr>
-  <tr>
-    <td>BK1600 Ultra</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-  </tr>
-  <tr>
-    <td>PowerFlex 2000</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-  </tr>
-  <tr>
-    <td>SolidFlex 2000</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-    <td>✓</td>
-  </tr>
-  <tr>
-    <td>Smart Plug</td>
-    <td>✗</td>
-    <td>✓</td>
-    <td>✗</td>
-    <td>✓</td>
-  </tr>
-</tbody>
-</table>
-
-**Étapes :**
-
-1. Touchez **Cluster**.  
-2. Touchez **Créer un cluster**.  
-3. Sélectionnez **Mode Cluster** : sans fil ou filaire. Maintenez les cartes des appareils et glissez-les dans les emplacements principal ou subordonné.  
-4. Définissez la **limitation de puissance de sortie AC** selon les règlements et politiques locales.  
-5. Touchez **Enregistrer** pour finaliser la configuration.
-
+👉 Pour les instructions détaillées de configuration et de mise en parallèle, veuillez consulter le [Guide du Cluster](../hardware/technical-note/cluster.md).
 
 ## 5. Source de données
 
@@ -328,32 +267,15 @@ Choisissez votre séparateur décimal préféré : point ou virgule.
 
 Touchez **Enregistrer**, toutes les modifications seront appliquées immédiatement. Vous pouvez revenir à tout moment pour ajuster vos préférences.
 
-## 7. Comité des suggestions
 
-Le Tableau de suggestions est votre canal direct pour nous communiquer vos idées ou signaler des problèmes rencontrés.
-
-Touchez **Comité des suggestions** pour accéder à la fonctionnalité.  
-<img src={require("./img/profile_page.png").default} width="240"/>
-
-Actions possibles :
-
-- Voir les suggestions : Parcourez les idées et retours des autres utilisateurs.  
-  <img src={require("./img/suggestions.png").default} width="240"/>
-
-- Signaler un problème : Touchez **Signaler directement i'incident**, décrivez le problème et soumettez-le.  
-  <img src={require("./img/report_issue.png").default} width="240"/>
-
-- Partager une suggestion : Touchez **Suggestion de partage** pour proposer des améliorations ou nouvelles fonctionnalités.  
-  <img src={require("./img/share_suggestion2.png").default} width="240"/>
-
-## 8. Services d’exploitation
+## 7. Services d’exploitation
 
 Pour faciliter la maintenance, vous pouvez ajouter et gérer des fournisseurs de services (revendeurs, installateurs) via **Services d’exploitation**. Après autorisation, le fournisseur peut consulter les informations de base sur vos appareils pour offrir un support plus précis.
 
 <img src={require("./img/profile_page.png").default} width="240"/>
 <img src={require("./img/operation_service.png").default} width="240"/>
 
-## 9. Connexion Directe À L'Appareil
+## 8. Connexion Directe À L'Appareil
 
 La **Connexion directe** utilise Bluetooth pour la communication locale, permettant de surveiller et gérer les appareils compatibles sans passer par le réseau domestique.
 
@@ -383,7 +305,7 @@ Assurez-vous que le Bluetooth est activé et que l’appareil cible est sous ten
 <img src={require("./img/device_connected.png").default} width="240"/>
 <img src={require("./img/disconnect_device.png").default} width="240"/>
 
-## 10. Assistance à Distance
+## 9. Assistance à Distance
 
 Cette fonction aide les techniciens après-vente à localiser et résoudre rapidement les problèmes potentiels des appareils.
 
@@ -418,7 +340,7 @@ Cette fonction aide les techniciens après-vente à localiser et résoudre rapid
 - Après le débogage, quittez le mode pour sécuriser la session.
 :::
 
-## 11. À propos de INDEVOLT
+## 10. À propos de INDEVOLT
 
 Touchez **À propos de INDEVOLT** pour en savoir plus sur l’application : version actuelle, accords de service et confidentialité, liste de partage d’informations à des tiers, description des autorisations et gestion des permissions système.
 

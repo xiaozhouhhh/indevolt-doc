@@ -5,6 +5,95 @@ description: Versionsverlauf und Funktionsverbesserungen der Energy-Ease-App.
 
 # Versionshinweise
 
+## V1.4.0
+
+- Neue intelligente Energiemanagement-Funktionen hinzugefügt
+- Strompreisstrategien und KI-Erlebnis optimiert
+- Startseite und Strompreisanzeige verbessert
+- Unterstützung für weitere Geräte- und Zubehörkonfigurationen hinzugefügt
+- Systemstabilität und Benutzererfahrung verbessert
+- Bekannte Probleme behoben
+
+---
+
+## V1.3.0
+
+- Neue Gerätefunktionen und Bedienhilfen hinzugefügt
+- Lade-/Entladepläne und Energiemanagement optimiert
+- Strompreisbenachrichtigungen und Verbindungsstabilität verbessert
+- Bekannte Probleme behoben und die allgemeine Benutzererfahrung verbessert
+
+---
+
+## V1.2.13
+
+- Ethernet-Verbindung für stabilere Netzwerke hinzugefügt
+- Unterstützung für weitere Stromtarife (z. B. Tempo)
+- Verbesserte intelligente Energiestrategien
+- Optimierte Geräteeinrichtung und Benutzererfahrung
+- Allgemeine Leistungs- und Stabilitätsverbesserungen
+
+---
+
+## V1.2.12
+
+Bekannte Probleme behoben und die System­sicherheit sowie Stabilität verbessert.
+
+---
+
+## V1.2.11
+
+- Ethernet-Verbindung für stabilere Netzwerke hinzugefügt
+- Unterstützung für weitere Stromtarife (z. B. Tempo)
+- Verbesserte intelligente Energiestrategien
+- Optimierte Geräteeinrichtung und Benutzererfahrung
+- Allgemeine Leistungs- und Stabilitätsverbesserungen
+
+---
+
+## V1.2.10
+
+- Benutzerdefinierte Lade- und Entladezeitpläne mit 15-Minuten-Intervallen hinzugefügt
+- 800-W-Qualifikationsantrag für Deutschland hinzugefügt
+- AI-Modus-Erlebnis verbessert
+- Anzeige von Zählerdaten und Verlaufsdiagrammen optimiert
+- Schnellerer Zugriff auf den lokalen Modus im Offline-Betrieb
+- Bekannte Probleme behoben und Stabilität verbessert
+
+---
+
+## V1.2.9
+
+- Optimierung der Darstellung von Energiedaten und der Startseite für mehr Übersichtlichkeit
+- Anpassung und Verbesserung der Energiestrategien für ein besseres Nutzungserlebnis
+- Erweiterte und optimierte Unterstützung ausgewählter Geräte sowie des lokalen Modus
+- Behebung bekannter Probleme und Verbesserung der Systemstabilität und -leistung
+
+---
+
+## V1.2.8
+
+- Verbesserung der Energieverwaltungs-Erfahrung
+- Unterstützung für weitere Geräte und Funktionen hinzugefügt
+- Bekannte Probleme behoben und Systemleistung verbessert
+
+---
+
+## V1.2.7
+
+- Optimierung der KI-Energiestrategien zur Verbesserung des Nutzungserlebnisses
+- Unterstützung für weitere Geräte und Funktionen hinzugefügt
+- Verbesserter Gerätekonfigurationsprozess und höhere Stabilität
+- Bekannte Probleme behoben und die Systemleistung verbessert
+
+---
+
+## V1.2.6
+
+Bekannte Probleme behoben und die System­sicherheit sowie Stabilität verbessert.
+
+---
+
 ## V1.2.5
 
 - Verbesserte Verwaltung der Haushaltsenergie und Preis­einstellungen
