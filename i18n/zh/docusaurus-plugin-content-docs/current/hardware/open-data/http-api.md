@@ -18,8 +18,8 @@ description: todo
 
 `Indevolt` 是微储设备数据交互接口，用于读取设备运行数据和配置参数，以及向设备下发控制指令。
 
-* [**`Indevolt.GetData`**](#retrieve-data)：读取设备运行数据或配置参数。
-* [**`Indevolt.SetData`**](#control-device)：修改设备配置参数或执行控制操作。
+* [**`Indevolt.GetData`**](#indevoltgetdata)：读取设备运行数据或配置参数。
+* [**`Indevolt.SetData`**](#indevoltsetdata)：修改设备配置参数或执行控制操作。
 
 
 **适用设备**
