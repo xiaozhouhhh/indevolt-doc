@@ -64,7 +64,7 @@ Nach der Konfiguration können Sie im Zählerbereich die Daten der drei CTs sepa
 
 <img src={require("./img/ct_direction.png").default} width="240"/>
 <img src={require("./img/ct_location.png").default} width="240"/>
-<!-- <img src={require("./img/meter_data.png").default} width="240"/> -->
+<img src={require("./img/meter_data.png").default} width="240"/>
 
 ### 4.2 Lastquelle für Mikro-Energiespeicher konfigurieren (optional)
 
