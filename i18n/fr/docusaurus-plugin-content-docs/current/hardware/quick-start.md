@@ -55,7 +55,7 @@ Exemple basé sur une configuration de **1 module principal + 2 modules batterie
 1. Installer 4 pieds de support sous le module batterie d’extension inférieur.  
    <img src={require("./img/installation-step1.png").default} width="360"/>
 
-2. Placer le module batterie au sol et maintenir une distance de 20 à 30 mm par rapport au mur.  
+2. Un espace libre d’au moins 30 mm doit être maintenu à l’arrière de l’appareil (zone du dissipateur thermique) afin d’assurer une ventilation adéquate et une dissipation thermique efficace.  
    <img src={require("./img/installation-step2.png").default} width="360"/>
 
 3. Ajuster les quatre pieds afin de garantir que l’équipement soit parfaitement horizontal à l’aide d’un niveau à bulle.  
