@@ -1,5 +1,5 @@
 ---
-title: 概述
+title: MQTT 概述
 description: 介绍如何通过 MQTT 查看和控制微储设备。
 ---
 
@@ -39,7 +39,7 @@ flowchart LR
 | INDEVOLT 微储   | MQTT Client | 连接到 Broker，上传设备数据并接收控制命令  |
 
 
-1. 微储连接 MQTT Broker，可选使用TLS/SSL加密以保障通信安全
+1. 微储连接 MQTT Broker，根据 Broker 配置，可使用TLS/SSL加密通信
 2. 设备主动发布运行数据至 Broker
 3. App 或第三方系统订阅对应 Topic
 4. MQTT Broker 接收已发布的消息，并将其转发给所有订阅方
@@ -52,9 +52,11 @@ flowchart LR
 
 本功能适用于支持 MQTT 的设备：
 
-| 型号                         | 最低适用固件版本                      |
-| ---------------------------- | ------------------------------------- |
+| 型号    | 最低适用固件版本   |
+| ------- | ------------------ |
 | PowerFlex 2000<br />PowerFlex 2000 Eco<br />SolidFlex 2000<br />SolidFlex 2000 Eco | CMS: V140C.0B.0036<br />EMS：V1.01.08 |
+| PowerFlex 3000 AC<br />PowerFlex 3000 Hybrid<br />SolidFlex 3000 AC  | CMS: V140C.09.3036  |
+| PowerFlex 2000<br />SolidFlex 1200 | CMS: V140B.09.2036 |
 
 
 ---
@@ -67,57 +69,36 @@ flowchart LR
 
 - ✅ 设备已正常通电
 - ✅ 设备已成功联网
-
+- ✅ 设备支持 MQTT 功能
 
 ### 3.2 开启 MQTT
 
-设备的 MQTT 功能默认关闭，需要在 App 中手动开启。
+设备的 MQTT 功能默认关闭，需在 App 中手动开启，并配置 MQTT Broker 信息。
 
 
 
 ### 3.3 MQTT 连接参数
 
 
-| 参数        | 说明                                  |
-| ----------- | ------------------------------------- |
-| Broker 地址 | MQTT Broker 地址                       |
-| 端口        | 1883（非加密） / 8883（TLS/SSL 加密） |
-| Client ID   | 默认使用设备序列号（SN）              |
-| 用户名      | MQTT 登录账号，默认为空，支持自定义   |
-| 密码        | MQTT 登录密码，默认为空，支持自定义   |
-| Keep Alive  | 默认 60 秒                            |
+| 参数           | 说明                                                   |
+| -------------- | ------------------------------------------------------ |
+| Broker 地址    | MQTT Broker 地址，可以是本地服务器 IP 或云端服务器地址 |
+| 端口           | 1883（非加密） / 8883（TLS/SSL 加密）                  |
+| Client ID      | 默认使用设备序列号（SN）                               |
+| 用户名         | MQTT 登录账号，默认为空，支持自定义                    |
+| 密码           | MQTT 登录密码，默认为空，支持自定义                    |
+| TLS            | 是否启用 TLS 加密                                      |
+| CA Certificate | TLS 模式下使用的 CA 证书（如需要）                     |
+| Keep Alive     | 默认 60 秒                                             |
+
 
 ---
 
-## 4. 使用示例
-
-**订阅实时数据**
-
-```bash
-mosquitto_sub -h mqtt.example.com -t ""
-```
-
-示例输出：
-
-```json
-{
-
-}
-```
-
-**发布控制命令**
-
-```bash
-mosquitto_pub -h mqtt.example.com -t "" -m '{}'
-```
-
----
-
-## 5. Topic
+## 4. Topic
 
 Topic 用于标识 MQTT 消息的类别和路由，类似于文件系统中的路径（如：`energy/device1/soc`）。MQTT Broker 根据 Topic 将消息转发给对应的订阅者。
 
-MQTT 支持订阅单个 Topic，也支持使用通配符批量订阅。
+MQTT 支持订阅单个 Topic，也支持使用**通配符**批量订阅。
 
 | 通配符 | 作用         | 示例 |
 | ------ | ------------ | ---- |
@@ -128,7 +109,7 @@ MQTT 支持订阅单个 Topic，也支持使用通配符批量订阅。
 
 ---
 
-## 6. QoS
+## 5. QoS
 
 QoS（Quality of Service）表示消息传递的可靠性等级。
 
@@ -144,7 +125,7 @@ QoS（Quality of Service）表示消息传递的可靠性等级。
 
 ---
 
-## 7. FAQ
+## 9. FAQ
 
 <details>
   <summary>**Q: MQTT 无法连接**</summary>
