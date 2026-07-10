@@ -1,6 +1,6 @@
 ---
 title: MQTT Topic
-description: todo
+description: INDEVOLT MQTT Topic 结构及消息格式说明。
 ---
 
 # MQTT Topic
@@ -71,10 +71,47 @@ mosquitto_pub -h 127.0.0.1 -t "/test/subtopic/control" -m '{}'
 
 **消息格式**
 
-| 字段 | 说明 |
-| ---- | ---- |
-|      |      |
+```json
+{
+    "GW_SN": "xxxxxxxx",    
+    "dataType": "modbusString",    
+    "SN1": "xxxxxxxx",    
+    "dataMap": [
+        {
+            "groupNum": "2"    
+        },
+        {
+            "groupID": "0",    
+            "commandString": "010300000001840A"    
+        },
+        {
+            "groupID": "1",
+            "commandString": "0110000001020000303A"    
+        }
+    ]
+}
+```
 
+**字段说明**
+
+| 字段       | 类型   | 说明                                      |
+| ---------- | ------ | ----------------------------------------- |
+| `GW_SN`    | String | 网关序列号。                              |
+| `dataType` | String | 消息类型，固定为 `modbusString`。 |
+| `SN1`      | String | 目标设备序列号。                          |
+| `dataMap`  | Array  | Modbus 命令列表。                         |
+
+**`dataMap` 说明**
+
+`dataMap` 中可包含一条或多条 Modbus 命令，设备按照数组顺序依次执行。
+
+| 字段 | 类型 | 说明 |
+| --- | --- | --- |
+| `groupNum` | String | 命令总数。 |
+| `groupID` | String | 当前命令编号，从 `0` 开始。 |
+| `commandString` | String | Modbus 指令，十六进制字符串格式。 |
+
+`commandString` 的内容应符合 Modbus 报文格式，包括设备地址、功能码、寄存器地址、数据及 CRC 校验。具体寄存器地址请参考：[Modbus 寄存器说明](./modbus-register-table.md)。
 
 ## 3. 控制应答
 
@@ -94,29 +131,33 @@ mosquitto_sub -h 127.0.0.1 -t "/test/subtopic/control_ack" -v
 
 **示例消息**
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs>
-  <TabItem value="success" label="成功" default>
-
 ```json
 {
-
+    "GW_SN": "xxxxxxxx",
+    "dataType": "modbusString",
+    "SN1": "xxxxxxxx",
+    "dataMap": [
+        {
+            "groupNum": "2"
+        },
+        {
+            "groupID": "0",
+            "result": "success",
+            "commandResponse": "018302C0F1"
+        },
+        {
+            "groupID": "1",
+            "result": "success",
+            "commandResponse": "0190030C01"
+        }
+    ]
 }
 ```
 
-  </TabItem>
+**字段说明**
 
-  <TabItem value="fail" label="失败">
-
-```json
-{
-
-}
-```
-
-  </TabItem>
-
-</Tabs>
+| 字段              | 类型   | 说明            |
+| ----------------- | ------ | --------------- |
+| `result`          | String | 命令执行结果    |
+| `commandResponse` | String | Modbus 返回数据 |
 
