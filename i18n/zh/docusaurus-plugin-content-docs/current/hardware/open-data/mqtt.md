@@ -55,8 +55,8 @@ flowchart LR
 | 型号    | 最低适用固件版本   |
 | ------- | ------------------ |
 | PowerFlex 2000<br />PowerFlex 2000 Eco<br />SolidFlex 2000<br />SolidFlex 2000 Eco | CMS: V140C.0B.0036<br />EMS：V1.01.08 |
-| PowerFlex 3000 AC<br />PowerFlex 3000 Hybrid<br />SolidFlex 3000 AC  | CMS: V140C.09.3036  |
-| PowerFlex 1200<br />SolidFlex 1200 | CMS: V140B.09.2036 |
+| PowerFlex 3000 Hybrid<br />SolidFlex 3000 AC<br />SolidFlex 3000 AC Pro<br />SolidFlex 3000 Hybrid Pro  | CMS: V140C.09.3036  |
+| SolidFlex 1200 | CMS: V140B.09.2036 |
 
 
 ---

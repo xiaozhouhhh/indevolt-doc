@@ -54,8 +54,8 @@ import TabItem from '@theme/TabItem';
 > | --------------------------- | ----------------------------------------- |
 > | BK1600 / BK1600 Ultra          | V1.3.0A_R006.072_M4848_00000039           |
 > | SolidFlex 2000 / PowerFlex 2000 | CMS：V1406.07.002E |
-> | PowerFlex 3000 AC<br />PowerFlex 3000 Hybrid<br />SolidFlex 3000 AC  | CMS: V1409.08.3034  |
-> | PowerFlex 1200<br />SolidFlex 1200 | CMS: V1407.07.202E |
+> | PowerFlex 3000 Hybrid<br />SolidFlex 3000 AC<br />SolidFlex 3000 AC Pro<br />SolidFlex 3000 Hybrid Pro  | CMS: V1409.08.3034  |
+> | SolidFlex 1200 | CMS: V1407.07.202E |
 >
 > 请在 INDEVOLT App 中查看设备固件版本。
 > 
