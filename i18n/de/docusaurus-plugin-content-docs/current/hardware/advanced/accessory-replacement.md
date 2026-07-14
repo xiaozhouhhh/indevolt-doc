@@ -150,7 +150,7 @@ Wenn Sie die Migration derzeit nicht durchführen möchten, können Sie auf **Ü
 <img src={require("./img/wifi_connected.png").default} width="240"/>
 
 
-## 4. Austauschverlauf anzeigen
+### 4. Austauschverlauf anzeigen
 
 Um frühere Austauschvorgänge anzuzeigen, gehen Sie zu: **Einstellungen > Zubehör Austauschen**.
 
