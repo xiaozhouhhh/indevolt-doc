@@ -324,17 +324,17 @@ description: 深入了解 Indevolt 微型储能主机的详细技术参数与核
   </tr>
   <tr>
     <td rowspan="11">灯带显示</td>
-    <td rowspan="3">显示灯带要求</td>
+    <td rowspan="3">显示灯带</td>
     <td colspan="4">采用红、黄、蓝、绿4个灯</td>
   </tr>
   <tr>
-    <td colspan="4">每个灯可以单独进行控制，可以进行SOC以及动态显示。</td>
+    <td colspan="4">每个灯可以单独进行控制，可以进行SOC以及动态显示</td>
   </tr>
   <tr>
     <td colspan="4">支持控制LED灯亮暗调节</td>
   </tr>
   <tr>
-    <td rowspan="8">显示逻辑要求</td>
+    <td rowspan="8">显示逻辑</td>
     <td colspan="4">**待机**：显示当前的SOC，按照百分比显示，从底部到顶部延伸。灯条为蓝色</td>
   </tr>
   <tr>

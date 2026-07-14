@@ -48,8 +48,8 @@ Bereid vóór installatie de volgende gereedschappen voor:
 
 Bepaal op basis van de configuratie de benodigde installatieruimte en zorg voor voldoende ruimte voor warmteafvoer en elektrische isolatie.
 
-<img src={require("./img/system-size.png").default} width="480"/>
-<img src={require("./img/device-size.png").default} width="480"/>
+<img src={require("./img/system-size.png").default} width="720"/>
+<img src={require("./img/device-size.png").default} width="600"/>
 
 **Stap 2: Apparaat bevestigen**
 
@@ -57,7 +57,7 @@ Onderstaand voorbeeld gebruikt **1 voedingsmodule + 2 batterijmodules**:
 
 1. Monteer 4 steunvoeten onder de onderste uitbreidingsbatterijmodule.  
    <img src={require("./img/installation-step1.png").default} width="360"/>
-2. Plaats de batterijmodule op de grond en houd 20–30 mm afstand tot de muur.  
+2. Aan de achterzijde van het apparaat (koellichaam) moet een vrije ruimte van minimaal 30 mm worden aangehouden om voldoende ventilatie en efficiënte warmteafvoer te garanderen. 
    <img src={require("./img/installation-step2.png").default} width="360"/>
 3. Stel de hoogte van de vier steunvoeten af zodat het apparaat waterpas staat en gebruik een waterpas voor controle.  
    <img src={require("./img/installation-step3.png").default} width="480"/>

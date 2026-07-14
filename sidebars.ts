@@ -176,10 +176,11 @@ const sidebars: SidebarsConfig = {
             `,
           },
           items: [
-            'app/solaredge',
-            'app/growatt',
             'app/goodwe',
-            'app/solax'
+            'app/growatt',
+            'app/solaredge',
+            'app/solax',
+            'app/sungrow',
           ],
         },
       ],
