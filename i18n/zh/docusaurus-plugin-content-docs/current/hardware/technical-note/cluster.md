@@ -310,6 +310,10 @@ sub1 -.RS485.-> sub2
 
 选择并机设备间的通信方式：Wi-Fi、RS485。
 
+如选择 **RS485 通信**：
+- 设备需要安装支持 RS485 通信的 LAN 模块。
+- 使用标准网线连接设备的 RS485 接口。
+
 <img src={require("./img/cluster_communication.png").default} width="240"/>
 
 ### 步骤 5：配置集群参数
