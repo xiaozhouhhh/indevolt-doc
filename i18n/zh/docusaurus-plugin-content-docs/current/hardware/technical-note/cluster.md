@@ -180,20 +180,31 @@ sub2 -.Wi-Fi.-> router
 
 ### 5.2 RS485 通信
 
-通过 RS485 口依次连接主从设备，适用于网络环境较弱或需要稳定有线通信的场景。
+通过 RS485 口使用网线连接主从设备，适用于网络环境较弱或需要稳定有线通信的场景。
 
 ```mermaid
 flowchart LR
 
 main[主机]
+sub[从机]
+
+main -.RS485.-> sub
+```
+
+如需连接两台从机，可通过 **RJ45 一分二转接器**连接主机与从机。
+
+```mermaid
+flowchart LR
+
+main[主机]
+hub[RJ45 一分二转接器]
 sub1[从机 1]
 sub2[从机 2]
 
-main -.RS485.-> sub1
-sub1 -.RS485.-> sub2
+main -.RS485.-> hub
+hub --> sub1
+hub --> sub2
 ```
-
-用户可根据现场布线条件与网络环境选择合适的通信方式。
 
 :::info
 如果设备当前仅支持 Wi-Fi，需要使用 RS485 并机，可更换为新版本通信模块。具体更换方法请参考：[配件更换](../advanced/accessory-replacement.md)
