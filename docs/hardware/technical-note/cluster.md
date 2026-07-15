@@ -200,6 +200,8 @@ A cluster can be configured through the INDEVOLT App.
 Before starting, make sure:
 - All devices support clustering
 - All devices are powered on normally
+- All devices are connected to the network properly and have been added to the same home.
+- For RS485 cluster operation, the communication cables are connected correctly.
 
 ### Step 1: Enter Cluster Settings
 
@@ -211,33 +213,39 @@ Tap **Create a Cluster** to start creating a cluster.
 <img src={require("./img/cluster_device_settings.png").default} width="240"/>
 <img src={require("./img/create_cluster.png").default} width="240"/>
 
-### Step 2: Configure Cluster Parameters
+### Step 2: Select Cluster Mode
 
-On the creation page, configure the basic cluster settings, including the cluster name, cluster mode, and power-related limits.
+Select the cluster mode: **Centralized** or **Coordinated**.
+
+<img src={require("./img/creating_cluster.png").default} width="240"/>
+<img src={require("./img/cluster_mode.png").default} width="240"/>
+
+### Step 3: Add Main and Sub Devices
+
+In the list of compatible devices, press and hold a device card, then drag the device to the Main or Sub area.
+
+<img src={require("./img/cluster_devices.png").default} width="240"/>
+
+### Step 4: Select Communication Method
+
+Select the communication method between parallel devices: **Wi-Fi** or **RS485**.
+
+<img src={require("./img/cluster_communication.png").default} width="240"/>
+
+### Step 5: Configure Cluster Parameters
+
+Configure the basic cluster settings, including the cluster name and power-related limits, then tap **Save** to complete the creation.
 
 :::danger
 Ensure all configuration parameters comply with local grid requirements and regulations.
 :::
 
-<img src={require("./img/creating_cluster.png").default} width="240"/>
 <img src={require("./img/cluster_name.png").default} width="240"/>
-<img src={require("./img/cluster_mode.png").default} width="240"/>
 <img src={require("./img/cluster_output_limit.png").default} width="240"/>
 <img src={require("./img/cluster_feed_in_limit.png").default} width="240"/>
-
-### Step 3: Add Main and Sub Devices
-
-In the available device list, press and hold a device card, then drag it into the main or sub area.
-
-<img src={require("./img/cluster_devices.png").default} width="240"/>
-
-### Step 4: Confirm and Save
-
-After confirming that all settings are correct, tap **Save** to complete the cluster configuration.
-
 <img src={require("./img/cluster_created.png").default} width="240"/>
 
-### Step 5: View and Manage the Cluster
+### Step 6: View and Manage the Cluster
 
 After successful configuration, the App automatically enters the cluster details page, where you can view the overall system status, including main/sub relationships, real-time power, and energy strategies.
 

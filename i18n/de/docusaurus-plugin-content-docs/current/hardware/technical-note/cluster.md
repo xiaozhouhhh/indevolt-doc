@@ -195,7 +195,8 @@ Bitte stellen Sie vorab sicher:
 
 * Alle Geräte unterstützen den Cluster-Betrieb
 * Alle Geräte sind eingeschaltet und betriebsbereit
-
+* Alle Geräte ordnungsgemäß mit dem Netzwerk verbunden und demselben Zuhause hinzugefügt wurden.
+* Bei einer RS485-Parallelschaltung die Kommunikationskabel korrekt angeschlossen sind.
 
 ### Schritt 1: Cluster-Einstellungen öffnen
 
@@ -207,21 +208,12 @@ Tippen Sie anschließend auf **Einen Cluster erstellen**, um ein neues Cluster z
 <img src={require("./img/cluster_device_settings.png").default} width="240"/>
 <img src={require("./img/create_cluster.png").default} width="240"/>
 
+### Schritt 2: Cluster-Modus auswählen
 
-### Schritt 2: Cluster-Parameter konfigurieren
-
-Auf der Erstellungsseite müssen grundlegende Parameter des Clusters konfiguriert werden, einschließlich Name, Cluster-Modus sowie Leistungsgrenzen.
-
-:::danger
-Stellen Sie sicher, dass alle Parameter den lokalen Netzvorschriften und gesetzlichen Anforderungen entsprechen.
-:::
+Wählen Sie den Cluster-Modus: **Zentralisierter** oder **Koordiniert**.
 
 <img src={require("./img/creating_cluster.png").default} width="240"/>
-<img src={require("./img/cluster_name.png").default} width="240"/>
 <img src={require("./img/cluster_mode.png").default} width="240"/>
-<img src={require("./img/cluster_output_limit.png").default} width="240"/>
-<img src={require("./img/cluster_feed_in_limit.png").default} width="240"/>
-
 
 ### Schritt 3: Haupt- und Untergeräte hinzufügen
 
@@ -229,15 +221,26 @@ In der Liste der clusterfähigen Geräte können Sie die Karten per Langdruck au
 
 <img src={require("./img/cluster_devices.png").default} width="240"/>
 
+### Schritt 4: Kommunikationsmethode auswählen
 
-### Schritt 4: Bestätigen und speichern
+Wählen Sie die Kommunikationsmethode zwischen den parallelen Geräten: **Wi-Fi** oder **RS485**.
 
-Überprüfen Sie alle Angaben und tippen Sie auf **Speichern**, um die Cluster-Konfiguration abzuschließen.
+<img src={require("./img/cluster_communication.png").default} width="240"/>
 
+### Schritt 5: Clusterparameter konfigurieren
+
+Konfigurieren Sie die grundlegenden Clusterparameter, einschließlich des Namens und der leistungsbezogenen Grenzwerte, und tippen Sie anschließend auf **Speichern**, um die Erstellung abzuschließen.
+
+:::danger
+Stellen Sie sicher, dass die konfigurierten Parameter den lokalen Netzanforderungen sowie den geltenden Gesetzen und Vorschriften entsprechen.
+:::
+
+<img src={require("./img/cluster_name.png").default} width="240"/>
+<img src={require("./img/cluster_output_limit.png").default} width="240"/>
+<img src={require("./img/cluster_feed_in_limit.png").default} width="240"/>
 <img src={require("./img/cluster_created.png").default} width="240"/>
 
-
-### Schritt 5: Cluster anzeigen und verwalten
+### Schritt 6: Cluster anzeigen und verwalten
 
 Nach erfolgreicher Einrichtung wechselt die App automatisch zur Cluster-Übersichtsseite. Dort können Sie den gesamten Systemstatus einsehen, einschließlich der Gerätezuordnung im Cluster, der Echtzeit-Leistung sowie der Energiemanagement-Strategien.
 

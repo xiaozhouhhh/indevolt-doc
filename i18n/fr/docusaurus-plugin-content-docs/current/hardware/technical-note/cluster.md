@@ -197,6 +197,8 @@ Avant de commencer, assurez-vous que :
 
 - Tous les appareils prennent en charge le cluster
 - Tous les appareils sont correctement allumés
+- Tous les appareils sont correctement connectés au réseau et ajoutés au même domicile.
+- Pour un fonctionnement en parallèle via RS485, les câbles de communication sont correctement connectés.
 
 ### Étape 1 : Accéder aux paramètres de cluster
 
@@ -208,19 +210,12 @@ Appuyez sur **Créer un cluster** pour commencer.
 <img src={require("./img/cluster_device_settings.png").default} width="240"/>
 <img src={require("./img/create_cluster.png").default} width="240"/>
 
-### Étape 2 : Configurer les paramètres du cluster
+### Étape 2 : Sélectionner le mode Cluster
 
-Après avoir accédé à la page de création, configurez les paramètres de base du cluster : nom, mode de fonctionnement et limites de puissance.
-
-:::danger
-Assurez-vous que les paramètres configurés respectent les exigences du réseau et les réglementations locales.
-:::
+Sélectionnez le mode Cluster : **centralisé** ou **coordonné**.
 
 <img src={require("./img/creating_cluster.png").default} width="240"/>
-<img src={require("./img/cluster_name.png").default} width="240"/>
 <img src={require("./img/cluster_mode.png").default} width="240"/>
-<img src={require("./img/cluster_output_limit.png").default} width="240"/>
-<img src={require("./img/cluster_feed_in_limit.png").default} width="240"/>
 
 ### Étape 3 : Ajouter les appareils principaux et secondaires
 
@@ -228,13 +223,26 @@ Dans la liste des appareils compatibles, maintenez appuyée la carte de l’appa
 
 <img src={require("./img/cluster_devices.png").default} width="240"/>
 
-### Étape 4 : Confirmer et enregistrer la configuration
+### Étape 4 : Sélectionner la méthode de communication
 
-Après vérification des informations, appuyez sur **Enregistrer** pour finaliser la configuration du Cluster.
+Sélectionnez la méthode de communication entre les appareils en parallèle : **Wi-Fi** ou **RS485**.
 
+<img src={require("./img/cluster_communication.png").default} width="240"/>
+
+### Étape 5 : Configurer les paramètres du cluster
+
+Configurez les paramètres de base du cluster, notamment le nom du groupe et les limites liées à la puissance, puis appuyez sur **Enregistrer** pour terminer la création.
+
+:::danger
+Assurez-vous que les paramètres configurés sont conformes aux exigences du réseau électrique local ainsi qu'aux lois et réglementations applicables.
+:::
+
+<img src={require("./img/cluster_name.png").default} width="240"/>
+<img src={require("./img/cluster_output_limit.png").default} width="240"/>
+<img src={require("./img/cluster_feed_in_limit.png").default} width="240"/>
 <img src={require("./img/cluster_created.png").default} width="240"/>
 
-### Étape 5 : Consulter et gérer le cluster
+### Étape 6 : Consulter et gérer le cluster
 
 Une fois la configuration terminée, l’application ouvre automatiquement la page de détails du cluster. Vous pouvez y consulter l’état du système, les relations entre appareils principaux et secondaires, la puissance en temps réel et les stratégies énergétiques.
 
