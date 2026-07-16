@@ -141,9 +141,8 @@ If you do not want to migrate historical data immediately, tap **Skip**. You can
 <img src={require("./img/wifi_settings.png").default} width="240"/>
 <img src={require("./img/wifi_connected.png").default} width="240"/>
 
----
 
-## 4. View Replacement History
+### 4. View Replacement History
 
 To view previous replacement records, go to: **Settings > Accessory Replacement**
 

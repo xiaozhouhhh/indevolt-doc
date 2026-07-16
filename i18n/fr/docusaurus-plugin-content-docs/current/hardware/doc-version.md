@@ -7,6 +7,7 @@ description: Historique des versions de la documentation des équipements de sto
 
 | Date de mise à jour | Version | Contenu de la mise à jour |
 | ------------------- | ------- | -------------------------- |
+| 2026-07-16 | V1.0.16 | Mise à jour de la documentation sur le fonctionnement en cluster des micro-stockages : ajout des instructions de cluster RS485. |
 | 2026-07-03 | V1.0.15 | Ajouter la documentation micro-stockage en allemand   |
 | 2026-06-26 | V1.0.14 | Ajout de la documentation de [Surveillance multi-points des TC pour compteur triphasé](./advanced/three-phase-meter.md)         |
 | 2026-06-22 | V1.0.13 | Mise à jour de la documentation OpenData :<br /> 1. Ajout des points de données de la série BK1600 (SN de l'appareil, versions du firmware, température de la batterie, puissance/courant/tension PV) ainsi que des points de contrôle. |

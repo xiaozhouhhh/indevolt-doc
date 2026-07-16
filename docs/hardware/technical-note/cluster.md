@@ -7,7 +7,7 @@ description: Learn how to connect multiple energy storage devices into one clust
 
 ## 1. What Is a Cluster
 
-A cluster refers to connecting multiple micro energy storage devices into one unified system, allowing them to work together for power supply, energy storage, and energy management.
+A cluster is a system that combines multiple micro energy storage devices into a single coordinated system, allowing them to work together for power supply, energy storage, and energy management.
 
 In a cluster system, one device must be configured as the main unit, which is responsible for system control and coordination. The remaining devices operate as sub units connected to the same cluster. All devices communicate and work together automatically.
 
@@ -17,11 +17,11 @@ After clustering is enabled, both the total output power and total storage capac
 
 ## 2. Why Use a Cluster
 
-A single device has limited power output and storage capacity. When household loads increase or longer backup time is required, clustering can be used to expand system capability.
+A single device has limited power output and storage capacity. When higher power output or longer backup duration is required, clustering can be used to expand system capability.
 
 **Increase Output Power**
 
-Multiple devices can output power simultaneously, allowing the system to support larger loads.
+Multiple devices can supply power simultaneously, allowing the system to support larger loads.
 
 > Example:
 > - One SolidFlex 2000 unit can provide up to approximately 2400W inverter output.
@@ -65,20 +65,6 @@ The following models can be used as main or sub units:
     <td>Sub</td>
   </tr>
   <tr>
-    <td>PowerFlex 2000</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-  </tr>
-  <tr>
-    <td>SolidFlex 2000</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-  </tr>
-  <tr>
     <td>BK1600</td>
     <td>❌</td>
     <td>✅</td>
@@ -92,12 +78,33 @@ The following models can be used as main or sub units:
     <td>✅</td>
     <td>✅</td>
   </tr>
+  <tr>
+    <td>SolidFlex 2000<br />PowerFlex 2000<br />SolidFlex 2000 Eco<br />PowerFlex 2000 Eco</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+    <tr>
+    <td>SolidFlex 1200</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>SolidFlex 3000 AC<br />SolidFlex 3000 AC Pro<br />SolidFlex 3000 Hybrid Pro<br />PowerFlex 3000 AC<br />PowerFlex 3000 Hybrid</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
 </tbody>
 </table>
 
 :::info
 
-- Mixed clustering between SolidFlex 2000 / PowerFlex 2000 and BK1600 / BK1600 Ultra has not been fully validated and is not recommended. However, SolidFlex 2000 and PowerFlex 2000 can operate in the same cluster normally.
+- Mixed clusters combining SolidFlex / PowerFlex series and BK series have not been fully validated and is not recommended. However, SolidFlex and PowerFlex series models can be connected in parallel with each other.
 - During cluster operation:
   - PV input through the **PV port** is supported
   - Connecting microinverters or loads through the **Backup port** is still under optimization and is not yet fully supported
@@ -108,24 +115,23 @@ The following models can be used as main or sub units:
 
 ## 4. Cluster Modes
 
-The system supports two cluster modes for different installation environments.
 
-Communication between devices supports the following methods:
-- Wi-Fi
-- Ethernet
-- RS485
+The cluster supports a maximum of **3 devices**:
 
-Users can choose the most suitable communication method according to the installation environment and network conditions.
+- 1 main device
+- Up to 2 sub devices
+
+Depending on the installation environment, the following two modes can be selected:
 
 ### 4.1 Coordinated Cluster
 
-Each device connects independently to the grid and handles its own AC input and output. Devices synchronize data through the communication network, while the main unit coordinates system operation status and power distribution.
+Each device connects independently to the grid and handles its own AC input and output. Devices synchronize data through the communication network, while the main unit coordinates system operation and power distribution.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-  <TabItem value="gen1" label="SolidFlex 2000 / PowerFlex 2000" default>
+  <TabItem value="gen1" label="SolidFlex / PowerFlex" default>
     <img src={require("./img/coordinated_gen2.png").default} width="480" />
   </TabItem>
   <TabItem value="gen2" label="BK1600 / BK1600 Ultra">
@@ -143,7 +149,7 @@ Connection method:
 - If multiple sub devices are used, continue cascading connections through **Backup → GRID IN/OUT**
 
 <Tabs>
-  <TabItem value="gen1" label="SolidFlex 2000 / PowerFlex 2000" default>
+  <TabItem value="gen1" label="SolidFlex / PowerFlex" default>
     <img src={require("./img/centralized_gen2.png").default} width="480" />
   </TabItem>
   <TabItem value="gen2" label="BK1600 / BK1600 Ultra">
@@ -153,30 +159,135 @@ Connection method:
 
 ---
 
-## 5. Cluster Operating Rules
+## 5. Cluster Communication Methods
 
-During cluster operation, the system automatically coordinates devices and distributes power without manual intervention.
+Devices must maintain communication to synchronize operating status. The following two communication methods are supported:
 
-### 5.1 System Capacity Limits
+### 5.1 Wi-Fi Communication
 
-The system supports up to 3 devices in one cluster:
-- 1 main device
-- Up to 2 sub devices
+Connect all devices to the same Wi-Fi network. This method is suitable for scenarios where devices are installed close to each other and a stable Wi-Fi network is available.
 
-### 5.2 Output Capability
+```mermaid
+flowchart LR
 
-Maximum output power in cluster mode:
-- Standard loads: 7200W (3 × 2400W)
-- With microinverters connected: 10800W (3 × 3600W)
+main[Main]
+sub1[Sub 1]
+sub2[Sub 2]
 
-> Note:
-> When microinverters or loads are connected through the Backup port during cluster operation, power display accuracy may be affected. This function is still under continuous optimization.
+router[Router]
 
-:::danger
-Ensure the maximum system output power complies with local electrical and safety regulations.
+main -.Wi-Fi.-> router
+sub1 -.Wi-Fi.-> router
+sub2 -.Wi-Fi.-> router
+```
+
+### 5.2 RS485 Communication
+
+Use a network cable to connect the main and sub devices through the RS485 ports. This method is suitable for environments with poor network conditions or scenarios requiring stable wired communication.
+
+```mermaid
+flowchart LR
+
+main[Main]
+sub[Sub]
+
+main -.RS485.-> sub
+```
+
+To connect two sub devices, use an **RJ45 1-to-2 splitter** to connect the main device and sub devices.
+
+```mermaid
+flowchart LR
+
+main[Main]
+hub[RJ45 1-to-2 splitter]
+sub1[Sub 1]
+sub2[Sub 2]
+
+main -.RS485.-> hub
+hub --> sub1
+hub --> sub2
+```
+
+**RJ45 Pinout**
+
+<img src={require("./img/rs485_pinout.png").default} width="480"/>
+
+| Pin | Signal  | Function                                            |
+| --- | ------- | --------------------------------------------------- |
+| 1   | GND     | Shield ground                                       |
+| 2   | GND     | Shield ground                                       |
+| 3   | N.C.    | Not connected                                       |
+| 4   | RS485 A | RS485 differential signal A (for Indevolt Smart CT) |
+| 5   | RS485 B | RS485 differential signal B (for Indevolt Smart CT) |
+| 6   | N.C.    | Not connected                                       |
+| 7   | DC 5V   | 5 V power supply, maximum current: 200 mA           |
+| 8   | DC 5V   | 5 V power supply, maximum current: 200 mA           |
+
+
+:::info
+If the device currently only supports Wi-Fi and RS485 parallel connection is required, the communication module can be replaced with a newer version. For details, see: [Accessory Replacement](../advanced/accessory-replacement.md)
 :::
 
-### 5.3 Power Distribution Behavior
+---
+
+## 6. Cluster Power Limitations
+
+After devices are configured as a cluster, the maximum system power depends on:
+
+* Cluster mode
+* Device model
+
+Where:
+
+* **AC input power** determines the maximum power that the system can obtain from the grid.
+* **AC output power** determines the maximum power that the system can provide to loads.
+
+:::danger
+Ensure that the maximum system output power complies with local electrical standards and safety regulations.
+:::
+
+### 6.1 Single Device Power
+
+The maximum AC input/output capability of each device model is as follows:
+
+| Model       | Maximum AC Output/Input Power |
+| ----------- | ----------------------------- |
+| BK Series   | 1200 W                        |
+| 2000 Series | 2400 W                        |
+| 1200 Series | 1200 W                        |
+| 3000 Series | 3000 W                        |
+
+### 6.2 Maximum AC Input Power
+
+After parallel connection, multiple devices can support AC input simultaneously.
+
+Maximum cluster AC input power = Sum of the maximum AC input power of all cluster devices
+
+### 6.3 Maximum AC Output Power
+
+The maximum AC output power after parallel connection depends on the cluster mode.
+
+* **Coordinated cluster:**
+  Maximum cluster AC output power = Sum of the maximum AC output power of all cluster devices
+
+* **Centralized cluster:**
+  The AC input and output of all devices are ultimately connected to the grid through the main device. Therefore, the AC output capability is limited by the power capacity of the main device.
+
+  | Main Model | Maximum Cluster AC Output Power |
+  | ------------ | ------------------------------- |
+  | BK1600 Ultra | 2300 W                          |
+  | 2000 Series  | 3600 W                          |
+  | 1200 Series  | 2300 W                          |
+  | 3000 Series  | 3600 W                          |
+
+:::note
+When devices are configured as a cluster, connecting microinverters and loads through the bypass port may cause inaccurate power display. This function is still being optimized.
+:::
+
+---
+
+## 7. Cluster Power Distribution
 
 During cluster operation, the system automatically distributes power based on device SOC and load conditions. Therefore:
 - Different devices may output different power levels
@@ -191,53 +302,66 @@ Typical system behavior under different load conditions:
 | 200W ~ 500W   | Two devices with higher SOC share the load |
 | Above 500W    | All sub devices participate and distribute power based on SOC ratio |
 
+
 ---
 
-## 6. How to Create a Cluster
+## 8. How to Create a Cluster
 
 A cluster can be configured through the INDEVOLT App.
 
 Before starting, make sure:
 - All devices support clustering
-- All devices are powered on normally
+- All devices are powered on
+- All devices are connected to the network properly and have been added to the same home.
+- For RS485 cluster operation, the communication cables are connected correctly.
 
 ### Step 1: Enter Cluster Settings
 
 On the device details page, tap the <img src={require("./img/settings_icon.png").default} width="30" style={{verticalAlign: "middle"}}/> icon in the upper-right corner to enter the settings page, then select **Cluster**.
 
-Tap **Create a Cluster** to start creating a cluster.
+Tap **Create a Cluster** to create a new cluster.
 
 <img src={require("./img/device_info.png").default} width="240"/>
 <img src={require("./img/cluster_device_settings.png").default} width="240"/>
 <img src={require("./img/create_cluster.png").default} width="240"/>
 
-### Step 2: Configure Cluster Parameters
+### Step 2: Select Cluster Mode
 
-On the creation page, configure the basic cluster settings, including the cluster name, cluster mode, and power-related limits.
+Select the cluster mode: **Centralized** or **Coordinated**.
+
+<img src={require("./img/creating_cluster.png").default} width="240"/>
+<img src={require("./img/cluster_mode.png").default} width="240"/>
+
+### Step 3: Add Main and Sub Devices
+
+In the list of compatible devices, press and hold a device card, then drag the device to the Main or Sub area.
+
+<img src={require("./img/cluster_devices.png").default} width="240"/>
+
+### Step 4: Select Communication Method
+
+Select the communication method between cluster devices: **Wi-Fi** or **RS485**.
+
+If **RS485** communication is selected:
+- The device must be installed with a LAN module that supports RS485 communication.
+- Use a standard network cable to connect to the device's RS485 port.
+
+<img src={require("./img/cluster_communication.png").default} width="240"/>
+
+### Step 5: Configure Cluster Parameters
+
+Configure the basic cluster settings, including the cluster name and power-related limits, then tap **Save** to complete the creation.
 
 :::danger
 Ensure all configuration parameters comply with local grid requirements and regulations.
 :::
 
-<img src={require("./img/creating_cluster.png").default} width="240"/>
 <img src={require("./img/cluster_name.png").default} width="240"/>
-<img src={require("./img/cluster_mode.png").default} width="240"/>
 <img src={require("./img/cluster_output_limit.png").default} width="240"/>
 <img src={require("./img/cluster_feed_in_limit.png").default} width="240"/>
-
-### Step 3: Add Main and Sub Devices
-
-In the available device list, press and hold a device card, then drag it into the main or sub area.
-
-<img src={require("./img/cluster_devices.png").default} width="240"/>
-
-### Step 4: Confirm and Save
-
-After confirming that all settings are correct, tap **Save** to complete the cluster configuration.
-
 <img src={require("./img/cluster_created.png").default} width="240"/>
 
-### Step 5: View and Manage the Cluster
+### Step 6: View and Manage the Cluster
 
 After successful configuration, the App automatically enters the cluster details page, where you can view the overall system status, including main/sub relationships, real-time power, and energy strategies.
 

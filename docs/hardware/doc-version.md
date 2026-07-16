@@ -7,6 +7,7 @@ description: Version history of INDEVOLT energy storage device documentation
 
 | Date       | Version | Updates                                                  |
 | ---------- | ------- | -------------------------------------------------------- |
+| 2026-07-16 | V1.0.16 | Updated the micro-storage cluster documentation: added RS485 cluster instructions. |
 | 2026-07-03 | V1.0.15 | Add German micro-storage documentation  |
 | 2026-06-26 | V1.0.14 | Added [Multi-Position CT Monitoring for Three-Phase Meters](./advanced/three-phase-meter.md)         |
 | 2026-06-22 | V1.0.13 | Updated the OpenData documentation:<br /> 1. Added BK1600 Series data points (device SN, firmware versions, battery temperature, PV power/current/voltage) and control points. |
