@@ -7,6 +7,7 @@ description: Versiegeschiedenis van de INDEVOLT documentatie
 
 | Datum bijgewerkt | Versie | Wijzigingen |
 | ---------------- | ------- | ------------ |
+| 2026-07-16 | V1.0.16 | De clusterbeschrijving voor micro-energieopslag bijgewerkt: ondersteuning voor RS485-clusters toegevoegd. |
 | 2026-07-03 | V1.0.15 | Duitstalige micro-opslagdocumentatie toevoegen    |
 | 2026-06-26 | V1.0.14 | Toegevoegd: [CT-monitoring op meerdere punten in een driefasige energiemeter](./advanced/three-phase-meter.md)         |
 | 2026-06-22 | V1.0.13 | OpenData-documentatie bijgewerkt:<br /> 1. Datapunten voor de BK1600-serie toegevoegd (apparaat-SN, firmwareversies, batterijtemperatuur, PV-vermogen/-stroom/-spanning) en besturingspunten. |
