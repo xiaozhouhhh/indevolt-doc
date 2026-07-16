@@ -206,6 +206,21 @@ hub --> sub1
 hub --> sub2
 ```
 
+**RJ45 引脚定义**
+
+<img src={require("./img/rs485_pinout.png").default} width="480"/>
+
+| 引脚 | 信号 | 功能 |
+| --- | --- | --- |
+| 1 | GND | 屏蔽地 |
+| 2 | GND | 屏蔽地 |
+| 3 | N.C. | 未连接 |
+| 4 | RS485 A | RS485 差分信号 A（用于 INDEVOLT Smart CT） |
+| 5 | RS485 B | RS485 差分信号 B（用于 INDEVOLT Smart CT） |
+| 6 | N.C. | 未连接 |
+| 7 | DC 5V | 5 V 电源，最大电流：200 mA |
+| 8 | DC 5V | 5 V 电源，最大电流：200 mA |
+
 :::info
 如果设备当前仅支持 Wi-Fi，需要使用 RS485 并机，可更换为新版本通信模块。具体更换方法请参考：[配件更换](../advanced/accessory-replacement.md)
 :::
