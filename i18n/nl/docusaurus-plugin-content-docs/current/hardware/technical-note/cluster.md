@@ -205,6 +205,21 @@ hub --> sub1
 hub --> sub2
 ```
 
+**RJ45-pinout**
+
+<img src={require("./img/rs485_pinout.png").default} width="480"/>
+
+| Pin | Signaal | Functie |
+| --- | --- | --- |
+| 1 | GND | Afschermingsaarde |
+| 2 | GND | Afschermingsaarde |
+| 3 | N.C. | Niet aangesloten |
+| 4 | RS485 A | RS485-differentieel signaal A (voor INDEVOLT Smart CT) |
+| 5 | RS485 B | RS485-differentieel signaal B (voor INDEVOLT Smart CT) |
+| 6 | N.C. | Niet aangesloten |
+| 7 | DC 5V | 5 V-voeding, maximale stroom: 200 mA |
+| 8 | DC 5V | 5 V-voeding, maximale stroom: 200 mA |
+
 :::info
 Als het apparaat momenteel alleen Wi-Fi ondersteunt en een RS485-clusterverbinding vereist is, kan de communicatiemodule worden vervangen door een nieuwere versie. Raadpleeg voor de vervangingsprocedure: [Accessoires vervangen](../advanced/accessory-replacement.md).
 :::

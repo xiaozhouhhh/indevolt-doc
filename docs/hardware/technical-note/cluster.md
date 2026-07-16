@@ -209,6 +209,22 @@ hub --> sub1
 hub --> sub2
 ```
 
+**RJ45 Pinout**
+
+<img src={require("./img/rs485_pinout.png").default} width="480"/>
+
+| Pin | Signal  | Function                                            |
+| --- | ------- | --------------------------------------------------- |
+| 1   | GND     | Shield ground                                       |
+| 2   | GND     | Shield ground                                       |
+| 3   | N.C.    | Not connected                                       |
+| 4   | RS485 A | RS485 differential signal A (for Indevolt Smart CT) |
+| 5   | RS485 B | RS485 differential signal B (for Indevolt Smart CT) |
+| 6   | N.C.    | Not connected                                       |
+| 7   | DC 5V   | 5 V power supply, maximum current: 200 mA           |
+| 8   | DC 5V   | 5 V power supply, maximum current: 200 mA           |
+
+
 :::info
 If the device currently only supports Wi-Fi and RS485 parallel connection is required, the communication module can be replaced with a newer version. For details, see: [Accessory Replacement](../advanced/accessory-replacement.md)
 :::

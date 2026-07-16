@@ -205,6 +205,21 @@ hub --> sub1
 hub --> sub2
 ```
 
+**Brochage RJ45**
+
+<img src={require("./img/rs485_pinout.png").default} width="480"/>
+
+| Broche | Signal | Fonction |
+| --- | --- | --- |
+| 1 | GND | Masse du blindage |
+| 2 | GND | Masse du blindage |
+| 3 | N.C. | Non connecté |
+| 4 | RS485 A | Signal différentiel RS485 A (pour INDEVOLT Smart CT) |
+| 5 | RS485 B | Signal différentiel RS485 B (pour INDEVOLT Smart CT) |
+| 6 | N.C. | Non connecté |
+| 7 | DC 5V | Alimentation 5 V, courant maximal : 200 mA |
+| 8 | DC 5V | Alimentation 5 V, courant maximal : 200 mA |
+
 :::info
 Si l’appareil prend actuellement uniquement en charge le Wi-Fi et qu’une connexion en cluster via RS485 est nécessaire, le module de communication peut être remplacé par une version plus récente. Pour plus d’informations, consultez : [Remplacement d'accessoire](../advanced/accessory-replacement.md)
 :::
