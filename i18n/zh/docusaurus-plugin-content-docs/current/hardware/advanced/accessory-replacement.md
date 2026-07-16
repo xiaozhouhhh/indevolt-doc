@@ -149,9 +149,7 @@ description: 更换 WiFi+LAN 模块并迁移设备设置及历史数据。
 <img src={require("./img/wifi_settings.png").default} width="240"/>
 <img src={require("./img/wifi_connected.png").default} width="240"/>
 
----
-
-## 4. 查看更换记录
+### 4. 查看更换记录
 
 如需查看历史更换记录，进入：**Settings > Accessory Replacement**
 

@@ -151,9 +151,8 @@ Si vous ne souhaitez pas effectuer la migration immédiatement, appuyez sur **Pa
 <img src={require("./img/wifi_settings.png").default} width="240"/>
 <img src={require("./img/wifi_connected.png").default} width="240"/>
 
----
 
-## 4. Consulter l’historique des remplacements
+### 4. Consulter l’historique des remplacements
 
 Pour consulter l’historique des remplacements, accédez à **Paramètres > Remplacement D’accessoire**
 

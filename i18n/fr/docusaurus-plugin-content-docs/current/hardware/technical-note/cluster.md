@@ -61,20 +61,6 @@ Les modèles suivants peuvent être utilisés comme appareil principal ou second
     <td>Secondaire</td>
   </tr>
   <tr>
-    <td>PowerFlex 2000</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-  </tr>
-  <tr>
-    <td>SolidFlex 2000</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-    <td>✅</td>
-  </tr>
-  <tr>
     <td>BK1600</td>
     <td>❌</td>
     <td>✅</td>
@@ -88,12 +74,33 @@ Les modèles suivants peuvent être utilisés comme appareil principal ou second
     <td>✅</td>
     <td>✅</td>
   </tr>
+  <tr>
+    <td>SolidFlex 2000<br />PowerFlex 2000<br />SolidFlex 2000 Eco<br />PowerFlex 2000 Eco</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+    <tr>
+    <td>SolidFlex 1200</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td>SolidFlex 3000 AC<br />SolidFlex 3000 AC Pro<br />SolidFlex 3000 Hybrid Pro<br />PowerFlex 3000 AC<br />PowerFlex 3000 Hybrid</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+    <td>✅</td>
+  </tr>
 </tbody>
 </table>
 
 :::info
 
-- Le cluster entre les modèles SolidFlex 2000 / PowerFlex 2000 et BK1600 / BK1600 Ultra n’a pas encore été entièrement validé. Il n’est donc pas recommandé de les mélanger dans une même installation. En revanche, les modèles SolidFlex 2000 et PowerFlex 2000 sont entièrement compatibles entre eux.
+- Le fonctionnement en cluster entre les modèles SolidFlex / PowerFlex et la série BK n’a pas été entièrement validé et n’est donc pas recommandé. Toutefois, les modèles SolidFlex et PowerFlex peuvent être utilisés ensemble dans un même cluster.
 - En mode cluster :
   - Les panneaux photovoltaïques peuvent être connectés via les interfaces **PV**
   - La connexion de micro-onduleurs et de charges via l’interface **Backup** est encore en cours d’optimisation et n’est pas totalement prise en charge pour le moment
@@ -104,14 +111,12 @@ Les modèles suivants peuvent être utilisés comme appareil principal ou second
 
 ## 4. Mode Cluster
 
-Le système prend en charge deux modes de fonctionnement adaptés à différents environnements d’installation.
+Le système prend en charge un maximum de **3 appareils connectés en cluster** :
 
-La communication entre appareils peut s’effectuer via :
-- Wi-Fi
-- Ethernet
-- RS485
+- 1 appareil principal
+- Jusqu’à 2 appareils secondaires
 
-Les utilisateurs peuvent choisir le mode de communication le plus adapté selon le câblage et l’environnement réseau disponibles sur site.
+Selon l’environnement d’installation, les deux modes de connexion en cluster suivants peuvent être sélectionnés :
 
 ### 4.1 Cluster coordonné
 
@@ -121,7 +126,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-  <TabItem value="gen1" label="SolidFlex 2000 / PowerFlex 2000" default>
+  <TabItem value="gen1" label="SolidFlex / PowerFlex" default>
     <img src={require("./img/coordinated_gen2.png").default} width="480" />
   </TabItem>
   <TabItem value="gen2" label="BK1600 / BK1600 Ultra">
@@ -139,7 +144,7 @@ Méthode de connexion :
 - En présence de plusieurs appareils secondaires, ils sont reliés en cascade via **Backup → GRID IN/OUT**
 
 <Tabs>
-  <TabItem value="gen1" label="SolidFlex 2000 / PowerFlex 2000" default>
+  <TabItem value="gen1" label="SolidFlex / PowerFlex" default>
     <img src={require("./img/centralized_gen2.png").default} width="480" />
   </TabItem>
   <TabItem value="gen2" label="BK1600 / BK1600 Ultra">
@@ -149,29 +154,118 @@ Méthode de connexion :
 
 ---
 
-## 5. Règles de fonctionnement
 
-Lorsque le Cluster est en fonctionnement, le système coordonne automatiquement les appareils et répartit la puissance sans intervention manuelle.
+## 5. Méthodes de communication
 
-### 5.1 Limites du système
+Les appareils doivent maintenir une communication entre eux afin de synchroniser leur état de fonctionnement. Deux méthodes de communication sont prises en charge :
 
-Le système prend en charge jusqu’à 3 appareils en parallèle :
-- 1 appareil principal
-- Jusqu’à 2 appareils secondaires
+### 5.1 Communication Wi-Fi
 
-### 5.2 Capacité de sortie
+Connectez tous les appareils au même réseau Wi-Fi. Cette méthode convient aux installations où les appareils sont proches les uns des autres et où un réseau Wi-Fi stable est disponible.
 
-La puissance maximale après mise en parallèle est la suivante :
-- Charges standard : 7200 W (3 × 2400 W)
-- Avec micro-onduleurs connectés : 10800 W (3 × 3600 W)
+```mermaid
+flowchart LR
 
-> Remarque : en mode cluster, l’affichage de puissance peut être imprécis lorsque des micro-onduleurs ou des charges sont connectés au port bypass. Cette fonction est encore en cours d’optimisation.
+main[Appareil principal]
+sub1[Appareil secondaire 1]
+sub2[Appareil secondaire 2]
 
-:::danger
-Assurez-vous que la puissance maximale du système respecte les réglementations électriques et normes de sécurité locales.
+router[Routeur]
+
+main -.Wi-Fi.-> router
+sub1 -.Wi-Fi.-> router
+sub2 -.Wi-Fi.-> router
+```
+
+### 5.2 Communication RS485
+
+Connectez l’appareil principal et les appareils secondaires via les ports RS485 à l’aide d’un câble réseau. Cette méthode convient aux environnements avec une connexion réseau insuffisante ou aux scénarios nécessitant une communication filaire stable.
+
+```mermaid
+flowchart LR
+
+main[Appareil principal]
+sub[Appareil secondaire]
+
+main -.RS485.-> sub
+```
+
+Pour connecter deux appareils secondaires, utilisez un **répartiteur RJ45 1 vers 2** afin de connecter l’appareil principal aux appareils secondaires.
+
+```mermaid
+flowchart LR
+
+main[Appareil principal]
+hub[Répartiteur RJ45 1 vers 2]
+sub1[Appareil secondaire 1]
+sub2[Appareil secondaire 2]
+
+main -.RS485.-> hub
+hub --> sub1
+hub --> sub2
+```
+
+:::info
+Si l’appareil prend actuellement uniquement en charge le Wi-Fi et qu’une connexion en cluster via RS485 est nécessaire, le module de communication peut être remplacé par une version plus récente. Pour plus d’informations, consultez : [Remplacement d'accessoire](../advanced/accessory-replacement.md)
 :::
 
-### 5.3 Répartition de puissance
+## 6. Limites de puissance du système en cluster
+
+Après la mise en cluster, la puissance maximale du système dépend de :
+
+* Mode cluster
+* Modèle d’appareil
+
+À noter :
+
+* La **puissance d’entrée AC** détermine la puissance maximale que le système peut prélever depuis le réseau électrique.
+* La **puissance de sortie AC** détermine la puissance maximale que le système peut fournir aux charges.
+
+:::danger
+Assurez-vous que la puissance maximale de sortie du système respecte les normes électriques locales et les réglementations de sécurité.
+:::
+
+### 6.1 Puissance d’un appareil individuel
+
+Les capacités maximales d’entrée/sortie AC des différents modèles sont les suivantes :
+
+| Modèle     | Puissance maximale d’entrée/sortie AC |
+| ---------- | ------------------------------------- |
+| Série BK   | 1200 W                                |
+| Série 2000 | 2400 W                                |
+| Série 1200 | 1200 W                                |
+| Série 3000 | 3000 W                                |
+
+### 6.2 Puissance maximale d’entrée AC
+
+Après la connexion en cluster, plusieurs appareils peuvent effectuer une entrée AC simultanément.
+
+Puissance maximale d’entrée AC du cluster = somme des puissances maximales d’entrée AC de tous les appareils connectés en cluster
+
+### 6.3 Puissance maximale de sortie AC
+
+La puissance maximale de sortie AC après la mise en cluster dépend du mode de connexion.
+
+* **Cluster coordonné :**
+  Puissance maximale de sortie AC du cluster = somme des puissances maximales de sortie AC de tous les appareils connectés en cluster
+
+* **Cluster centralisé :**
+  Les entrées et sorties AC de tous les appareils sont finalement connectées au réseau électrique via l’appareil principal. Par conséquent, la puissance de sortie AC est limitée par la capacité de puissance de l’appareil principal.
+
+  | Modèle principal | Puissance maximale de sortie AC du cluster |
+  | ---------------- | ------------------------------------------ |
+  | BK1600 Ultra     | 2300 W                                     |
+  | Série 2000       | 3600 W                                     |
+  | Série 1200       | 2300 W                                     |
+  | Série 3000       | 3600 W                                     |
+
+:::note
+En fonctionnement en cluster, la connexion de micro-onduleurs et de charges via le port bypass peut entraîner une indication de puissance incorrecte. Cette fonction est toujours en cours d’optimisation.
+:::
+
+---
+
+## 7. Répartition de puissance
 
 En fonctionnement parallèle, le système répartit automatiquement la puissance selon le niveau de batterie et la charge :
 
@@ -189,7 +283,7 @@ Comportement typique selon la charge :
 
 ---
 
-## 6. Comment configurer le cluster
+## 8. Comment configurer le cluster
 
 La configuration peut être effectuée via l’application INDEVOLT.
 
@@ -197,6 +291,8 @@ Avant de commencer, assurez-vous que :
 
 - Tous les appareils prennent en charge le cluster
 - Tous les appareils sont correctement allumés
+- Tous les appareils sont correctement connectés au réseau et ajoutés au même domicile.
+- Pour un fonctionnement en parallèle via RS485, les câbles de communication sont correctement connectés.
 
 ### Étape 1 : Accéder aux paramètres de cluster
 
@@ -208,19 +304,12 @@ Appuyez sur **Créer un cluster** pour commencer.
 <img src={require("./img/cluster_device_settings.png").default} width="240"/>
 <img src={require("./img/create_cluster.png").default} width="240"/>
 
-### Étape 2 : Configurer les paramètres du cluster
+### Étape 2 : Sélectionner le mode Cluster
 
-Après avoir accédé à la page de création, configurez les paramètres de base du cluster : nom, mode de fonctionnement et limites de puissance.
-
-:::danger
-Assurez-vous que les paramètres configurés respectent les exigences du réseau et les réglementations locales.
-:::
+Sélectionnez le mode Cluster : **centralisé** ou **coordonné**.
 
 <img src={require("./img/creating_cluster.png").default} width="240"/>
-<img src={require("./img/cluster_name.png").default} width="240"/>
 <img src={require("./img/cluster_mode.png").default} width="240"/>
-<img src={require("./img/cluster_output_limit.png").default} width="240"/>
-<img src={require("./img/cluster_feed_in_limit.png").default} width="240"/>
 
 ### Étape 3 : Ajouter les appareils principaux et secondaires
 
@@ -228,13 +317,31 @@ Dans la liste des appareils compatibles, maintenez appuyée la carte de l’appa
 
 <img src={require("./img/cluster_devices.png").default} width="240"/>
 
-### Étape 4 : Confirmer et enregistrer la configuration
+### Étape 4 : Sélectionner la méthode de communication
 
-Après vérification des informations, appuyez sur **Enregistrer** pour finaliser la configuration du Cluster.
+Sélectionnez la méthode de communication entre les appareils en parallèle : **Wi-Fi** ou **RS485**.
 
+Si la **communication RS485** est sélectionnée :
+
+- L'appareil doit être équipé d'un module LAN prenant en charge la communication RS485.
+- Utilisez un câble réseau standard pour connecter le port RS485 de l'appareil.
+
+<img src={require("./img/cluster_communication.png").default} width="240"/>
+
+### Étape 5 : Configurer les paramètres du cluster
+
+Configurez les paramètres de base du cluster, notamment le nom du groupe et les limites liées à la puissance, puis appuyez sur **Enregistrer** pour terminer la création.
+
+:::danger
+Assurez-vous que les paramètres configurés sont conformes aux exigences du réseau électrique local ainsi qu'aux lois et réglementations applicables.
+:::
+
+<img src={require("./img/cluster_name.png").default} width="240"/>
+<img src={require("./img/cluster_output_limit.png").default} width="240"/>
+<img src={require("./img/cluster_feed_in_limit.png").default} width="240"/>
 <img src={require("./img/cluster_created.png").default} width="240"/>
 
-### Étape 5 : Consulter et gérer le cluster
+### Étape 6 : Consulter et gérer le cluster
 
 Une fois la configuration terminée, l’application ouvre automatiquement la page de détails du cluster. Vous pouvez y consulter l’état du système, les relations entre appareils principaux et secondaires, la puissance en temps réel et les stratégies énergétiques.
 
