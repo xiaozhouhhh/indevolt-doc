@@ -119,8 +119,8 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Technical Specification',
       items: [
-        'hardware/geek/power-tech-specs',
-        'hardware/geek/battery-tech-specs',
+        'hardware/tech-specs/power-tech-specs',
+        'hardware/tech-specs/battery-tech-specs',
       ],
     },
     'hardware/faq-troubleshooting',
