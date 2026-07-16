@@ -1,51 +1,52 @@
 ---
-title: Register
-description: INDEVOLT micro storage Modbus register structure and mapping description
+title: Registerbeschreibung
+description: Beschreibung der Modbus-Registerstruktur und -Zuordnung von INDEVOLT-Energiespeichersystemen
 ---
 
-# Register
+# Registerbeschreibung
 
-Whether using Modbus TCP or Modbus RTU, the register addresses, function codes, and data formats are exactly the same. The only difference is the communication method.
+Unabhängig davon, ob Modbus TCP oder Modbus RTU verwendet wird, sind Registeradressen, Funktionscodes und Datenformate vollständig identisch. Der Unterschied liegt ausschließlich in der Kommunikationsmethode.
 
-Internal data of the energy storage system (EMS / BMS / PCS / Meter, etc.) is mapped to Modbus registers.
+Die internen Daten des Energiespeichersystems (EMS / BMS / PCS / Meter usw.) werden einheitlich auf Modbus-Register abgebildet.
 
-Device registers are divided according to **functional systems**:
-- [System](#system)
-- [Socket](#socket)
-- [PV](#pv)
-- [Meter](#meter)
-- [Load](#load)
-- [Inverter](#inverter)
-- [Grid](#grid)
-- [Cluster](#cluster)
-- [Bypass](#bypass)
-- [Battery](#battery)
-- [AC Output](#ac-output)
+Die Geräteregister sind nach **Funktionssystemen** unterteilt:
+
+- [System](#system) (Systemebene)
+- [Socket](#socket) (Steckdose)
+- [PV](#pv) (Photovoltaik)
+- [Meter](#meter) (Zähler)
+- [Load](#load) (Last)
+- [Inverter](#inverter) (Wechselrichter)
+- [Grid](#grid) (Stromnetz)
+- [Cluster](#cluster) (Cluster)
+- [Bypass](#bypass) (Bypass)
+- [Battery](#battery) (Batterie)
+- [AC Output](#ac-output) (AC-Ausgang)
 
 **Register Type**
 
-Each system uses standard data groups to describe **data attributes**:
+Jedes System verwendet eine einheitliche Standard-Datenstruktur, um die **Dateneigenschaften** zu beschreiben:
 
-| Group | Description |
+| Gruppe | Beschreibung |
 | --------------- | ----------------------------- |
-| Event | Event records (alarms) |
-| Info | Basic device information (model / version, etc.) |
-| Mode | Operating modes |
-| Real Time Data | Real-time measurement data |
-| Real Time State | Real-time status bits (switches / flags) |
-| Settings | Configurable parameters |
-| Statistics | Accumulated data |
-| Status | Operating status |
+| Event | Ereignisprotokolle (Alarme) |
+| Info | Grundlegende Geräteinformationen (Modell / Version usw.) |
+| Mode | Betriebsmodus |
+| Real Time Data | Echtzeit-Messdaten |
+| Real Time State | Echtzeit-Statusbits (Schalter / Statusflags) |
+| Settings | Konfigurierbare Parameter |
+| Statistics | Kumulierte Daten |
+| Status | Betriebsstatus |
 
-:::tip Register Address Description
+:::tip Hinweis zu Registeradressen
 
-Different Modbus tools may display register addresses in different formats. Some tools use:
+Die Anzeige von Registeradressen kann je nach verwendetem Modbus-Tool unterschiedlich sein. Einige Tools verwenden:
 
-- Actual addresses starting from `0`
-- Addresses starting from `1`
-- Holding register addresses with a `40001` prefix
+- Tatsächliche Adressen beginnend bei `0`
+- Adressen beginnend bei `1`
+- Holding-Register-Adressen mit dem Präfix `40001`
 
-Therefore, the same register may be displayed differently in different software tools.
+Daher kann dasselbe Register in verschiedenen Softwaretools unterschiedlich dargestellt werden.
 
 :::
 
@@ -483,3 +484,5 @@ Therefore, the same register may be displayed differently in different software 
 | 1143            | GridChargeEnable    |       | enum16 | 1            |       | RW             | AC Output | Settings       | Before V1.4    | Grid Charging Enable (0 = Disable, 1 = Enable)                                                                                                |
 |                 | RELAY_FAIL          | 24    |        |              |       |                | Inverter  | Event          | Before V1.4    | Relay Fail                                                                                                                                    |
 |                 | EPS_OVER_LOAD       | 25    |        |              |       |                | Inverter  | Event          | Before V1.4    | EPS (Bypass) Overload                                                                                                                          |
+
+

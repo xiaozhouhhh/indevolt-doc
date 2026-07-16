@@ -23,7 +23,7 @@ import TabItem from '@theme/TabItem';
 > 在默认状态下设备 API 功能未开启，需要开启后才能使用 API。OpenData 提供以下方式：
 > - [HTTP](#http)
 > - [HTTP Digest](#http-digest)
-> - [HTTPS](#4-https暂不支持) （暂未支持，敬请期待）
+> - [HTTPS](#https)（暂未支持，敬请期待）
 > 
 > 您可在 INDEVOLT App 中设置本地 API：
 > - **设备已联网**：推荐使用 **云端设置**，操作更简单  
@@ -54,7 +54,7 @@ import TabItem from '@theme/TabItem';
 > | --------------------------- | ----------------------------------------- |
 > | BK1600 / BK1600 Ultra          | V1.3.0A_R006.072_M4848_00000039           |
 > | SolidFlex 2000 / PowerFlex 2000 | CMS：V1406.07.002E |
-> | PowerFlex 3000 Hybrid<br />SolidFlex 3000 AC<br />SolidFlex 3000 AC Pro<br />SolidFlex 3000 Hybrid Pro  | CMS: V1409.08.3034  |
+> | PowerFlex 3000 AC<br />PowerFlex 3000 Hybrid<br />SolidFlex 3000 AC<br />SolidFlex 3000 AC Pro<br />SolidFlex 3000 Hybrid Pro  | CMS: V1409.08.3034  |
 > | SolidFlex 1200 | CMS: V1407.07.202E |
 >
 > 请在 INDEVOLT App 中查看设备固件版本。
@@ -227,7 +227,7 @@ http://{IP_ADDRESS}:8080/rpc/{API}
 
 ---
 
-## 4. HTTPS（暂不支持）
+## 4. HTTPS（暂不支持）{#https}
 
 HTTPS 基于 TLS 对通信数据进行加密，并通过数字证书验证服务器身份，可有效防止数据被窃听或篡改。
 

@@ -1,30 +1,28 @@
 ---
-title: API 参考
+title: API-Referenz
 description: todo
 ---
 
-# API 参考
+# API-Referenz
 
-| 组件                    | 说明                                   |
+| Komponente | Beschreibung |
 | ----------------------- | -------------------------------------- |
-| [`Indevolt`](#indevolt) | 读取 INDEVOLT 微储设备数据，控制设备。 |
-| [`Sys`](#sys)           | 获取设备基本信息和系统状态。           |
-| [`WIFI`](#wifi)         | 获取设备当前的 Wi-Fi 连接状态。        |
-
+| [`Indevolt`](#indevolt) | Lesen von Gerätedaten der INDEVOLT Energiespeicher und Steuerung des Geräts |
+| [`Sys`](#sys) | Abrufen grundlegender Geräteinformationen und des Systemstatus |
+| [`WIFI`](#wifi) | Abrufen des aktuellen WLAN-Verbindungsstatus des Geräts |
 
 ---
 
 ## `Indevolt`
 
-`Indevolt` 是微储设备数据交互接口，用于读取设备运行数据和配置参数，以及向设备下发控制指令。
+`Indevolt` ist die Datenschnittstelle für die Kommunikation mit dem Energiespeicher. Sie wird verwendet, um Betriebsdaten und Konfigurationsparameter des Geräts auszulesen sowie Steuerbefehle an das Gerät zu senden.
 
-* [**`Indevolt.GetData`**](#indevoltgetdata)：读取设备运行数据或配置参数。
-* [**`Indevolt.SetData`**](#indevoltsetdata)：修改设备配置参数或执行控制操作。
+* [**`Indevolt.GetData`**](#indevoltgetdata): Lesen von Betriebsdaten oder Konfigurationsparametern des Geräts.
+* [**`Indevolt.SetData`**](#indevoltsetdata): Ändern von Konfigurationsparametern oder Ausführen von Steuerbefehlen.
 
 ### `Indevolt.GetData`
 
-读取设备运行数据或配置参数。
-
+Liest Betriebsdaten oder Konfigurationsparameter des Geräts.
 
 import ApiBlock from "@site/src/components/ApiBlock";
 import ResponseBlock from "@site/src/components/ResponseBlock";
@@ -34,7 +32,7 @@ import ResponseBlock from "@site/src/components/ResponseBlock";
 
 ```bash
 curl -g -X POST -H "Content-Type: application/json" "http://192.168.31.213:8080/rpc/Indevolt.GetData?config={\"t\":[1664,1665]}"
-```
+````
 
 </ApiBlock>
 
@@ -49,30 +47,31 @@ curl -g -X POST -H "Content-Type: application/json" "http://192.168.31.213:8080/
 
 </ResponseBlock>
 
+#### Anfrageparameter
 
-#### 请求参数
+| Parameter | Typ    | Erforderlich | Beschreibung                     |
+| --------- | ------ | ------------ | -------------------------------- |
+| `config`  | Object | Ja           | Konfiguration für den Datenabruf |
 
-| 参数名   | 类型   | 必填 | 说明         |
-| -------- | ------ | ---- | ------------ |
-| `config` | Object | 是   | 数据读取配置 |
+Beschreibung des Objekts `config`
 
-`config` 对象说明
+| Parameter | Typ   | Erforderlich | Beschreibung                                                    |
+| --------- | ----- | ------------ | --------------------------------------------------------------- |
+| `t`       | Array | Ja           | Liste der auszulesenden [cJSON-Datenpunkte](#cjson-datenpunkte) |
 
-| 参数名 | 类型  | 必填 | 说明                                       |
-| ------ | ----- | ---- | ------------------------------------------ |
-| `t`    | Array | 是   | 待读取的 [cJSON 点位](#cjson-点位)列表 |
+#### Antwortparameter
 
+Gerätedaten im JSON-Format:
 
-#### 返回参数
+* **Key**: cJSON-Datenpunkt
+* **Value**: Aktueller Wert des entsprechenden Datenpunkts
 
-JSON 格式的设备数据，其中：
-- Key：cJSON 点位
-- Value：对应数据点的当前值
+#### cJSON-Datenpunkte
 
+Die folgenden cJSON-Datenpunkte werden zum Auslesen von Betriebsdaten oder Konfigurationsparametern des Geräts verwendet.
 
-#### cJSON 点位
+Die unterstützten cJSON-Datenpunkte können je nach Gerätemodell unterschiedlich sein. Bitte beachten Sie die Datenpunktliste des jeweiligen Gerätemodells.
 
-以下 cJSON 点位用于读取设备运行数据或配置参数。不同设备型号支持的 cJSON 点位存在差异，请参考对应设备型号的数据点列表。
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -82,14 +81,14 @@ import TabItem from '@theme/TabItem';
 
   <table><thead>
     <tr>
-      <th>cJSON 点位</th>
-      <th>cJSON 值类型</th>
-      <th>单位</th>
-      <th>说明</th>
-      <th>Enum 定义</th>
-      <th>API</th>
-      <th>注释</th>
-    </tr></thead>
+    <th>cJSON-Punkt</th>
+    <th>cJSON-Werttyp</th>
+    <th>Einheit</th>
+    <th>Beschreibung</th>
+    <th>Enum-Definition</th>
+    <th>API</th>
+    <th>Hinweise</th>
+  </tr></thead>
   <tbody>
     <tr>
       <td colspan="7" style={{ textAlign: 'center' }}>SN </td>
@@ -1101,14 +1100,14 @@ import TabItem from '@theme/TabItem';
 
 <table><thead>
 <tr>
-    <th>cJSON 点位</th>
-    <th>cJSON 值类型</th>
-    <th>单位</th>
-    <th>说明</th>
-    <th>Enum 定义</th>
+    <th>cJSON-Punkt</th>
+    <th>cJSON-Werttyp</th>
+    <th>Einheit</th>
+    <th>Beschreibung</th>
+    <th>Enum-Definition</th>
     <th>API</th>
-    <th>注释</th>
-</tr></thead>
+    <th>Hinweise</th>
+  </tr></thead>
 <tbody>
 <tr>
     <td colspan="7" style={{ textAlign: 'center' }}>SN </td>
@@ -1563,22 +1562,20 @@ import TabItem from '@theme/TabItem';
  </tbody>
  </table>
 
-
-
-
   </TabItem>
 </Tabs>
 
 
 ### `Indevolt.SetData`
 
-修改设备配置参数或向设备发送控制指令。
+Ändert Konfigurationsparameter des Geräts oder sendet Steuerbefehle an das Gerät.
 
 <ApiBlock method="POST" path="/rpc/Indevolt.SetData">
 
 ```bash
 curl -g -X POST -H "Content-Type: application/json" "http://192.168.31.213:8080/rpc/Indevolt.SetData?config={\"f\":16,\"t\":47005,\"v\":[4]}"
-```
+````
+
 </ApiBlock>
 
 <ResponseBlock title="200 OK">
@@ -1588,49 +1585,53 @@ curl -g -X POST -H "Content-Type: application/json" "http://192.168.31.213:8080/
   "result": true
 }
 ```
+
 </ResponseBlock>
 
-#### 请求参数
+#### Anfrageparameter
 
-| 参数名 | 类型   | 必填 | 说明         |
-| ------ | ------ | ---- | ------------ |
-| `config` | Object | 是   | 数据写入配置 |
+| Parameter | Typ    | Erforderlich | Beschreibung                              |
+| --------- | ------ | ------------ | ----------------------------------------- |
+| `config`  | Object | Ja           | Konfiguration für das Schreiben von Daten |
 
-`config` 对象说明
+Beschreibung des Objekts `config`
 
-| 参数名 | 类型   | 必填 | 说明                                   |
-| ------ | ------ | ---- | -------------------------------------- |
-| `f`    | Number | 是   | 功能码，固定为 `16`                      |
-| `t`    | Number | 是   | 待写入的 [cJSON 点位](#cjson-点位-1)   |
-| `v`    | Array  | 是   | 写入值，请参考对应点位的 值 说明 |
+| Parameter | Typ    | Erforderlich | Beschreibung                                               |
+| --------- | ------ | ------------ | ---------------------------------------------------------- |
+| `f`       | Number | Ja           | Funktionscode, fest auf `16` gesetzt                       |
+| `t`       | Number | Ja           | Zu schreibender [cJSON-Datenpunkt](#cjson-datenpunkte-1)   |
+| `v`       | Array  | Ja           | Schreibwert. Siehe Beschreibung des jeweiligen Datenpunkts |
 
-#### 返回参数
+#### Antwortparameter
 
-| 参数名   | 类型 | 说明                               |
-| -------- | ---- | ---------------------------------- |
-| `result` | Boolean | `true`: success; `false`: failure. |
+| Parameter | Typ     | Beschreibung                                 |
+| --------- | ------- | -------------------------------------------- |
+| `result`  | Boolean | `true`: erfolgreich; `false`: fehlgeschlagen |
 
-#### 示例
+#### Beispiele
 
-1. 设置实时控制模式
+1. Echtzeit-Steuerungsmodus einstellen
 
-     ```bash
-     curl -g -X POST -H "Content-Type: application/json" "http://192.168.31.213:8080/rpc/Indevolt.SetData?config={\"f\":16,\"t\":47005,\"v\":[4]}"
-     ```
+   ```bash
+   curl -g -X POST -H "Content-Type: application/json" "http://192.168.31.213:8080/rpc/Indevolt.SetData?config={\"f\":16,\"t\":47005,\"v\":[4]}"
+   ```
 
-2. 设置实时控制模式下的放电状态、功率和 SOC
+2. Entladezustand, Leistung und SOC im Echtzeit-Steuerungsmodus einstellen
 
-     ```bash
-     curl -g -X POST -H "Content-Type: application/json" "http://192.168.31.213:8080/rpc/Indevolt.SetData?config={\"f\":16,\"t\":47015,\"v\":[2,700,5]}"
-     ```
+   ```bash
+   curl -g -X POST -H "Content-Type: application/json" "http://192.168.31.213:8080/rpc/Indevolt.SetData?config={\"f\":16,\"t\":47015,\"v\":[2,700,5]}"
+   ```
 
-#### cJSON 点位
+#### cJSON-Datenpunkte
 
-不同设备型号支持的 cJSON 点位 `t` 存在差异,不同点位对应的 `v` 格式和含义也不同，请参考对应设备型号的列表。
+Die unterstützten cJSON-Datenpunkte `t` können je nach Gerätemodell unterschiedlich sein. Auch das Format und die Bedeutung des Werts `v` unterscheiden sich je nach Datenpunkt.
+
+Bitte beachten Sie die entsprechende Datenpunktliste des jeweiligen Gerätemodells.
+
 
 <Tabs>
   <TabItem value="sf2000" label="SolidFlex 2000 / PowerFlex 2000" default>
-    | cJSON 点位 | cJSON 值类型 | 单位 | 说明    | 值        | API |
+    | cJSON-Punkt | cJSON-Werttyp | Einheit | Beschreibung | Wert | API |
     | ----------- | ---------------- | ---- | -------------------- | --------------------------------------|---|
     | 47005       | Enum             |      | Mode Setting| 1: Self-consumed Prioritized<br />4: Real-time control<br />5: Charge/Discharge Schedule |`Indevolt.SetData`|
     | 47015       | UINT             |      | State Setting (Only available in real-time control)| 0: Standby<br />1: Charging<br />2: Discharging     |`Indevolt.SetData`|
@@ -1647,7 +1648,7 @@ curl -g -X POST -H "Content-Type: application/json" "http://192.168.31.213:8080/
 
   </TabItem>
   <TabItem value="bk1600" label="BK1600 / BK1600 Ultra">
-    | cJSON 点位 | cJSON 值类型 | 单位 | 说明 | 值                                       | API |
+    | cJSON-Punkt | cJSON-Werttyp | Einheit | Beschreibung | Wert | API |
     | ----------- | ---------------- | ---- | ----------------- | ------------------- |---|
     | 47005 | Enum |      | Mode Setting   | 0: Outdoor Portable<br />1: Self-consumed Prioritized<br />4: Real-Time Control<br />5: Charge/Discharge Schedule |`Indevolt.SetData`|
     | 47015 | Enum |      | State Setting (Only available in real-time control) | 0: Standby<br />1: Charging<br />2: Discharging    |`Indevolt.SetData`|
@@ -1657,28 +1658,27 @@ curl -g -X POST -H "Content-Type: application/json" "http://192.168.31.213:8080/
   </TabItem>
 </Tabs>
 
-
 :::info
-实时控制模式下，可一次性写入状态、功率、SOC值以控制设备充放电。
+Im Echtzeit-Steuerungsmodus können Status, Leistung und SOC-Wert in einer einzigen Anfrage geschrieben werden, um den Lade- und Entladevorgang des Geräts zu steuern.
 :::
 
 ---
 
 ## `Sys`
 
-`Sys` 用于获取设备基本信息和系统状态。
+`Sys` wird verwendet, um grundlegende Geräteinformationen und den Systemstatus abzurufen.
 
 ### `Sys.GetConfig`
 
-获取设备当前配置信息，包括设备型号、序列号、固件版本等。
+Ruft die aktuellen Konfigurationsinformationen des Geräts ab, einschließlich Gerätemodell, Seriennummer, Firmware-Version usw.
 
 <ApiBlock method="GET" path="/rpc/Sys.GetConfig">
 
 ```bash
 curl "http://192.168.31.213:8080/rpc/Sys.GetConfig"
-```
-</ApiBlock> 
+````
 
+</ApiBlock> 
 
 <ResponseBlock title="200 OK">
 
@@ -1699,49 +1699,51 @@ curl "http://192.168.31.213:8080/rpc/Sys.GetConfig"
   }
 }
 ```
+
 </ResponseBlock>
 
-**返回参数**
+**Antwortparameter**
 
-| 参数名   | 类型   | 说明     |
-| -------- | ------ | -------- |
-| `device` | Object | 设备信息 |
+| Parameter | Typ    | Beschreibung        |
+| --------- | ------ | ------------------- |
+| `device`  | Object | Geräteinformationen |
 
-`device`说明
+Beschreibung des Objekts `device`
 
-| 参数名       | 类型   | 说明                           |
-| ------------ | ------ | ------------------------------ |
-| `hostname`   | String | Device name                    |
-| `timezone`   | Number | Timezone                       |
-| `type`       | String | Device model                   |
-| `sn`         | String | Device serial number           |
-| `mac`        | String | Device MAC address             |
-| `fw`         | String | Device firmware version        |
-| `f_ver`      | String | CMS version                    |
-| `p_ver`      | String | Pfile version                  |
-| `time`       | String | Current time                   |
-| `time_stamp` | Number | Current timestamp (in seconds) |
-| `run_time`   | Number | Device runtime (in seconds)    |
+| Parameter    | Typ    | Beschreibung                          |
+| ------------ | ------ | ------------------------------------- |
+| `hostname`   | String | Gerätename                            |
+| `timezone`   | Number | Zeitzone                              |
+| `type`       | String | Gerätemodell                          |
+| `sn`         | String | Seriennummer des Geräts               |
+| `mac`        | String | MAC-Adresse des Geräts                |
+| `fw`         | String | Firmware-Version des Geräts           |
+| `f_ver`      | String | CMS-Version                           |
+| `p_ver`      | String | Pfile-Version                         |
+| `time`       | String | Aktuelle Uhrzeit                      |
+| `time_stamp` | Number | Aktueller Zeitstempel (in Sekunden)   |
+| `run_time`   | Number | Betriebszeit des Geräts (in Sekunden) |
 
 ---
 
 ## `WIFI`
 
-`WiFi` 用于获取设备当前的 Wi-Fi 连接状态。
+`WiFi` wird verwendet, um den aktuellen WLAN-Verbindungsstatus des Geräts abzurufen.
 
-**适用设备**
+**Unterstützte Geräte**
 
-- BK1600 / BK1600 Ultra
+* BK1600 / BK1600 Ultra
 
 ### `WiFi.GetStatus`
 
-获取设备当前 Wi-Fi ，包括 IP 地址、Wi-Fi 名称和信号强度。
+Ruft den aktuellen WLAN-Status des Geräts ab, einschließlich IP-Adresse, WLAN-Name und Signalstärke.
 
 <ApiBlock method="GET" path="/rpc/WiFi.GetStatus">
 
 ```bash
 curl "http://192.168.0.7:8080/rpc/WiFi.GetStatus"
 ```
+
 </ApiBlock> 
 
 <ResponseBlock title="200 OK">
@@ -1756,19 +1758,21 @@ curl "http://192.168.0.7:8080/rpc/WiFi.GetStatus"
   }
 }
 ```
+
 </ResponseBlock>
 
-**返回参数**
+**Antwortparameter**
 
-| 参数名   | 类型   | 说明             |
-| -------- | ------ | ---------------- |
-| `src`    | String | 设备序列号（SN） |
-| `params` | Object | Wi-Fi 状态信息   |
+| Parameter | Typ    | Beschreibung                 |
+| --------- | ------ | ---------------------------- |
+| `src`     | String | Seriennummer des Geräts (SN) |
+| `params`  | Object | WLAN-Statusinformationen     |
 
-`params` 说明
+Beschreibung von `params`
 
-| 参数名   | 类型   | 说明                                                     |
-| -------- | ------ | -------------------------------------------------------- |
-| `sta_ip` | String | 设备当前 IP 地址                                         |
-| `ssid`   | String | 当前连接的 Wi-Fi 名称                                    |
-| `rssi`   | Number | Wi-Fi 信号强度百分比，范围 `0~100`，数值越大表示信号越好 |
+| Parameter | Typ    | Beschreibung                                                                                 |
+| --------- | ------ | -------------------------------------------------------------------------------------------- |
+| `sta_ip`  | String | Aktuelle IP-Adresse des Geräts                                                               |
+| `ssid`    | String | Name des aktuell verbundenen WLAN-Netzwerks                                                  |
+| `rssi`    | Number | WLAN-Signalstärke in Prozent, Bereich `0~100`; ein höherer Wert bedeutet ein besseres Signal |
+

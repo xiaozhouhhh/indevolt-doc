@@ -1,268 +1,26 @@
 ---
-title: OpenData API
-description: Toegang tot lokale apparaatgegevens via een standaard HTTP-interface en bediening van het INDEVOLT micro-energieopslagsysteem.
+title: API-referentie
+description: todo
 ---
 
-# OpenData API
-
-## 1️⃣ Introductie {#introduction}
-
-OpenData is een lichtgewicht communicatieframework dat is ontworpen voor WiFi-gebaseerde INDEVOLT IoT-apparaten. Het apparaat verbindt via WiFi met het lokale netwerk en ondersteunt zowel actieve dataversturing als externe query-respons.
-
-**Kernfunctionaliteiten**
-
-- Apparaatgegevens ophalen: realtime uitlezen van apparaatdata.
-- Apparaatbediening: dynamisch aanpassen van apparaatparameters en configuratie.
-
-**Toepassingsscenario’s**
-
-- Ontvangen van externe HTTP-verzoeken
-
-  <img src={require("./img/opendata-use-case.png").default} width="240"/>
-
----
-
-## 2️⃣ Voorbereiding {#preparations}
-
-### Stap 1. Tools installeren {#install-tools}
-
-> - **[Postman](https://www.getpostman.com/) / cURL**: voor het aanroepen van HTTP API’s om apparaatgegevens op te halen of configuraties aan te passen.
-> - Een netwerkdebugtool (zoals [NetAssist](https://www.cmsoft.cn/resource/102.html)): voor het ontvangen van UDP-broadcasts.
-
-### Stap 2. API inschakelen {#enable-api}
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-> Standaard is de API-functie uitgeschakeld. Deze moet eerst worden ingeschakeld om te kunnen gebruiken. OpenData ondersteunt de volgende drie methoden:
-> - [HTTP](#http)
-> - [HTTP Digest](#http-digest)
-> - HTTPS (momenteel niet ondersteund, binnenkort beschikbaar)
->
-> Je kunt de lokale API instellen in de INDEVOLT App:
-> - **Apparaat is online**: aanbevolen via **cloudconfiguratie**, eenvoudiger in gebruik  
-> - **Apparaat is niet online**: via **lokale Bluetooth-configuratie**
->
-> <Tabs>
->   <TabItem value="cloud" label="Cloud" default>
->     <img src={require("./img/select_device.png").default} width="200"/>
->     <img src={require("./img/device_info.png").default} width="200"/>
->     <img src={require("./img/select_local_api.png").default} width="200"/>
->     <img src={require("./img/local_api.png").default} width="200"/>
->   </TabItem>
->   <TabItem value="local" label="Lokaal Bluetooth">
->     <img src={require("./img/profile_page.png").default} width="200"/>
->     <img src={require("./img/scan_qr_code.png").default} width="200"/>
->     <img src={require("./img/connect_device.png").default} width="200"/>
->     <img src={require("./img/device_connected.png").default} width="200"/>
->     <img src={require("./img/select_local_api2.png").default} width="200"/>
->     <img src={require("./img/local_api2.png").default} width="200"/>
->   </TabItem>
-> </Tabs>
-
-### Stap 3. Firmwareversie controleren {#check-firmware}
-
-> Als de firmwareversie lager is dan de tabelwaarden, moet je de firmware updaten.
->
-> | Model | Vereiste firmwareversie |
-> |------|--------------------------|
-> | BK1600 / BK1600 Ultra | V1.3.0A_R006.072_M4848_00000039 |
-> | SolidFlex 2000 / PowerFlex 2000 | CMS: V1406.07.002E |
->
-> Controleer de firmware in de INDEVOLT App.
->
-> <Tabs>
->   <TabItem value="cloud" label="Cloud" default>
->     <img src={require("./img/select_device.png").default} width="200"/>
->     <img src={require("./img/device_info.png").default} width="200"/>
->     <img src={require("./img/select_firmware2.png").default} width="200"/>
->     <img src={require("./img/view_firmware_version2.png").default} width="200"/>
->   </TabItem>
->   <TabItem value="local" label="Lokaal Bluetooth">
->     <img src={require("./img/profile_page.png").default} width="200"/>
->     <img src={require("./img/scan_qr_code.png").default} width="200"/>
->     <img src={require("./img/connect_device.png").default} width="200"/>
->     <img src={require("./img/device_connected.png").default} width="200"/>
->     <img src={require("./img/select_firmware.png").default} width="200"/>
->     <img src={require("./img/view_firmware_version.png").default} width="200"/>
->   </TabItem>
-> </Tabs>
-
-### Stap 4. IP-adres ophalen {#obtain-ip}
-
-> Kies één van de volgende methoden:
-> - 🧩 Methode 1: via routerbeheer;
-> - 🧩 Methode 2: via de App;
->   <img src={require("./img/select_network.png").default} width="200"/>
->   <img src={require("./img/view_ip.png").default} width="200"/>
-> - 🧩 Methode 3: via UDP-broadcast
->
->   (1) Zorg dat apparaat en pc in hetzelfde LAN zitten.  
->   (2) Open een netwerkdebugtool.  
->   (3) Selecteer **UDP** protocol.  
->   (4) Kies Local Host Addr.  
->   (5) Stel Local Host Port in op **10000**.  
->   (6) Klik op **Open**.  
->   <img src={require("./img/udp-settings.png").default} width="120"/>
->   (7) Stel remote in op: **255.255.255.255:8099**.  
->   <img src={require("./img/set-udp-remote.png").default} width="480"/>
->   (8) Vul commando in: **AT+IGDEVICEIP**.  
->   (9) Klik **Send**.  
->   <img src={require("./img/send-at-command.png").default} width="360"/>
->   (10) Het apparaat antwoordt met IP en SN.
->   <img src={require("./img/udp-message.png").default} width="360"/>
-
----
-
-
-## 3️⃣ HTTP-gebruik {#http}
-
-### 3.1 Verzoekstructuur {#request-structure}
-
-**HTTP-methoden**
-
-| Methode | Beschrijving |
-|--------|-------------|
-| GET    | Haalt een specifieke resource op van de server. |
-| POST   | Voert een specifieke actie uit op de server. |
-
-**Verzoek-URL**
-
-```
-http://{IP_ADDRESS}:8080/rpc/{API}
-```
-
-Waarbij:
-- `{IP_ADDRESS}`: het IP-adres van het apparaat.
-- `{API}`: de aan te roepen HTTP API.
-
-**Voorbeeldverzoek**
-
-- Apparaatgegevens ophalen:
-  ```
-  POST [http://192.168.31.213:8080/rpc/Indevolt.GetData?config={"t":[1664,1665]}](http://192.168.31.213:8080/rpc/Indevolt.GetData?config={%22t%22:[1664,1665]})
-  ```
-
-**cURL-voorbeeld**
-
-- Batterij-SOC ophalen:
-  ```
-  curl -g -X POST -H "Content-Type: application/json" "[http://192.168.1.75:8080/rpc/Indevolt.GetData?config={\"t\":[6002]}](http://192.168.1.75:8080/rpc/Indevolt.GetData?config={\%22t\%22:[6002]})"
-  ````
-
----
-
-### 3.2 Verzoekfrequentielimieten {#rate-limit}
-
-Om de stabiliteit van het systeem te waarborgen, gelden de volgende limieten voor alle HTTP API’s:
-
-| Type | Limiet |
-|------|--------|
-| Aanbevolen interval | ≥ 5 seconden |
-| Minimale ondersteunde interval | 1 seconde |
-
----
-
-### 3.3 Foutcodes {#errors}
-
-| Statuscode | Beschrijving | Uitleg |
-|-----------|-------------|--------|
-| 400 | Bad Request | De server kan het verzoek niet begrijpen; de client moet het verzoek aanpassen en opnieuw proberen. |
-| 401 | Unauthorized | Authenticatie vereist; de client moet geldige inloggegevens verstrekken. |
-| 403 | Forbidden | Het verzoek is begrepen maar geweigerd, meestal door onvoldoende rechten. |
-| 404 | Not Found | De server kan de gevraagde resource niet vinden; mogelijk bestaat deze niet meer. |
-| 405 | Method Not Allowed | De gebruikte methode is niet toegestaan voor deze resource. |
-| 408 | Request Timeout | De server heeft te lang op het verzoek gewacht; probeer later opnieuw. |
-| 409 | Conflict | Het verzoek conflicteert met de huidige status van de resource. |
-| 410 | Gone | De resource is permanent verwijderd en niet meer beschikbaar. |
-| 500 | Internal Server Error | Onbekende serverfout; het verzoek kan niet worden voltooid. |
-| 501 | Not Implemented | De server ondersteunt deze methode niet. |
-| 502 | Bad Gateway | Ongeldige respons ontvangen van een upstream server. |
-| 503 | Service Unavailable | Server is tijdelijk niet beschikbaar door overbelasting of onderhoud. |
-| 504 | Gateway Timeout | Geen tijdige respons van upstream server ontvangen. |
-| 505 | HTTP Version Not Supported | De gebruikte HTTP-versie wordt niet ondersteund. |
-
----
-
-## 4️⃣ HTTP Digest {#http-digest}
-
-Digest-authenticatie wordt gebruikt om gebruikers te verifiëren zonder wachtwoorden in platte tekst te verzenden.
-
-In HTTP+Digest-modus:
-- Bij eerste gebruik of na fabrieksreset moet eerst de `User.SetConfig`-interface worden gebruikt om het standaardwachtwoord te wijzigen.
-- Na succesvolle wijziging kunnen andere interfaces worden gebruikt.
-
-**Tools**
-
-- ASCII → hex-converter  
-- Hex → Base64-converter  
-- AES-GCM-encryptietool  
-
-**Voorbeeld: wachtwoord wijzigen**
-
-1. Converteer het nieuwe wachtwoord, oude wachtwoord en randomwaarde naar hex.
-
-   | | ASCII-string | Hex |
-   |--|-------------|-----|
-   | Nieuw wachtwoord | qwertyui | 71 77 65 72 74 79 75 69 |
-   | Oud wachtwoord | qazwsxed | 71 61 7a 77 73 78 65 64 00 00 00 00 00 00 00 00 (aangevuld tot 16 bytes) |
-   | Randomwaarde | 123456 | 31 32 33 34 35 36 00 00 00 00 00 00 (aangevuld tot 12 bytes) |
-
-2. Gebruik een AES-GCM tool om te versleutelen (voer bovenstaande waarden in).
-    <img src={require("./img/aes-gcm-info.png").default} width="480"/>
-
-3. Converteer ciphertext en tag naar Base64.
-
-   | | Hex | Base64 |
-   |--|-----|--------|
-   | Ciphertext | 4e b2 90 67 54 02 d4 c4 | TrKQZ1QC1MQ= |
-   | Tag | cf 0b d0 4e 37 a0 e6 bb cb 74 1b cb ce ab 72 9a | zwvQTjeg5rvLdBvLzqtymg== |
-
-4. Voltooi Digest-authenticatie en verstuur het `User.SetConfig`-verzoek.
-
-   <span className="http-method-badge">POST</span> **`http://{IP_ADDRESS}:8080/rpc/User.SetConfig?config={"Password":"{PASSWORD}"}`**
-
-   Waarbij:
-   - `{IP_ADDRESS}`: het IP-adres van het apparaat.
-   - `{PASSWORD}`: het met AES-128-GCM versleutelde en naar Base64 geconverteerde wachtwoord.
-
-   <img src={require("./img/digest-auth.png").default} width="720"/>
-
-| Parameter | Type | Beschrijving | Verplicht |
-|----------|------|-------------|----------|
-| Username | String | Standaardwaarde `opend` | Ja |
-| Password | String | Standaard apparaatsleutel.<br /><br />- Met het **standaard wachtwoord** kan alleen de **`User.SetConfig`**-interface worden aangeroepen om het wachtwoord te wijzigen.<br />- Na het wijzigen van het wachtwoord kunnen met het **nieuwe wachtwoord** andere interfaces worden aangeroepen. | Verplicht |
-| Realm    | String | - Bij het aanroepen van **`User.SetConfig`** om het wachtwoord te wijzigen, moet een **AES128-GCM Tag** worden opgegeven.<br />- Bij het aanroepen van **andere interfaces** kan een willekeurige waarde worden gebruikt. | Verplicht |
-| Nonce | Digest standaard | Willekeurige waarde toegestaan | Ja |
-| Algorithm | Digest standaard | MD5 | Ja |
-| qop | Digest standaard | auth | Ja |
-| Nonce Count | Digest standaard | Willekeurige waarde toegestaan | Ja |
-| Client Nonce | Digest standaard | Willekeurige waarde toegestaan | Ja |
-
----
-
-## 5️⃣ API {#api}
+# API-referentie
 
 | Component | Beschrijving |
-|----------|-------------|
-| [`Indevolt`](#indevolt) | Leest apparaatgegevens en bestuurt het INDEVOLT-apparaat. |
-| [`Sys`](#sys) | Haalt CMS (Communication Management System)-informatie van het apparaat op. |
+| ----------------------- | -------------------------------------- |
+| [`Indevolt`](#indevolt) | Leest gegevens van INDEVOLT-energieopslagapparaten en biedt functies voor apparaatbesturing. |
+| [`Sys`](#sys) | Haalt basisinformatie van het apparaat en de systeemstatus op. |
+| [`WIFI`](#wifi) | Haalt de huidige Wi-Fi-verbindingsstatus van het apparaat op. |
 
 ---
 
-## 6️⃣ `Indevolt` {#indevolt}
+## `Indevolt`
 
 `Indevolt` biedt API's voor gegevensuitwisseling met micro-energieopslagsystemen. Hiermee kunt u bedrijfsgegevens en configuratieparameters van het apparaat ophalen en besturingsopdrachten naar het apparaat verzenden.
 
 * [**`Indevolt.GetData`**](#retrieve-data): Haalt bedrijfsgegevens of configuratieparameters van het apparaat op.
 * [**`Indevolt.SetData`**](#control-device): Wijzigt configuratieparameters van het apparaat of voert besturingsacties uit.
 
-**Ondersteunde apparaten**
-
-* BK1600 / BK1600 Ultra
-* SolidFlex 2000 / PowerFlex 2000
-
-### 6.1 `Indevolt.GetData` {#retrieve-data}
+### `Indevolt.GetData`
 
 Haalt bedrijfsgegevens of configuratieparameters van het apparaat op.
 
@@ -311,7 +69,8 @@ Geeft apparaatgegevens terug in JSON-formaat, waarbij:
 
 De onderstaande cJSON-punten worden gebruikt om bedrijfsgegevens of configuratieparameters van het apparaat op te halen. Welke cJSON-punten worden ondersteund, verschilt per apparaatmodel. Raadpleeg de lijst met gegevenspunten van het betreffende apparaat voor meer informatie.
 
-
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <Tabs>
   <TabItem value="sf2000" label="SolidFlex 2000 / PowerFlex 2000" default>
@@ -1746,7 +1505,7 @@ De onderstaande cJSON-punten worden gebruikt om bedrijfsgegevens of configuratie
   </TabItem>
 </Tabs>
 
-### 6.2 `Indevolt.SetData` {#control-device}
+### `Indevolt.SetData`
 
 Wijzigt configuratieparameters van het apparaat of verzendt besturingsopdrachten naar het apparaat.
 
@@ -1844,14 +1603,9 @@ In de realtime besturingsmodus kunnen status, vermogen en SOC in één keer word
 
 ---
 
-## 7️⃣ `Sys` {#sys}
+## `Sys`
 
 `Sys` wordt gebruikt om basisapparaatinformatie en de systeemstatus op te halen.
-
-**Ondersteunde apparaten**
-
-- BK1600 / BK1600 Ultra
-- SolidFlex 2000 / PowerFlex 2000
 
 ### `Sys.GetConfig`
 
@@ -1911,7 +1665,7 @@ curl "http://192.168.31.213:8080/rpc/Sys.GetConfig"
 
 ---
 
-## 8️⃣ `WiFi` {#wifi}
+## `WiFi`
 
 `WiFi` wordt gebruikt om de huidige Wi-Fi-verbindingsstatus van het apparaat op te halen.
 
@@ -1960,23 +1714,3 @@ curl "http://192.168.0.7:8080/rpc/WiFi.GetStatus"
 | `sta_ip` | String | IP-adres van het apparaat |
 | `ssid` | String | SSID van het verbonden Wi-Fi-netwerk |
 | `rssi` | Number | Wi-Fi-signaalsterkte (0–100). Een hogere waarde duidt op een beter signaal. |
-
----
-
-## 9️⃣ FAQ {#faq}
-
-<details>
-  <summary>**HTTP geeft 401 Unauthorized terug.**</summary>
-
-* Controleer of de Digest-authenticatie gebruikersnaam en wachtwoord correct zijn.
-* Bij eerste gebruik of na fabrieksreset ondersteunt het apparaat alleen de interface `User.SetConfig`. Zie [Digest-authenticatie](#http-digest). Na het wijzigen van het wachtwoord kun je met het nieuwe wachtwoord alle interfaces gebruiken.
-
-</details>
-
-<details>
-  <summary>**Na het verzenden van een broadcast-opdracht wordt geen IP-adres ontvangen.**</summary>
-
-De OpenData API is niet ingeschakeld, waardoor deze functie niet beschikbaar is. Zie [API inschakelen](#enable-api).
-
-</details>
-```

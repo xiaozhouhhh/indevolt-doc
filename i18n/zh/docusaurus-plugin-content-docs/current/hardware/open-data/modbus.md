@@ -69,7 +69,7 @@ flowchart LR
 | 型号    | 最低适用固件版本   |
 | ------- | ------------------ |
 | PowerFlex 2000<br />PowerFlex 2000 Eco<br />SolidFlex 2000<br />SolidFlex 2000 Eco | CMS: V140C.0B.0036<br />EMS：V1.01.08 |
-| PowerFlex 3000 Hybrid<br />SolidFlex 3000 AC<br />SolidFlex 3000 AC Pro<br />SolidFlex 3000 Hybrid Pro  | CMS: V140C.09.3036  |
+| PowerFlex 3000 AC<br />PowerFlex 3000 Hybrid<br />SolidFlex 3000 AC<br />SolidFlex 3000 AC Pro<br />SolidFlex 3000 Hybrid Pro  | CMS: V140C.09.3036  |
 | SolidFlex 1200 | CMS: V140B.09.2036 |
 
 
@@ -114,6 +114,8 @@ flowchart LR
 
 连接成功后，即可读取设备寄存器。寄存器地址请参考 [Modbus 寄存器说明](./modbus-register-table.md)。
 
+---
+
 ## 5. 推荐读取频率
 
 | 类型         | 限制   |
@@ -124,7 +126,9 @@ flowchart LR
 
 频繁读取可能增加设备通信负载，影响通信稳定性。
 
-## 6 常用功能码
+---
+
+## 6. 常用功能码
 
 | 功能码 | 说明                                     |
 | ------ | ---------------------------------------- |
@@ -133,6 +137,7 @@ flowchart LR
 | `0x06` | 写单个寄存器（Write Single Register）    |
 | `0x10` | 写多个寄存器（Write Multiple Registers） |
 
+---
 
 ## 7. Python 示例
 

@@ -52,6 +52,7 @@ mosquitto_sub -h 127.0.0.1 -t "/test/subtopic" -v
 }
 ```
 
+---
 
 ## 2. 控制命令
 
@@ -112,6 +113,8 @@ mosquitto_pub -h 127.0.0.1 -t "/test/subtopic/control" -m '{}'
 | `commandString` | String | Modbus 指令，十六进制字符串格式。 |
 
 `commandString` 的内容应符合 Modbus 报文格式，包括设备地址、功能码、寄存器地址、数据及 CRC 校验。具体寄存器地址请参考：[Modbus 寄存器说明](./modbus-register-table.md)。
+
+---
 
 ## 3. 控制应答
 
