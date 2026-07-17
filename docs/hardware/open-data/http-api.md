@@ -69,6 +69,9 @@ Returns device data in JSON format, where:
 
 The following cJSON Points are used to retrieve device operating data or configuration parameters. The supported cJSON Points vary by device model. Refer to the corresponding device's data point list for details.
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <Tabs>
   <TabItem value="sf2000" label="SolidFlex 2000 / PowerFlex 2000" default>
 

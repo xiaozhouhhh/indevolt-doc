@@ -17,8 +17,8 @@ description: todo
 
 `Indevolt` biedt API's voor gegevensuitwisseling met micro-energieopslagsystemen. Hiermee kunt u bedrijfsgegevens en configuratieparameters van het apparaat ophalen en besturingsopdrachten naar het apparaat verzenden.
 
-* [**`Indevolt.GetData`**](#retrieve-data): Haalt bedrijfsgegevens of configuratieparameters van het apparaat op.
-* [**`Indevolt.SetData`**](#control-device): Wijzigt configuratieparameters van het apparaat of voert besturingsacties uit.
+* [**`Indevolt.GetData`**](#indevoltgetdata): Haalt bedrijfsgegevens of configuratieparameters van het apparaat op.
+* [**`Indevolt.SetData`**](#indevoltsetdata): Wijzigt configuratieparameters van het apparaat of voert besturingsacties uit.
 
 ### `Indevolt.GetData`
 
