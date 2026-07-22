@@ -158,6 +158,7 @@ const sidebars: SidebarsConfig = {
             'app/solaredge',
             'app/solax',
             'app/sungrow',
+            'app/solis',
           ],
         },
       ],
