@@ -80,6 +80,7 @@ const sidebars: SidebarsConfig = {
         'hardware/technical-note/device-communication',
         'hardware/technical-note/soc-balancing',
         'hardware/technical-note/cluster',
+        'hardware/technical-note/deep-standby',
       ],
     },
     {
